@@ -1,0 +1,21 @@
+{
+  "protocol": "v2",
+  "groups": 315,
+  "K": 14,
+  "reference_variance": 148.2273811350213,
+  "common_invariance_passed": true,
+  "common_max_eigenvalue_error": 8.526512829121202e-14,
+  "fixed_K_passed": true,
+  "perturbation_trends_tested": 42,
+  "perturbation_trend_failures": [],
+  "geometry_checks_passed": true,
+  "delta_sensitivity_failures": [],
+  "limits": [
+    "15 subjects, 7 states, 3 seeds; not independent external validation",
+    "single protocol perturbs ast001 only; additional target identities remain untested",
+    "geometry coverage is sampled; normal reversals are not self-intersections",
+    "legacy NPZ seeds are common; v2 permutations generated in memory",
+    "missing-coordinate E_COMP undefined: no implicit filling/dropping",
+    "independent poses need an explicit alignment protocol before PCA"
+  ]
+}

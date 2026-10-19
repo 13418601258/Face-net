@@ -1,0 +1,47 @@
+{
+  "status": "coordinate_sanity_check_only",
+  "samples": [
+    {
+      "subject": "ast001",
+      "state": "au0",
+      "landmark_count": 84,
+      "mesh_diagonal": 2.2408346416217784,
+      "landmark_diagonal": 216.98052978582,
+      "median_raw_landmark_to_mesh_vertex_distance": 104.41310459291098,
+      "max_raw_distance": 122.13883311517002,
+      "sources": {
+        "mesh": {
+          "path": "ast001/Standardized Meshes/ast001_au0.obj",
+          "sha256": "829ec6f59d94a8b49a515c33877c50af4c838deb83f0ce713d8b38fff8c98397"
+        },
+        "landmark": {
+          "path": "ast001/landmarks/ast001_au0.txt",
+          "sha256": "447a18e1ed3443dcd4a3d57a72419eaf3d6fad9f8be5514bdc234fb7c31c6ba6"
+        }
+      }
+    },
+    {
+      "subject": "ast001",
+      "state": "happy",
+      "landmark_count": 84,
+      "mesh_diagonal": 2.298186231595983,
+      "landmark_diagonal": 217.8171242104851,
+      "median_raw_landmark_to_mesh_vertex_distance": 101.28788915367798,
+      "max_raw_distance": 125.96211011620362,
+      "sources": {
+        "mesh": {
+          "path": "ast001/Standardized Meshes/ast001_happy.obj",
+          "sha256": "1b3db36b873f37d746e352219193625bf41f4a0077546bc9815ec730ffbb4395"
+        },
+        "landmark": {
+          "path": "ast001/landmarks/ast001_happy.txt",
+          "sha256": "53cf869d3a3212ff69403eba234791b1b5072425d8089167c9de910e29046d17"
+        }
+      }
+    }
+  ],
+  "conclusion": "These sampled landmarks cannot be used directly in the standardized mesh frame. This check does not prove no transform exists; obtain documented coordinate transform and template attachment before independent landmark experiments. No scale or alignment transform was invented.",
+  "html_path": "log\\方向\\实验计划-阶段0至3.html",
+  "html_sha256": "7c58f0b96cfc32914226c5ecf4cef2b9122fb893751fb45194b6973a13aa4b3c",
+  "html_utf8_no_bom": true
+}

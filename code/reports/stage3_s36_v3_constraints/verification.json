@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "constraint_grid_complete",
+      "passed": true
+    },
+    {
+      "name": "designs_complete",
+      "passed": true
+    },
+    {
+      "name": "energy_grid_complete",
+      "passed": true
+    },
+    {
+      "name": "landmarks_all_140_samples_two_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_solved",
+      "passed": true
+    },
+    {
+      "name": "gates_in_range",
+      "passed": true
+    },
+    {
+      "name": "noiseless_truth_gate_zero",
+      "passed": true
+    },
+    {
+      "name": "full_rank_noiseless_recovery",
+      "passed": true
+    },
+    {
+      "name": "two_anchor_nullity_two",
+      "passed": true
+    },
+    {
+      "name": "accepted_probes_valid_geometry",
+      "passed": true
+    },
+    {
+      "name": "zero_weight_matches_control",
+      "passed": true
+    },
+    {
+      "name": "sparse_anchor_step_decreases_anchor",
+      "passed": true
+    },
+    {
+      "name": "no_network_release",
+      "passed": true
+    },
+    {
+      "name": "sources_unchanged",
+      "passed": true
+    },
+    {
+      "name": "outputs_unchanged",
+      "passed": true
+    },
+    {
+      "name": "external_source_hashes",
+      "passed": true
+    },
+    {
+      "name": "twenty_subjects_per_sampleable_case",
+      "passed": true
+    },
+    {
+      "name": "subject_aggregate_equals_group",
+      "passed": true
+    },
+    {
+      "name": "no_subject_values_for_unsampleable",
+      "passed": true
+    },
+    {
+      "name": "crop_reindexing_confirmed",
+      "passed": true
+    },
+    {
+      "name": "noise_free_duplicates_not_independent",
+      "passed": true
+    },
+    {
+      "name": "review_hashes_match",
+      "passed": true
+    },
+    {
+      "name": "aggregate_two_v2_0.0",
+      "passed": true
+    },
+    {
+      "name": "aggregate_two_v2_1e-06",
+      "passed": true
+    },
+    {
+      "name": "aggregate_two_v2_1e-05",
+      "passed": true
+    },
+    {
+      "name": "aggregate_two_v2_0.0001",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_spread_0.0",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_spread_1e-06",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_spread_1e-05",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_spread_0.0001",
+      "passed": true
+    },
+    {
+      "name": "aggregate_six_spread_0.0",
+      "passed": true
+    },
+    {
+      "name": "aggregate_six_spread_1e-06",
+      "passed": true
+    },
+    {
+      "name": "aggregate_six_spread_1e-05",
+      "passed": true
+    },
+    {
+      "name": "aggregate_six_spread_0.0001",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_clustered_0.0",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_clustered_1e-06",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_clustered_1e-05",
+      "passed": true
+    },
+    {
+      "name": "aggregate_three_clustered_0.0001",
+      "passed": true
+    }
+  ],
+  "count": 38
+}

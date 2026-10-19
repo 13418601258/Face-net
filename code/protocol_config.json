@@ -1,0 +1,80 @@
+{
+  "version": "rigid-gpa-v3",
+  "subjects": "1-15",
+  "states": [
+    "au0",
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "strengths": [
+    0.01,
+    0.05,
+    0.1,
+    0.25
+  ],
+  "modes": [
+    "common",
+    "single",
+    "independent"
+  ],
+  "single_subject": "ast001",
+  "delta": 1e-09,
+  "delta_checks": [
+    1e-06,
+    0.001
+  ],
+  "reference_scale": "pooled per-state rigid-GPA unperturbed samples; frozen once in v3",
+  "geometry_surface_samples": 2048,
+  "geometry_tolerance_diagonal_fraction": 0.001,
+  "invariance_atol": 1e-08,
+  "invariance_rtol": 1e-10,
+  "gpa": {
+    "max_iterations": 100,
+    "tolerance": 1e-09,
+    "initialization": "first_centered_sample",
+    "scale": "preserve",
+    "reflection": false
+  },
+  "missing_policy": "geometry_only",
+  "geometry_operations": {
+    "coordinate_noise": [
+      0.0001,
+      0.0005,
+      0.001,
+      0.003
+    ],
+    "smooth_local_deformation": [
+      0.001,
+      0.003,
+      0.01,
+      0.03
+    ],
+    "random_missing": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "rigid_strengths": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "geometry_subject": "ast001",
+  "pose_score_atol": 1e-05,
+  "baseline_repeat_score_atol": 1e-10,
+  "permutation_nondecreasing_atol": 1e-06,
+  "independent_signal_retention_min": 0.5,
+  "baseline_change_policy": "record_raw_to_GPA_shift; invariance_relative_to_reprocessed_baseline",
+  "choices_authorized": "user confirmed preserve scale and geometry-only missing evaluation"
+}

@@ -1,0 +1,163 @@
+{
+  "by_layout": [
+    {
+      "layout": "two_v2",
+      "null_dimensions": [
+        2
+      ],
+      "weak_dimensions": [
+        4
+      ],
+      "median_energy_null_fraction": 0.0620969675695801,
+      "median_energy_weak_fraction": 0.08745723502522319,
+      "policies": [
+        {
+          "policy": "stay",
+          "count": 126,
+          "stay": 126,
+          "median_nrmse": 3.8631347095849516e-05,
+          "median_delta_vs_smooth": 0.0
+        },
+        {
+          "policy": "smooth",
+          "count": 126,
+          "stay": 103,
+          "median_nrmse": 3.8631347095849516e-05,
+          "median_delta_vs_smooth": 0.0
+        },
+        {
+          "policy": "energy",
+          "count": 126,
+          "stay": 125,
+          "median_nrmse": 3.8631347095849516e-05,
+          "median_delta_vs_smooth": 0.0
+        },
+        {
+          "policy": "augmented",
+          "count": 126,
+          "stay": 102,
+          "median_nrmse": 3.8631347095849516e-05,
+          "median_delta_vs_smooth": 0.0
+        }
+      ]
+    },
+    {
+      "layout": "three_clustered",
+      "null_dimensions": [
+        0
+      ],
+      "weak_dimensions": [
+        2,
+        4
+      ],
+      "median_energy_null_fraction": 0.0,
+      "median_energy_weak_fraction": 0.08702995252695618,
+      "policies": [
+        {
+          "policy": "stay",
+          "count": 80,
+          "stay": 80,
+          "median_nrmse": 0.00014508662689448256,
+          "median_delta_vs_smooth": 4.544390714616425e-07
+        },
+        {
+          "policy": "smooth",
+          "count": 80,
+          "stay": 7,
+          "median_nrmse": 0.0001445264895335404,
+          "median_delta_vs_smooth": 0.0
+        },
+        {
+          "policy": "energy",
+          "count": 80,
+          "stay": 43,
+          "median_nrmse": 0.00014508662689448256,
+          "median_delta_vs_smooth": 3.2057156851545527e-07
+        },
+        {
+          "policy": "augmented",
+          "count": 80,
+          "stay": 7,
+          "median_nrmse": 0.0001445264895335404,
+          "median_delta_vs_smooth": 0.0
+        }
+      ]
+    },
+    {
+      "layout": "six_spread",
+      "null_dimensions": [
+        0
+      ],
+      "weak_dimensions": [
+        0
+      ],
+      "median_energy_null_fraction": 0.0,
+      "median_energy_weak_fraction": 0.0,
+      "policies": [
+        {
+          "policy": "stay",
+          "count": 126,
+          "stay": 126,
+          "median_nrmse": 2.170567781418782e-06,
+          "median_delta_vs_smooth": 0.0
+        },
+        {
+          "policy": "smooth",
+          "count": 126,
+          "stay": 126,
+          "median_nrmse": 2.170567781418782e-06,
+          "median_delta_vs_smooth": 0.0
+        },
+        {
+          "policy": "energy",
+          "count": 126,
+          "stay": 126,
+          "median_nrmse": 2.170567781418782e-06,
+          "median_delta_vs_smooth": 0.0
+        },
+        {
+          "policy": "augmented",
+          "count": 126,
+          "stay": 126,
+          "median_nrmse": 2.170567781418782e-06,
+          "median_delta_vs_smooth": 0.0
+        }
+      ]
+    }
+  ],
+  "possibility_vs_selectability": [
+    {
+      "layout": "two_v2",
+      "feasible_cases": 126,
+      "diagnostic_oracle_material_opportunities": 0,
+      "selector_captures_material_opportunities": 0,
+      "selector_energy_cases": 1,
+      "selector_material_successes": 0,
+      "selector_material_harms": 0,
+      "oracle_median_relative_gain": 0.0002847542621551983
+    },
+    {
+      "layout": "three_clustered",
+      "feasible_cases": 80,
+      "diagnostic_oracle_material_opportunities": 2,
+      "selector_captures_material_opportunities": 0,
+      "selector_energy_cases": 0,
+      "selector_material_successes": 0,
+      "selector_material_harms": 0,
+      "oracle_median_relative_gain": 0.0
+    },
+    {
+      "layout": "six_spread",
+      "feasible_cases": 126,
+      "diagnostic_oracle_material_opportunities": 0,
+      "selector_captures_material_opportunities": 0,
+      "selector_energy_cases": 0,
+      "selector_material_successes": 0,
+      "selector_material_harms": 0,
+      "oracle_median_relative_gain": 0.0
+    }
+  ],
+  "verification_count": 46,
+  "oracle_warning": "Oracle uses dense truth after all decisions solely to bound opportunities among the fixed candidate pool. It is not an executable method or a fair performance claim.",
+  "interpretation": "Observation-based selector is replayed without dense truth. Selected audit anchors were never used for updates or selection. Previously viewed identities, synthetic observations and fixed local parameterization limit transfer."
+}

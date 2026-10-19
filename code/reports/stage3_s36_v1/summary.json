@@ -1,0 +1,115 @@
+{
+  "version": "s36-gradient-v1",
+  "complete": true,
+  "first_gate_pass": false,
+  "counts": {
+    "conditions": 210,
+    "finite_difference_pass": 210,
+    "restoring_direction": 209,
+    "regpa_restoring_direction": 209,
+    "update_energy_decreases": 210,
+    "update_rmse_improves": 209,
+    "variance_preserved": 210,
+    "all_criteria": 209
+  },
+  "network_status": "not_started_gate_failed_as_planned",
+  "baseline_drift": {
+    "conditions": 21,
+    "energy_decreases": 21,
+    "positive_rmse_after": 21
+  },
+  "step_sensitivity": {
+    "0.01": {
+      "conditions": 210,
+      "energy_decreases": 210,
+      "rmse_improves": 209
+    },
+    "0.03": {
+      "conditions": 210,
+      "energy_decreases": 210,
+      "rmse_improves": 209
+    },
+    "0.1": {
+      "conditions": 210,
+      "energy_decreases": 210,
+      "rmse_improves": 197
+    }
+  },
+  "variance_sensitivity": {
+    "0.99": 210,
+    "0.995": 210,
+    "0.999": 210
+  },
+  "local_variance_min": 0.9992400179876089,
+  "global_variance_min": 0.9999940585113245,
+  "fd_error_max": 1.3356395600627735e-07,
+  "baseline_score_error_max": 5.684341886080802e-14,
+  "actual_max_displacement_over_diagonal": 0.006606297785458622,
+  "rmse_relative_change_median": -0.0073577481901593855,
+  "surface_certificate_max_distance": 9.908051076137049e-15,
+  "geometry": [
+    {
+      "t": 0.1,
+      "variant": "before",
+      "subjects": 420,
+      "coverage_mean": 1.0,
+      "coverage_min": 1.0,
+      "surface_distance_over_tolerance": 6.688629581256633e-05,
+      "normal_reversal_rate_mean": 6.11515190756768e-07
+    },
+    {
+      "t": 0.1,
+      "variant": "after",
+      "subjects": 420,
+      "coverage_mean": 1.0,
+      "coverage_min": 1.0,
+      "surface_distance_over_tolerance": 6.687811138000081e-05,
+      "normal_reversal_rate_mean": 6.11515190756768e-07
+    },
+    {
+      "t": 0.5,
+      "variant": "before",
+      "subjects": 420,
+      "coverage_mean": 1.0,
+      "coverage_min": 1.0,
+      "surface_distance_over_tolerance": 0.00032125039186424133,
+      "normal_reversal_rate_mean": 1.2374189742372248e-05
+    },
+    {
+      "t": 0.5,
+      "variant": "after",
+      "subjects": 420,
+      "coverage_mean": 1.0,
+      "coverage_min": 1.0,
+      "surface_distance_over_tolerance": 0.0003187570449332592,
+      "normal_reversal_rate_mean": 1.2446132705990688e-05
+    },
+    {
+      "t": 1.0,
+      "variant": "before",
+      "subjects": 420,
+      "coverage_mean": 0.9999976748511905,
+      "coverage_min": 0.99951171875,
+      "surface_distance_over_tolerance": 0.0006208937797535004,
+      "normal_reversal_rate_mean": 0.0022372822826063495
+    },
+    {
+      "t": 1.0,
+      "variant": "after",
+      "subjects": 420,
+      "coverage_mean": 0.9999976748511905,
+      "coverage_min": 0.99951171875,
+      "surface_distance_over_tolerance": 0.0006138840666145766,
+      "normal_reversal_rate_mean": 0.0021095835221836127
+    }
+  ],
+  "limitations": [
+    "Exploratory gate on previously observed identities, no blind test or trained network",
+    "Same-face displacement cap may be far below 1% diagonal; no claim to cross-face or large slides",
+    "A point stays on the original surface, but reconnecting moved points changes mesh faces",
+    "Frozen aligned gradient is not the derivative through re-GPA; secondary re-GPA path checks address only path sensitivity",
+    "A strict gate failure limits this setup, not all neural parameterizations and not automatic evaluation validity",
+    "Three seeds are perturbation repeats; anatomy truth is the standardized AST correspondence proxy",
+    "Variance and geometry tolerances are declared diagnostic thresholds, not significance tests"
+  ]
+}

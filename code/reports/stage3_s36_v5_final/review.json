@@ -1,0 +1,400 @@
+{
+  "counts": {
+    "recorded_starts": 30,
+    "distinct_starts_including_controls": 21,
+    "distinct_corrupted_starts": 18,
+    "distinct_nonfloor_corrupted_starts": 15
+  },
+  "deduplicated_groups": [
+    {
+      "seed": 0,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "0_independent_0_two_v2",
+      "members": [
+        "0_independent_0_two_v2"
+      ]
+    },
+    {
+      "seed": 0,
+      "layout": "six_spread",
+      "sigma": 0.0,
+      "representative": "0_independent_0_six_spread",
+      "members": [
+        "0_independent_0_six_spread",
+        "0_shared_identity_0_six_spread",
+        "0_control_0_six_spread"
+      ]
+    },
+    {
+      "seed": 0,
+      "layout": "two_v2",
+      "sigma": 1e-05,
+      "representative": "0_independent_1e-05_two_v2",
+      "members": [
+        "0_independent_1e-05_two_v2"
+      ]
+    },
+    {
+      "seed": 0,
+      "layout": "six_spread",
+      "sigma": 1e-05,
+      "representative": "0_independent_1e-05_six_spread",
+      "members": [
+        "0_independent_1e-05_six_spread",
+        "0_shared_identity_1e-05_six_spread"
+      ]
+    },
+    {
+      "seed": 0,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "0_shared_identity_0_two_v2",
+      "members": [
+        "0_shared_identity_0_two_v2"
+      ]
+    },
+    {
+      "seed": 0,
+      "layout": "two_v2",
+      "sigma": 1e-05,
+      "representative": "0_shared_identity_1e-05_two_v2",
+      "members": [
+        "0_shared_identity_1e-05_two_v2"
+      ]
+    },
+    {
+      "seed": 0,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "0_control_0_two_v2",
+      "members": [
+        "0_control_0_two_v2"
+      ]
+    },
+    {
+      "seed": 1,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "1_independent_0_two_v2",
+      "members": [
+        "1_independent_0_two_v2"
+      ]
+    },
+    {
+      "seed": 1,
+      "layout": "six_spread",
+      "sigma": 0.0,
+      "representative": "1_independent_0_six_spread",
+      "members": [
+        "1_independent_0_six_spread",
+        "1_shared_identity_0_six_spread",
+        "1_control_0_six_spread"
+      ]
+    },
+    {
+      "seed": 1,
+      "layout": "two_v2",
+      "sigma": 1e-05,
+      "representative": "1_independent_1e-05_two_v2",
+      "members": [
+        "1_independent_1e-05_two_v2"
+      ]
+    },
+    {
+      "seed": 1,
+      "layout": "six_spread",
+      "sigma": 1e-05,
+      "representative": "1_independent_1e-05_six_spread",
+      "members": [
+        "1_independent_1e-05_six_spread",
+        "1_shared_identity_1e-05_six_spread"
+      ]
+    },
+    {
+      "seed": 1,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "1_shared_identity_0_two_v2",
+      "members": [
+        "1_shared_identity_0_two_v2"
+      ]
+    },
+    {
+      "seed": 1,
+      "layout": "two_v2",
+      "sigma": 1e-05,
+      "representative": "1_shared_identity_1e-05_two_v2",
+      "members": [
+        "1_shared_identity_1e-05_two_v2"
+      ]
+    },
+    {
+      "seed": 1,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "1_control_0_two_v2",
+      "members": [
+        "1_control_0_two_v2"
+      ]
+    },
+    {
+      "seed": 2,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "2_independent_0_two_v2",
+      "members": [
+        "2_independent_0_two_v2"
+      ]
+    },
+    {
+      "seed": 2,
+      "layout": "six_spread",
+      "sigma": 0.0,
+      "representative": "2_independent_0_six_spread",
+      "members": [
+        "2_independent_0_six_spread",
+        "2_shared_identity_0_six_spread",
+        "2_control_0_six_spread"
+      ]
+    },
+    {
+      "seed": 2,
+      "layout": "two_v2",
+      "sigma": 1e-05,
+      "representative": "2_independent_1e-05_two_v2",
+      "members": [
+        "2_independent_1e-05_two_v2"
+      ]
+    },
+    {
+      "seed": 2,
+      "layout": "six_spread",
+      "sigma": 1e-05,
+      "representative": "2_independent_1e-05_six_spread",
+      "members": [
+        "2_independent_1e-05_six_spread",
+        "2_shared_identity_1e-05_six_spread"
+      ]
+    },
+    {
+      "seed": 2,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "2_shared_identity_0_two_v2",
+      "members": [
+        "2_shared_identity_0_two_v2"
+      ]
+    },
+    {
+      "seed": 2,
+      "layout": "two_v2",
+      "sigma": 1e-05,
+      "representative": "2_shared_identity_1e-05_two_v2",
+      "members": [
+        "2_shared_identity_1e-05_two_v2"
+      ]
+    },
+    {
+      "seed": 2,
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "representative": "2_control_0_two_v2",
+      "members": [
+        "2_control_0_two_v2"
+      ]
+    }
+  ],
+  "maximum_equivalent_start_difference": 1.7381929229287607e-15,
+  "strict_gradient_checks_passed": true,
+  "strict_gradient_checks": [
+    {
+      "seed": 0,
+      "term": "joint",
+      "direction": 0,
+      "relative_error": 2.2337106862578167e-08,
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "term": "joint",
+      "direction": 1,
+      "relative_error": 1.1041082115230091e-07,
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "term": "single",
+      "direction": 0,
+      "relative_error": 4.943726278719896e-06,
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "term": "single",
+      "direction": 1,
+      "relative_error": 6.349481374656014e-05,
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "term": "bilaplacian",
+      "direction": 0,
+      "relative_error": 6.853407962192748e-07,
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "term": "bilaplacian",
+      "direction": 1,
+      "relative_error": 5.33861279689519e-07,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "term": "joint",
+      "direction": 0,
+      "relative_error": 2.4670271003952547e-06,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "term": "joint",
+      "direction": 1,
+      "relative_error": 2.683189744046609e-07,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "term": "single",
+      "direction": 0,
+      "relative_error": 6.444911149825295e-07,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "term": "single",
+      "direction": 1,
+      "relative_error": 0.0002258586424512201,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "term": "bilaplacian",
+      "direction": 0,
+      "relative_error": 2.5158589071038994e-08,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "term": "bilaplacian",
+      "direction": 1,
+      "relative_error": 1.1088976059092205e-07,
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "term": "joint",
+      "direction": 0,
+      "relative_error": 2.822061967771477e-05,
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "term": "joint",
+      "direction": 1,
+      "relative_error": 1.8153729921554623e-05,
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "term": "single",
+      "direction": 0,
+      "relative_error": 5.858432662523875e-06,
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "term": "single",
+      "direction": 1,
+      "relative_error": 1.3475979233961582e-06,
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "term": "bilaplacian",
+      "direction": 0,
+      "relative_error": 6.943079974614116e-06,
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "term": "bilaplacian",
+      "direction": 1,
+      "relative_error": 2.013719238603062e-08,
+      "passed": true
+    }
+  ],
+  "joint_accepted_raw_count": 72,
+  "joint_accepted_raw_improves": 0,
+  "joint_accepted_raw_worsens": 72,
+  "unique_primary_comparisons": [
+    {
+      "layout": "two_v2",
+      "family": "regularizer",
+      "unique_primary_accepted": 12,
+      "improved": 0,
+      "worsened": 12,
+      "median_relative_recovery_gain": -0.004839777704146378
+    },
+    {
+      "layout": "two_v2",
+      "family": "single",
+      "unique_primary_accepted": 24,
+      "improved": 0,
+      "worsened": 24,
+      "median_relative_recovery_gain": -0.004360743775794037
+    },
+    {
+      "layout": "two_v2",
+      "family": "joint",
+      "unique_primary_accepted": 24,
+      "improved": 0,
+      "worsened": 24,
+      "median_relative_recovery_gain": -0.004366276978572356
+    },
+    {
+      "layout": "six_spread",
+      "family": "regularizer",
+      "unique_primary_accepted": 3,
+      "improved": 0,
+      "worsened": 3,
+      "median_relative_recovery_gain": -0.13981584289146998
+    },
+    {
+      "layout": "six_spread",
+      "family": "single",
+      "unique_primary_accepted": 6,
+      "improved": 0,
+      "worsened": 6,
+      "median_relative_recovery_gain": -0.13519648709069
+    },
+    {
+      "layout": "six_spread",
+      "family": "joint",
+      "unique_primary_accepted": 6,
+      "improved": 0,
+      "worsened": 6,
+      "median_relative_recovery_gain": -0.10653218082096141
+    }
+  ],
+  "distinct_informative_selected_joint": 0,
+  "joint_pairing_deltas": [
+    1.0701305475874558,
+    1.0727245607145366,
+    1.0969820512882236
+  ],
+  "independent_verification_passed": true,
+  "deduplicated_decision_unchanged": true,
+  "interpretation": "The joint statistic detects identity-expression pairing, but no tested accepted joint candidate reduces dense correspondence error from the exact sparse fit. Both prior and compactness can bias an already good fit. Full-rank starts repeat across corruption patterns; repetitions are not independent evidence. This local test does not prove distant-start/global impossibility."
+}

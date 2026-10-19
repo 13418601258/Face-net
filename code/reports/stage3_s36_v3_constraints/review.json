@@ -1,0 +1,202 @@
+{
+  "topology": {
+    "full_template_vertices_retained": 33390,
+    "faces": 66190,
+    "full_bfm_face_index_range": [
+      0,
+      53139
+    ],
+    "remapped_face_index_range": [
+      0,
+      33389
+    ],
+    "exact_release_topology_match": true,
+    "correction": "Original landmark_audit.json false equality flags compare different index domains. After crop reindexing the faces match exactly; candidate landmark errors already used the correct lookup and remain unchanged."
+  },
+  "designs": [
+    {
+      "layout": "two_v2",
+      "ranks": [
+        4
+      ],
+      "condition_median": null
+    },
+    {
+      "layout": "three_spread",
+      "ranks": [
+        6
+      ],
+      "condition_median": 29.867759945791573
+    },
+    {
+      "layout": "six_spread",
+      "ranks": [
+        6
+      ],
+      "condition_median": 8.244698692462988
+    },
+    {
+      "layout": "three_clustered",
+      "ranks": [
+        6
+      ],
+      "condition_median": 4283.950227052323
+    }
+  ],
+  "noise_results": [
+    {
+      "layout": "two_v2",
+      "sigma": 0.0,
+      "records": 21,
+      "sampled": 21,
+      "valid": 21,
+      "median_all_sampleable_nrmse": 3.640666320176552e-05,
+      "median_valid_nrmse": 3.640666320176552e-05
+    },
+    {
+      "layout": "two_v2",
+      "sigma": 1e-06,
+      "records": 63,
+      "sampled": 63,
+      "valid": 63,
+      "median_all_sampleable_nrmse": 3.644670689552963e-05,
+      "median_valid_nrmse": 3.644670689552963e-05
+    },
+    {
+      "layout": "two_v2",
+      "sigma": 1e-05,
+      "records": 63,
+      "sampled": 63,
+      "valid": 63,
+      "median_all_sampleable_nrmse": 4.130171786252751e-05,
+      "median_valid_nrmse": 4.130171786252751e-05
+    },
+    {
+      "layout": "two_v2",
+      "sigma": 0.0001,
+      "records": 63,
+      "sampled": 63,
+      "valid": 58,
+      "median_all_sampleable_nrmse": 0.0001584371832600702,
+      "median_valid_nrmse": 0.00015856619949712922
+    },
+    {
+      "layout": "three_spread",
+      "sigma": 0.0,
+      "records": 21,
+      "sampled": 21,
+      "valid": 21,
+      "median_all_sampleable_nrmse": 1.8771247438188973e-19,
+      "median_valid_nrmse": 1.8771247438188973e-19
+    },
+    {
+      "layout": "three_spread",
+      "sigma": 1e-06,
+      "records": 63,
+      "sampled": 63,
+      "valid": 63,
+      "median_all_sampleable_nrmse": 1.6941578543034216e-06,
+      "median_valid_nrmse": 1.6941578543034216e-06
+    },
+    {
+      "layout": "three_spread",
+      "sigma": 1e-05,
+      "records": 63,
+      "sampled": 63,
+      "valid": 63,
+      "median_all_sampleable_nrmse": 1.6941578543035167e-05,
+      "median_valid_nrmse": 1.6941578543035167e-05
+    },
+    {
+      "layout": "three_spread",
+      "sigma": 0.0001,
+      "records": 63,
+      "sampled": 63,
+      "valid": 57,
+      "median_all_sampleable_nrmse": 0.00016941578543035172,
+      "median_valid_nrmse": 0.00017215401065554382
+    },
+    {
+      "layout": "six_spread",
+      "sigma": 0.0,
+      "records": 21,
+      "sampled": 21,
+      "valid": 21,
+      "median_all_sampleable_nrmse": 1.7794414771661093e-19,
+      "median_valid_nrmse": 1.7794414771661093e-19
+    },
+    {
+      "layout": "six_spread",
+      "sigma": 1e-06,
+      "records": 63,
+      "sampled": 63,
+      "valid": 63,
+      "median_all_sampleable_nrmse": 5.425828471196958e-07,
+      "median_valid_nrmse": 5.425828471196958e-07
+    },
+    {
+      "layout": "six_spread",
+      "sigma": 1e-05,
+      "records": 63,
+      "sampled": 63,
+      "valid": 63,
+      "median_all_sampleable_nrmse": 5.425828471196815e-06,
+      "median_valid_nrmse": 5.425828471196815e-06
+    },
+    {
+      "layout": "six_spread",
+      "sigma": 0.0001,
+      "records": 63,
+      "sampled": 63,
+      "valid": 61,
+      "median_all_sampleable_nrmse": 5.425828471196883e-05,
+      "median_valid_nrmse": 5.4413926353945045e-05
+    },
+    {
+      "layout": "three_clustered",
+      "sigma": 0.0,
+      "records": 21,
+      "sampled": 21,
+      "valid": 21,
+      "median_all_sampleable_nrmse": 1.4876107116675972e-17,
+      "median_valid_nrmse": 1.4876107116675972e-17
+    },
+    {
+      "layout": "three_clustered",
+      "sigma": 1e-06,
+      "records": 63,
+      "sampled": 63,
+      "valid": 58,
+      "median_all_sampleable_nrmse": 0.00012889554202931847,
+      "median_valid_nrmse": 0.00012909393997213598
+    },
+    {
+      "layout": "three_clustered",
+      "sigma": 1e-05,
+      "records": 63,
+      "sampled": 63,
+      "valid": 21,
+      "median_all_sampleable_nrmse": 0.0012882010103586472,
+      "median_valid_nrmse": 0.0008261966078855958
+    },
+    {
+      "layout": "three_clustered",
+      "sigma": 0.0001,
+      "records": 63,
+      "sampled": 23,
+      "valid": 6,
+      "median_all_sampleable_nrmse": 0.008814310065356958,
+      "median_valid_nrmse": 0.00018307912787559233
+    }
+  ],
+  "recorded_conditions": 1008,
+  "distinct_conditions_without_noiseless_repeats": 840,
+  "interpretation": [
+    "Noiseless three-replicate controls are duplicates, not independent observations.",
+    "Noisy geometry-invalid optima are not successful recoveries; display invalid counts and separate sampleable/valid medians.",
+    "At sigma=1e-5, three-spread interpolation has zero observation residual despite dense error; six-spread least-squares has a nonzero noise floor, so residual-only gate remains active.",
+    "Gradient-balanced E probes are single-step, not a converged noise-robust benefit claim.",
+    "Template crop indexing is resolved; BFM keypoint equivalence and per-sample release coordinate transform are not."
+  ],
+  "network_eligible": false
+}

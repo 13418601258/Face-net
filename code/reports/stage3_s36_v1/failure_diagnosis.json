@@ -1,0 +1,57 @@
+{
+  "status": "post_hoc_explanation_only",
+  "gate_unchanged": true,
+  "explanation": "An energy minimum displaced from the truth explains why low-amplitude restoration can increase compactness energy. This is not numerical noise or proof against every shared neural parameterization.",
+  "failed_paths": [
+    {
+      "state": "happy",
+      "seed": 0,
+      "t": 0.1,
+      "path_energy_minimum_t": [
+        0.10152039410141546
+      ],
+      "score_change_at_path_minimum": [
+        -0.00012794409597916
+      ],
+      "rmse_at_path_minimum": [
+        0.00017843015434191654
+      ],
+      "derivative": -3.774858450752619e-05,
+      "regpa_derivative": -4.113545060135948e-05,
+      "energy_change_actual_update": -0.00021101529655709328,
+      "relative_rmse_change": 0.00048393299038496096,
+      "subjects_improved": 7,
+      "local_variance_ratio": 0.9994811339326252,
+      "global_variance_ratio": 0.9999969878909118,
+      "normal_reversals_before": 4,
+      "normal_reversals_after": 4
+    }
+  ],
+  "clean_face_controls": [
+    {
+      "state": "happy",
+      "seed": 0,
+      "t": 0.1,
+      "post_hoc": true,
+      "removed_vertices": 12,
+      "retained_vertices": 500,
+      "dE_dt": 9.829862189135832e-06,
+      "energy_step": -0.0002066606592450171,
+      "relative_rmse_change": 0.00046569770114546216,
+      "before_health": {
+        "affected_faces": 1112,
+        "normal_reversals": 0,
+        "new_degenerate_faces": 0,
+        "normal_reversal_rate": 0.0
+      },
+      "after_health": {
+        "affected_faces": 1112,
+        "normal_reversals": 0,
+        "new_degenerate_faces": 0,
+        "normal_reversal_rate": 0.0
+      }
+    }
+  ],
+  "source_protocol_sha256": "c25d3a2e421088024057dd0ad1c9a284665be42e37cfa2b98c0560e1ce7fca22",
+  "code_sha256": "768655d71cb19ea18038d8b7c166bc6c4391b1eb92d0fa76cf59a1260c9393e2"
+}

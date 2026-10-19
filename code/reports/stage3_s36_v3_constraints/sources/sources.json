@@ -1,0 +1,65 @@
+{
+  "repository_commit": "02132155adda9fba6853f0c154cc33b57b31fed9",
+  "files": [
+    {
+      "file": "README.md",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/README.md?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "200224feb86a3f4f913244360c74347e4e316a4ef9ad74b7412a21105a39cdd5"
+    },
+    {
+      "file": "README_steps_01_04_06_07.md",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/README_steps_01_04_06_07.md?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "fe140214e1810ee9e638f577edd7c3f6b8953ccc47ebbde5415e8159f76f7d80"
+    },
+    {
+      "file": "run_landmark_extraction.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/02_landmark/run_landmark_extraction.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "f53410ca3b63bcb66efef4fd6f06b4868f87ff91c817ec4185aeba213992280a"
+    },
+    {
+      "file": "astface_edge_nicp.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/05_edge_nicp/astface_edge_nicp.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "13c6138b9574355c87a52648566c72b9b8b93bd4971fe6675a114ab314d8dfb9"
+    },
+    {
+      "file": "utils.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/05_edge_nicp/utils.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "8d26a72ac4bc6058fbaae24ada32836b89c3a88ea7c93447c51dcd5d2965529c"
+    },
+    {
+      "file": "bfm.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/05_edge_nicp/bfm.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "4efb84e9dcc67c682fa4c807ed8745d9f5ae4652c691b7b5c8dfff5352a33f7a"
+    },
+    {
+      "file": "06_bfm_cropper.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/06_bfm_cropper.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "b6d776cb72ad46e9e65c80fe85579935160b7cd452f9ecf603621ad947ddceff"
+    },
+    {
+      "file": "07_deformation_fields.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/07_deformation_fields.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "5f11833450797a16d2872899c14d630d8e95e29d6ea63a14c6801c90e9f67710"
+    },
+    {
+      "file": "edge_nicp.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/05_edge_nicp/edge_nicp.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "8d8ab6892d19a9beb6641c5d4407d4453d547b8ac551219c0cbffbec5d5f005a"
+    },
+    {
+      "file": "run_edge_nicp.py",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/contents/ASTFace%20Pipline/05_edge_nicp/run_edge_nicp.py?ref=02132155adda9fba6853f0c154cc33b57b31fed9",
+      "sha256": "fdc0708db440521021da6766f25bb150e399a0b687fa87a6829a5d108cb35013"
+    },
+    {
+      "file": "cut_bfm.txt",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/e61534b2efbd379ee6c3ae8e87d9d888071f5825",
+      "sha256": "c6a087c894d0c19bbbda27f08b7c0afce964739a9204651ced2dcd53ee5e5b34"
+    },
+    {
+      "file": "bfm_landmarks_withear.txt",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/8833c4945ec3b0d33e87f8cbd15a2998fd323e76",
+      "sha256": "fc2fd2bc83fedf99d7caf287f5bd4e6130025d4973026d244b7acff7d346ea3a"
+    }
+  ]
+}

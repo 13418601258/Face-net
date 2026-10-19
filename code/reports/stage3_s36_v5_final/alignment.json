@@ -1,0 +1,14 @@
+{
+  "shape": [
+    7,
+    20,
+    33390,
+    3
+  ],
+  "iterations": 4,
+  "relative_change": 2.9004769793518094e-11,
+  "scale_normalization": false,
+  "converged": true,
+  "input": "cached extracted raw meshes",
+  "sha256": "f507c9c53bddb83afb65a8b6e3623374255cc5929d947121044ae69d2229b793"
+}

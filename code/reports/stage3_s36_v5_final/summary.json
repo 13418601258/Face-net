@@ -1,0 +1,78 @@
+{
+  "complete": true,
+  "counts": {
+    "starts": 30,
+    "feasible": 30,
+    "candidates": 300,
+    "policies": 180,
+    "subject_records": 25200
+  },
+  "decisions": [
+    {
+      "layout": "two_v2",
+      "expected": 12,
+      "feasible": 12,
+      "joint_selected": 0,
+      "median_relative_gain": 0.0,
+      "median_absolute_gain": 0.0,
+      "median_gain_vs_single": 0.0,
+      "harmed_identity_fraction": 0.0,
+      "oracle_material_opportunities": 0,
+      "oracle_median_gain": 0.0,
+      "tests": {
+        "feasible_fraction": true,
+        "joint_used": false,
+        "relative_gain": false,
+        "absolute_gain": false,
+        "each_pattern": false,
+        "noisy_gain": false,
+        "audit_gain": false,
+        "positive_states": false,
+        "positive_seeds": false,
+        "alternate_cap": false,
+        "identity_harm": true,
+        "geometry": true,
+        "variance": true,
+        "control_drift": true
+      },
+      "passed": false
+    },
+    {
+      "layout": "six_spread",
+      "expected": 12,
+      "feasible": 12,
+      "joint_selected": 0,
+      "median_relative_gain": 0.0,
+      "median_absolute_gain": 0.0,
+      "median_gain_vs_single": 0.0,
+      "harmed_identity_fraction": 0.0,
+      "oracle_material_opportunities": 0,
+      "oracle_median_gain": 0.0,
+      "tests": {
+        "feasible_fraction": true,
+        "joint_used": false,
+        "relative_gain": false,
+        "absolute_gain": false,
+        "each_pattern": false,
+        "noisy_gain": false,
+        "audit_gain": false,
+        "positive_states": false,
+        "positive_seeds": false,
+        "alternate_cap": false,
+        "identity_harm": true,
+        "geometry": true,
+        "variance": true,
+        "control_drift": true
+      },
+      "passed": false
+    }
+  ],
+  "local_gate_passed": false,
+  "closed_loop_status": "skipped_by_frozen_gate",
+  "network_eligible": false,
+  "branch_status": "closed_no_further_investment",
+  "decision_zh": "最后一次局部验算未通过：结束 MDL 驱动对应支线，不进入第二关 MLP，不再追加调参或扩数据。",
+  "result_zh": "已运行30个队列，30个初值几何有效；保留全部失败或拒绝情况。联合身份/表情分别使用20和7项完整谱。",
+  "limitations": "All identities previously viewed; AST correspondence proxy and synthetic observations; baseline-derived common chart and fixed rigid alignment; local six-parameter field and finite candidate pool. Failure is a final project-budget stop, not universal MDL impossibility.",
+  "oracle_warning": "Dense-truth oracle is posthoc and bounded only by the fixed candidate pool, never used for updates or selection."
+}

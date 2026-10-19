@@ -1,0 +1,181 @@
+{
+  "status": "post_hoc_diagnostic_not_new_gate",
+  "certificate_cases": 21,
+  "feasible_zero_anchor_nonzero_correspondence": 21,
+  "feasible_path_cases": 21,
+  "median_exact_anchor_optimum_nrmse": 3.679109917447575e-05,
+  "amplitude_halvings": [
+    {
+      "state": "happy",
+      "seed": 0,
+      "halvings": 4,
+      "vertices": 574
+    },
+    {
+      "state": "au0",
+      "seed": 1,
+      "halvings": 0,
+      "vertices": 590
+    },
+    {
+      "state": "au0",
+      "seed": 0,
+      "halvings": 0,
+      "vertices": 590
+    },
+    {
+      "state": "au0",
+      "seed": 2,
+      "halvings": 0,
+      "vertices": 588
+    },
+    {
+      "state": "angry",
+      "seed": 0,
+      "halvings": 0,
+      "vertices": 542
+    },
+    {
+      "state": "angry",
+      "seed": 1,
+      "halvings": 0,
+      "vertices": 612
+    },
+    {
+      "state": "angry",
+      "seed": 2,
+      "halvings": 0,
+      "vertices": 637
+    },
+    {
+      "state": "disgust",
+      "seed": 0,
+      "halvings": 0,
+      "vertices": 591
+    },
+    {
+      "state": "disgust",
+      "seed": 2,
+      "halvings": 0,
+      "vertices": 592
+    },
+    {
+      "state": "disgust",
+      "seed": 1,
+      "halvings": 0,
+      "vertices": 700
+    },
+    {
+      "state": "fear",
+      "seed": 0,
+      "halvings": 0,
+      "vertices": 541
+    },
+    {
+      "state": "fear",
+      "seed": 1,
+      "halvings": 0,
+      "vertices": 606
+    },
+    {
+      "state": "fear",
+      "seed": 2,
+      "halvings": 0,
+      "vertices": 561
+    },
+    {
+      "state": "happy",
+      "seed": 1,
+      "halvings": 0,
+      "vertices": 661
+    },
+    {
+      "state": "happy",
+      "seed": 2,
+      "halvings": 0,
+      "vertices": 688
+    },
+    {
+      "state": "sad",
+      "seed": 0,
+      "halvings": 0,
+      "vertices": 621
+    },
+    {
+      "state": "sad",
+      "seed": 1,
+      "halvings": 0,
+      "vertices": 652
+    },
+    {
+      "state": "sad",
+      "seed": 2,
+      "halvings": 0,
+      "vertices": 606
+    },
+    {
+      "state": "surprise",
+      "seed": 0,
+      "halvings": 0,
+      "vertices": 815
+    },
+    {
+      "state": "surprise",
+      "seed": 1,
+      "halvings": 0,
+      "vertices": 610
+    },
+    {
+      "state": "surprise",
+      "seed": 2,
+      "halvings": 0,
+      "vertices": 677
+    }
+  ],
+  "arm_diagnostics": [
+    {
+      "arm": "anchor_fixed_e",
+      "positive_conditions": 84,
+      "strictly_beats_anchor": 30,
+      "median_signed_nrmse_difference": 3.036776566192281e-08,
+      "t1_initial_weighted_gradient_ratio_median": 0.00010396326750412232,
+      "t1_initial_weighted_gradient_ratio_min": 6.282453381637556e-05,
+      "t1_initial_weighted_gradient_ratio_max": 0.0007985699613691923
+    },
+    {
+      "arm": "anchor_gated_e",
+      "positive_conditions": 84,
+      "strictly_beats_anchor": 33,
+      "median_signed_nrmse_difference": 1.716762959419024e-10,
+      "t1_initial_weighted_gradient_ratio_median": 0.00010388032472965136,
+      "t1_initial_weighted_gradient_ratio_min": 6.27907680828973e-05,
+      "t1_initial_weighted_gradient_ratio_max": 0.0007020322353883226
+    }
+  ],
+  "nullspace_probes": {
+    "truth": {
+      "conditions": 21,
+      "accepted": 21,
+      "energy_decreases": 21,
+      "correspondence_improves": 0,
+      "correspondence_worsens": 21,
+      "max_anchor_residual": 3.5399116041067294e-33
+    },
+    "exact_anchor_minimizer": {
+      "conditions": 21,
+      "accepted": 21,
+      "energy_decreases": 21,
+      "correspondence_improves": 8,
+      "correspondence_worsens": 13,
+      "max_anchor_residual": 7.996438023055115e-32
+    }
+  },
+  "nullspace_probe_protocol": "Post-hoc single-step E/K descent in exact sparse-anchor nullspace; coefficient infinity step 0.01, Armijo 1e-4, 24 halvings and unchanged geometry guard. Uses no true recovery direction or dense error for step. Not a convergence or independent generalization experiment.",
+  "interpretation": [
+    "A=0 and gated gradient=0 are insufficient for dense correspondence; sparse-anchor nullspace remains.",
+    "The exact anchor minimizer uses only the sparse observation design; dense truth is used only to measure its remaining error.",
+    "Small observed combined-arm differences cannot establish utility: fixed lambda was exploratory and actual gradient ratios must be considered.",
+    "Initial amplitudes differ after geometry-only halving; t is relative within a path, not a shared physical corruption size.",
+    "Solver iteration limits are not convergence; this diagnostic does not replace or relabel any original endpoint."
+  ]
+}

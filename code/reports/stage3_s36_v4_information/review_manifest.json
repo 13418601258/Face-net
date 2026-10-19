@@ -1,0 +1,10 @@
+{
+  "reviewer_sha256": "4dfb9d9d3ece2102914e1e6cc9a6a36fb38c16dafd413cfa51e62a76b584ade3",
+  "source_manifest_sha256": "699e5c325aa05c8411dff34648f83b670a9bd0ef45b1d3af30bcd47470c86c16",
+  "files": {
+    "verification.json": "8337ce19e6c8d386116c2de9e550304f2933c29735fd806759418e10ec842642",
+    "review.json": "c12558fc0ffe9aa0a668e5cd36b6d012081c2cdcc8185f5b54f91418a3dc38e0",
+    "information_review.png": "fe6d6d77a7cffcf60f40afbc3176f58960fa2d2be40bb7bf694286e8c0a8c483",
+    "information_review.pdf": "774b9aaf430cad051d0ad2b05bf73d64d9eee626a5ff36b56d7ec824a6e68f97"
+  }
+}

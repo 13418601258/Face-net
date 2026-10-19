@@ -1,0 +1,43 @@
+# Local datasets and licensing files
+/data/
+
+# Local Python environments and interpreter caches
+/.venv/
+/.venv*/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Local experiment inputs and generated binary data
+# Keep protocols, source manifests, JSON/CSV summaries and figures tracked.
+/code/reports/**/cache/
+/code/reports/perturbations/
+/code/reports/**/patches/
+/code/reports/**/parameters/
+/code/reports/**/checkpoints/
+/code/reports/**/*.npy
+/code/reports/**/*.npz
+
+# Dataset archives and local transfer packages
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# Generated local scratch output
+/tmp/
+/temp/
+*.tmp
+*.bak
+*.swp
+
+# Common editor and OS files
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+desktop.ini

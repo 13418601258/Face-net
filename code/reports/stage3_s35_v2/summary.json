@@ -1,0 +1,222 @@
+{
+  "version": "stage3-s35-v2",
+  "complete": true,
+  "rows": {
+    "T2": 441,
+    "T3": 462,
+    "T4": 126,
+    "T5": 56
+  },
+  "geometry_subject_rows": 4060,
+  "cohorts": {
+    "base15": {
+      "N": 15,
+      "K": 14,
+      "subjects": [
+        "ast001",
+        "ast002",
+        "ast003",
+        "ast004",
+        "ast005",
+        "ast006",
+        "ast007",
+        "ast008",
+        "ast009",
+        "ast010",
+        "ast011",
+        "ast012",
+        "ast013",
+        "ast014",
+        "ast015"
+      ],
+      "reference_variance": 111.74964914610983,
+      "baseline_scores": {
+        "au0": -63.47756558384753,
+        "angry": -51.54736763220242,
+        "disgust": -50.38853046909199,
+        "fear": -51.80909751726821,
+        "happy": -49.8368496278989,
+        "sad": -53.08194875319244,
+        "surprise": -50.50117327474486
+      }
+    },
+    "new5": {
+      "N": 5,
+      "K": 4,
+      "subjects": [
+        "ast016",
+        "ast017",
+        "ast018",
+        "ast019",
+        "ast020"
+      ],
+      "reference_variance": 77.45819933818038,
+      "baseline_scores": {
+        "au0": -11.889951046702212,
+        "angry": -6.488923538298858,
+        "disgust": -7.579297435896203,
+        "fear": -7.341259128876141,
+        "happy": -6.323435757781112,
+        "sad": -7.755763168683631,
+        "surprise": -7.245452095754333
+      }
+    },
+    "all20": {
+      "N": 20,
+      "K": 19,
+      "subjects": [
+        "ast001",
+        "ast002",
+        "ast003",
+        "ast004",
+        "ast005",
+        "ast006",
+        "ast007",
+        "ast008",
+        "ast009",
+        "ast010",
+        "ast011",
+        "ast012",
+        "ast013",
+        "ast014",
+        "ast015",
+        "ast016",
+        "ast017",
+        "ast018",
+        "ast019",
+        "ast020"
+      ],
+      "reference_variance": 109.16412439918614,
+      "baseline_scores": {
+        "au0": -96.54724475704174,
+        "angry": -80.57820862535995,
+        "disgust": -78.8882423365873,
+        "fear": -80.31471499801916,
+        "happy": -78.2530384017198,
+        "sad": -81.54721490202738,
+        "surprise": -78.95379885372351
+      }
+    }
+  },
+  "T1": {
+    "original_individual_counterexamples": 21,
+    "seed_groups": 28,
+    "reproducible_negative_groups": 0
+  },
+  "T2": {
+    "original": {
+      "seed_checks": 84,
+      "positive_step_gt_sd": 31,
+      "positive_step_gt_2sd": 19,
+      "identity_checks": 14,
+      "identity_stable": 3,
+      "by_cohort": {
+        "base15": {
+          "checks": 28,
+          "positive_step_gt_sd": 12
+        },
+        "new5": {
+          "checks": 28,
+          "positive_step_gt_sd": 3
+        },
+        "all20": {
+          "checks": 28,
+          "positive_step_gt_sd": 16
+        }
+      }
+    },
+    "added": {
+      "seed_checks": 63,
+      "positive_step_gt_sd": 42,
+      "positive_step_gt_2sd": 28,
+      "identity_checks": 14,
+      "identity_stable": 12,
+      "by_cohort": {
+        "base15": {
+          "checks": 21,
+          "positive_step_gt_sd": 18
+        },
+        "new5": {
+          "checks": 21,
+          "positive_step_gt_sd": 6
+        },
+        "all20": {
+          "checks": 21,
+          "positive_step_gt_sd": 18
+        }
+      }
+    },
+    "full": {
+      "seed_checks": 147,
+      "positive_step_gt_sd": 65,
+      "positive_step_gt_2sd": 37,
+      "identity_checks": 14,
+      "identity_stable": 3,
+      "by_cohort": {
+        "base15": {
+          "checks": 49,
+          "positive_step_gt_sd": 26
+        },
+        "new5": {
+          "checks": 49,
+          "positive_step_gt_sd": 5
+        },
+        "all20": {
+          "checks": 49,
+          "positive_step_gt_sd": 34
+        }
+      }
+    }
+  },
+  "T3": {
+    "global_index": {
+      "checks": 56,
+      "detected": 56,
+      "paired_positive_steps_gt_3sd": 56,
+      "monotone_seed_curves": 21,
+      "seed_curves": 21
+    },
+    "local_cycle": {
+      "checks": 49,
+      "detected": 49,
+      "paired_positive_steps_gt_3sd": 49,
+      "monotone_seed_curves": 21,
+      "seed_curves": 21
+    },
+    "adjacent_swap": {
+      "checks": 49,
+      "detected": 49,
+      "paired_positive_steps_gt_3sd": 49,
+      "monotone_seed_curves": 21,
+      "seed_curves": 21
+    }
+  },
+  "T4": {
+    "seed_curves": 21,
+    "monotone": 21,
+    "endpoint_pass": 21,
+    "endpoint_abs_max": 5.684341886080802e-14
+  },
+  "T5": {
+    "harmful_candidates": 49,
+    "tested_candidates": 56,
+    "max_lambda_geom_min": 1.5062334514363953,
+    "equivalent_mu_comp_max": 0.6639077090250294,
+    "analytic_error_max": 1.1368683772161603e-13,
+    "zero_spectrum_score": -393.74205090198177,
+    "loss_convention": "L=delta_E/K + lambda_geom*G; G=(1-coverage)+symmetric_distance/tolerance+normal_rate; lambda>=(-delta_E/K)/G for tested negative candidates only",
+    "limitation": "Finite sampled paths only; no global safe weight or training guarantee"
+  },
+  "replay": {
+    "checks": 252,
+    "passed": 252,
+    "max_score_error": 1.1368683772161603e-13
+  },
+  "geometry_scope": "T2 and T5: every all20 identity and every condition; T2 subcohorts: scores only",
+  "limits": [
+    "three perturbation seeds are not independent identity replicates",
+    "all20 overlaps base15 and new5",
+    "T3/T4 discrete permutation ordering does not demonstrate a useful continuous training gradient",
+    "standardized AST meshes are a proxy for correct correspondence, not external anatomical ground truth"
+  ]
+}

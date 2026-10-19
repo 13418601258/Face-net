@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "summary.json": "6b34acad8ecf87587cd2ae4f167f9fe5621e2cc629b4bfd508beac2efe0d9f02",
+    "verification.json": "49fa99e6c2a0fa2d9f66e0d467440e973b05fc0e78b0dd00145e88cc281c5900",
+    "structure_checks.json": "1eab8d1df58c738f706c7fa407074b67aa77d75e63d8ac8833dacf1650fd5623",
+    "candidates.csv": "9d915f36871d4cac27bd6f8d1906cafb0f1df5e349ff1ee9e8fe63d817fb9200",
+    "policies.csv": "227da4975764efe316d327182b3070b82d55c700819b13a2764b37920a945ffc"
+  },
+  "outputs": {
+    "review.json": "eed2856d15850626e49d43db5ddd662c29c32bd223fd10c47d96b94f2c9abf81",
+    "final_report.md": "a06344ed2b942c9a8cea8fce0ea0376e0355d4e86f1cadfac9567abb638cecdd"
+  },
+  "source_sha256": "5aee9941846ba9c861a32abd9bcc2589907fbb7e0b84234858ba25c218ea0168"
+}

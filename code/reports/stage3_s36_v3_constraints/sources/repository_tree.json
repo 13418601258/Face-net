@@ -1,0 +1,374 @@
+{
+  "sha": "02132155adda9fba6853f0c154cc33b57b31fed9",
+  "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/02132155adda9fba6853f0c154cc33b57b31fed9",
+  "tree": [
+    {
+      "path": "ASTFace Pipline",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99a56b0e4e834412a23a62e22595462de309b6e2",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/99a56b0e4e834412a23a62e22595462de309b6e2"
+    },
+    {
+      "path": "ASTFace Pipline/01_icp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "005d1a4034645ec7519d0b41c0059dd8daa9aae1",
+      "size": 11663,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/005d1a4034645ec7519d0b41c0059dd8daa9aae1"
+    },
+    {
+      "path": "ASTFace Pipline/02_landmark",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e98b95fe4a9aaf8bb3a427ef8309eeb376b70ee0",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/e98b95fe4a9aaf8bb3a427ef8309eeb376b70ee0"
+    },
+    {
+      "path": "ASTFace Pipline/02_landmark/02_landmarks_README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5043c7b9614f9171a06a357be830a52396ce9ed5",
+      "size": 1950,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/5043c7b9614f9171a06a357be830a52396ce9ed5"
+    },
+    {
+      "path": "ASTFace Pipline/02_landmark/run_landmark_extraction.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c2f5dea84b02e372dd9f663042aaff53ef6f57e",
+      "size": 245,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/4c2f5dea84b02e372dd9f663042aaff53ef6f57e"
+    },
+    {
+      "path": "ASTFace Pipline/03_flame_fitting",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "578fcdb69c4682c5f520b0175185f3f502dec4f5",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/578fcdb69c4682c5f520b0175185f3f502dec4f5"
+    },
+    {
+      "path": "ASTFace Pipline/03_flame_fitting/03_flame_fitting_README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "192b2c5896502d1f4ac240f689cebf8d3510d8b5",
+      "size": 1912,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/192b2c5896502d1f4ac240f689cebf8d3510d8b5"
+    },
+    {
+      "path": "ASTFace Pipline/04_get_bfm_flame.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dddd39dfde03ce3a4bba63460be404bb24cc4f24",
+      "size": 13266,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/dddd39dfde03ce3a4bba63460be404bb24cc4f24"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "80bb735f9b1595e4150ec0ff4c9cd7ad90bfe85b",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/80bb735f9b1595e4150ec0ff4c9cd7ad90bfe85b"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/05_edge_nicp_README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ade158c9fcd5f70434702913cfc914e5064cadf8",
+      "size": 1850,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/ade158c9fcd5f70434702913cfc914e5064cadf8"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/BFM",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "91bfdefdfe4967465122cd55f581c8633c624b89",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/91bfdefdfe4967465122cd55f581c8633c624b89"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/BFM/bfm_landmarks_withear.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8833c4945ec3b0d33e87f8cbd15a2998fd323e76",
+      "size": 1700,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/8833c4945ec3b0d33e87f8cbd15a2998fd323e76"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/BFM/bfm_to_flame_indices.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca9ff8149d35c7b13f3fab608fdec754d72d2784",
+      "size": 449806,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/ca9ff8149d35c7b13f3fab608fdec754d72d2784"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/BFM/cal_face.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef9f7c82f0fe6f3912fe6d09914159aecfb867ee",
+      "size": 235369,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/ef9f7c82f0fe6f3912fe6d09914159aecfb867ee"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/BFM/nose_internal_withear.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56b17a22869429b56fb0d348b10d8f4e7eb18f32",
+      "size": 505,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/56b17a22869429b56fb0d348b10d8f4e7eb18f32"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5e2a163d9d099fdf6b555442d06913e577f272c",
+      "size": 1067,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/c5e2a163d9d099fdf6b555442d06913e577f272c"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/astface_edge_nicp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1a397f57d81f01a70654ab5c6a21f77e2302ec9",
+      "size": 1846,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/e1a397f57d81f01a70654ab5c6a21f77e2302ec9"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/bfm.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13afe3246e1088e0da55cfdacec69987c066f516",
+      "size": 4539,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/13afe3246e1088e0da55cfdacec69987c066f516"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "df1a6e0393476d85e243e303528bc85bfc875fe7",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/df1a6e0393476d85e243e303528bc85bfc875fe7"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/config/coarse_grain.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09a47510271b16fc9a806e2f9207263d5a7f94c1",
+      "size": 200,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/09a47510271b16fc9a806e2f9207263d5a7f94c1"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/config/fine_grain.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c24cba14041da01279ac059afa85d757e98dce9f",
+      "size": 263,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/c24cba14041da01279ac059afa85d757e98dce9f"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/config/path.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b5fcec5067edf36c565348b32ab0c066e678ab1",
+      "size": 354,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/8b5fcec5067edf36c565348b32ab0c066e678ab1"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/edge_nicp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88713d5a6abc7daf5896738fde9ee11c09f5ffb1",
+      "size": 9309,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/88713d5a6abc7daf5896738fde9ee11c09f5ffb1"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/io3d.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4c2cc725d5b811fdeb6ba29743fe0ca63eb1f00",
+      "size": 1398,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/c4c2cc725d5b811fdeb6ba29743fe0ca63eb1f00"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/local_affine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "608f736f2111064374a45b28962ab978feb441c0",
+      "size": 1812,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/608f736f2111064374a45b28962ab978feb441c0"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/run_edge_nicp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e602507e2818f37354da8a6dd31b053d8302b79",
+      "size": 8221,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/8e602507e2818f37354da8a6dd31b053d8302b79"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e35f3ba290edfd2879e6d796c553769631a86a4",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/2e35f3ba290edfd2879e6d796c553769631a86a4"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fd5826daa664a1b779603828e1afc57565a3b663",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/fd5826daa664a1b779603828e1afc57565a3b663"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show/bfm_show_au27.obj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85545ff413ed41b47c74655549500f1f224daeee",
+      "size": 3674229,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/85545ff413ed41b47c74655549500f1f224daeee"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show/bfm_show_au27_part.obj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79595f7063c96c0e6a26733a4785b6991b5929df",
+      "size": 2263591,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/79595f7063c96c0e6a26733a4785b6991b5929df"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show/flame_au27.obj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4edbe4fc0e6f1e7a54d15d3f02c08d53e48813",
+      "size": 315232,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/da4edbe4fc0e6f1e7a54d15d3f02c08d53e48813"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show/show_au27.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3599ec8d33f315ee3946ffc4a7774c1a0e0cd7b6",
+      "size": 699852,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/3599ec8d33f315ee3946ffc4a7774c1a0e0cd7b6"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show/show_au27.mtl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3f6b9edb90346352a2817f7a78ac2adb6c1f2d8",
+      "size": 41,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/a3f6b9edb90346352a2817f7a78ac2adb6c1f2d8"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show/show_au27.obj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4437e57529ad29a2e8c9b042c7c484b521bb98c",
+      "size": 10139527,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/c4437e57529ad29a2e8c9b042c7c484b521bb98c"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/testdata/astface_show/show_au27_landmarks.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f3742a6eafd492859bd5a71c566b4de67b1c3c6",
+      "size": 4764,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/4f3742a6eafd492859bd5a71c566b4de67b1c3c6"
+    },
+    {
+      "path": "ASTFace Pipline/05_edge_nicp/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d809d05deab401fb64023ecfbb3c646036b6b57f",
+      "size": 9929,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/d809d05deab401fb64023ecfbb3c646036b6b57f"
+    },
+    {
+      "path": "ASTFace Pipline/06_bfm_cropper.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb357b28742eece5e1780561de9f9453066bb65d",
+      "size": 6329,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/cb357b28742eece5e1780561de9f9453066bb65d"
+    },
+    {
+      "path": "ASTFace Pipline/07_deformation_fields.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bf35ee939b25de92ddbb3bfb8e6e40bc861a15a",
+      "size": 3242,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/0bf35ee939b25de92ddbb3bfb8e6e40bc861a15a"
+    },
+    {
+      "path": "ASTFace Pipline/README_steps_01_04_06_07.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80e27c0a4adeb09dbc1043a826465d8736d7914e",
+      "size": 4632,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/80e27c0a4adeb09dbc1043a826465d8736d7914e"
+    },
+    {
+      "path": "ASTFace Pipline/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b37cc0a6714cd05f78a9eaed316e80d276f34a1a",
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/trees/b37cc0a6714cd05f78a9eaed316e80d276f34a1a"
+    },
+    {
+      "path": "ASTFace Pipline/data/bfm_to_flame_indices.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca9ff8149d35c7b13f3fab608fdec754d72d2784",
+      "size": 449806,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/ca9ff8149d35c7b13f3fab608fdec754d72d2784"
+    },
+    {
+      "path": "ASTFace Pipline/data/cut_bfm.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e61534b2efbd379ee6c3ae8e87d9d888071f5825",
+      "size": 1446610,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/e61534b2efbd379ee6c3ae8e87d9d888071f5825"
+    },
+    {
+      "path": "ASTFace Pipline/data/template.obj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4569957b972652dbb468a8ded47fadc044aad658",
+      "size": 3657723,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/4569957b972652dbb468a8ded47fadc044aad658"
+    },
+    {
+      "path": "Data Usage Agreement (DUA) .pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ab05af1b97cf6f1728e6c4a363414e804a650d7",
+      "size": 89465,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/5ab05af1b97cf6f1728e6c4a363414e804a650d7"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73e47ede61b81074a295bc64ba6e5d802f96ddc5",
+      "size": 6251,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/73e47ede61b81074a295bc64ba6e5d802f96ddc5"
+    },
+    {
+      "path": "asfface_demo.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc6bd9c5ffb733e1280c68432298d487f5fd3068",
+      "size": 3801,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/fc6bd9c5ffb733e1280c68432298d487f5fd3068"
+    },
+    {
+      "path": "astface_demo.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "886f13792bc6631ea6be3fc594b2533616d8b30a",
+      "size": 2507572,
+      "url": "https://api.github.com/repos/zhaopu99/AST-face/git/blobs/886f13792bc6631ea6be3fc594b2533616d8b30a"
+    }
+  ],
+  "truncated": false
+}

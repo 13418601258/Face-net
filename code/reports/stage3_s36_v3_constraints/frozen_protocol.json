@@ -1,0 +1,77 @@
+{
+  "protocol": {
+    "version": "s36-v3-constraint-diagnostic",
+    "date": "2026-10-19",
+    "scope": "Synthetic sparse-observation mechanism audit, not neural training or an independent anatomical benchmark",
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "N": 20,
+    "K": 19,
+    "layouts": [
+      "two_v2",
+      "three_spread",
+      "six_spread",
+      "three_clustered"
+    ],
+    "layout_selection": "Two v2 anchors unchanged; spread adds maximum smallest-singular-value points within radius 0.65; cluster chooses three nearest centre vertices. No energy or dense outcome used.",
+    "noise_sigma_chart_diag": [
+      0.0,
+      1e-06,
+      1e-05,
+      0.0001
+    ],
+    "noise_replicates": [
+      0,
+      1,
+      2
+    ],
+    "noise_units": "Per UV coordinate Gaussian sigma / mean baseline mesh diagonal. Synthetic stress test, not estimated detector error; not 3D physical displacement.",
+    "exact_solver": "q*=Y pinv(D)^T + q_initial (I-pinv(D)D)^T, nearest unconstrained least-squares optimum. D uses sparse observations only. Geometry feasibility is audited after solution, never assumed or repaired with truth.",
+    "dense_evaluation": "Exclude union of all four layouts from evaluation for identical evaluation vertices across arms; report all identities, invalid geometry separately.",
+    "gate_test": "A is residual to noisy sparse observations, not zero truth. g=A/(A+1e-4). Measure gate at truth and exact sparse optimum.",
+    "energy_probes": "At t=1 with exact anchors, fixed initial lambda=rho*norm(grad A)/norm(grad E/K), rho=0.01,0.1,1. Same bounded coefficient step 0.01 and geometry-checked Armijo for anchor-only and A+lambda E. Single-step scale audit, NOT converged closed-loop gain.",
+    "landmarks": "Audit all 20 identities x 7 states; test both 0/1-based interpretations of publicly provided 68-point template index list. Fit proper similarity on even entries of the published 36-point correspondence, evaluate odd entries. Coordinate diagnostic only: sample release transforms and BFM.mat kpt_ind equivalence are not assumed. No fitted scale is applied to the baseline meshes.",
+    "preserve": "Read extracted data only. Do not modify v1/v2 code, results, or dataset. No archive access. No neural-training release."
+  },
+  "hashes": {
+    "code\\stage36_constraints.py": "9c7a93f6663b22b1e2946cde64beae205c0f8b51f2ca172af20dcb2144509c8b",
+    "code\\stage36_constraints_protocol.json": "69c10901f8f21c3fc422aaa877d513d4117d77b06a5f888dadcc9e20609a2366",
+    "code\\stage36_smooth.py": "8f3034b46f6da4327003da03d366275769798a0942ac4eb968a472923a6ba692",
+    "code\\stage36_gradient.py": "ea87da0226098761f6554d85fc6a97dc67483e78d5077d18239a291c82e8542f",
+    "code\\reports\\stage3_s36_v2_harmonic\\manifest.json": "8cb4312d6a1d46f75a27b9448ed00d39bef09cad59db5660312162337cc45ebd",
+    "code\\reports\\stage3_s36_v3_constraints\\sources\\sources.json": "5dd4096e50740209331e1dde7e1e5314822c20edd4bec9b0e29ed5cbebde9b1f",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\angry_0.npz": "fe83c33879f1b641cb75fe07e44771cb3104a214a724dcbc4ce4450d2d0817f1",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\angry_1.npz": "0bbfa8b7b4bca046b0058b6efed02a333a7a3d4260222cb0c5e1efa9fc239204",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\angry_2.npz": "33d56075b76f36378080bdb6220c1a9bfc0df50a1fd7dbb817908369377dcc9f",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\au0_0.npz": "a7b6fccb6447158a9272ae643f8c92ec6a3081fd875714735fa2f4d4bdea4e86",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\au0_1.npz": "72adbddceb489e11dee7f6e0bc00a9271f04219db0cf4288dcf7c6c3b17165e0",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\au0_2.npz": "65a79fe453488b850c822e21e3ed8710e2acd86d56d4893bb79228e221015dc3",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\disgust_0.npz": "28d3601dec146a93c17290d6ba5d24d46a37f50f7f18df2027d0eda0be44d9dd",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\disgust_1.npz": "ea02f49fa8f76da329f6f61fa7bfcfd5225e458bd2823c9f84d79caea5f9608d",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\disgust_2.npz": "30a9208f40659c9b2a7066d2815475f162dee692a02b5be49fcabc4ed3d2adab",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\fear_0.npz": "5f180580b492a7777fb9ca5017052e2a4d22f5d88653da66594b6e81c43420ff",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\fear_1.npz": "655e902760ace0b70dc6028b4e371e66797abda82c76506ea3d04a2da4dab0a5",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\fear_2.npz": "d55aa8d495bffec8cc5b0debdd9be64c8c50fe54ecfab23cf982ef5b5cca2688",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\happy_0.npz": "b895ba53725bf422fad5f27ef7f898926a95c143ea419cf1cac49320450012ee",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\happy_1.npz": "afc6c98d58f95661e060327a174d55cf3034784080781c4486e5cbd352bb5a8d",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\happy_2.npz": "ea9df61cfc5aa55765982211c941d1dd07a02479eb08bddff51f07b501c26905",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\sad_0.npz": "f02e2bea121ed899063cf8cfb696f862f835c9da28356d18f3131e85141c53c3",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\sad_1.npz": "8e2352c603ea1237a9ba0f4e98be00d38afbe4b7b1d72dff1165a7a7f9912706",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\sad_2.npz": "d50f10c20b16a6bc62dc6503ed6f4636f2e1cba67d6b40fd9d60f9f8649a2ee9",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\surprise_0.npz": "31963445848b8ebdb380ca1b49bab803f3bde5888ba900e882dff10c56510c65",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\surprise_1.npz": "67bb61668626dc5d38a516838e5af647540c00a011c60bd4381de29cfe75daf2",
+    "code\\reports\\stage3_s36_v2_harmonic\\parameters\\surprise_2.npz": "578fa6d35e535901a5a57cb40227ede75e61d85c508c9685c42c3553b3611e4c"
+  }
+}

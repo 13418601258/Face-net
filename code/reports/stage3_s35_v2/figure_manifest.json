@@ -1,0 +1,177 @@
+[
+  {
+    "name": "t2_smooth_all_states",
+    "sources": [
+      "t2_results.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t2_geometry_all_states",
+    "sources": [
+      "t2_results.csv",
+      "geometry_subjects.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t2_geometry_distance_normals",
+    "sources": [
+      "t2_results.csv",
+      "geometry_subjects.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t3_global_index",
+    "sources": [
+      "t3_results.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t3_local_cycle",
+    "sources": [
+      "t3_results.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t3_adjacent_swap",
+    "sources": [
+      "t3_results.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t4_restoration_all_states",
+    "sources": [
+      "t4_results.csv",
+      "t4_seed_checks.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t5_collapse_joint_curves",
+    "sources": [
+      "t5_results.csv",
+      "geometry_subjects.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "t5_copy_collapse",
+    "sources": [
+      "t5_results.csv"
+    ],
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  }
+]

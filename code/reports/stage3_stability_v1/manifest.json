@@ -1,0 +1,84 @@
+{
+  "version": "stage3-s3.3-v1",
+  "source": "F:\\arxiv\\三维人脸分析\\code\\reports\\stage3_v3",
+  "data_dir": "F:\\arxiv\\三维人脸分析\\data\\ASTFace_Public",
+  "cohorts": {
+    "new5": {
+      "subjects": [
+        "ast016",
+        "ast017",
+        "ast018",
+        "ast019",
+        "ast020"
+      ],
+      "N": 5,
+      "K": 4,
+      "reference_variance": 77.45819933818038,
+      "data_sha256": "8689f59d68956fa4a35d91377dd0f4d7d739638c075a47c6e43fd22dd490f73d",
+      "topology_hashes": {
+        "au0": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "angry": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "disgust": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "fear": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "happy": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "sad": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "surprise": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473"
+      }
+    },
+    "all20": {
+      "subjects": [
+        "ast001",
+        "ast002",
+        "ast003",
+        "ast004",
+        "ast005",
+        "ast006",
+        "ast007",
+        "ast008",
+        "ast009",
+        "ast010",
+        "ast011",
+        "ast012",
+        "ast013",
+        "ast014",
+        "ast015",
+        "ast016",
+        "ast017",
+        "ast018",
+        "ast019",
+        "ast020"
+      ],
+      "N": 20,
+      "K": 19,
+      "reference_variance": 109.16412439918614,
+      "data_sha256": "74e82d085c6b6398ae313d5273f4fba8d50fe19e0cbe6c6f9b8b519daf90cffd",
+      "topology_hashes": {
+        "au0": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "angry": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "disgust": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "fear": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "happy": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "sad": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473",
+        "surprise": "1216d6f83b2ab1ae0eaccaf77e54e30c52800d9fc117d33921dad4261e5a7473"
+      }
+    }
+  },
+  "base15_reference_source": "stage3_v3/experiments.csv",
+  "K_policy": "native K=N-1; normalized comparison delta/K",
+  "base15_K": 14,
+  "new5_K": 4,
+  "all20_K": 19,
+  "criteria": {
+    "seed_signal_gt_noise": "adjacent mean step > seed SD; descriptive, not a universal pass gate",
+    "identity_stable": "Spearman rho >= 0.8, same signs, and both cohort curves nondecreasing",
+    "comparison": "delta E_COMP divided by native K; absolute E_COMP not compared across N"
+  },
+  "code_sha256": {
+    "stage3_stability.py": "da41692cb1927602951d72b91423c1c9de164c7ebe485d38334b8dbb5eef3078"
+  },
+  "input_source_sha256": {
+    "experiments.csv": "7fd48c7868067f92c660819b5a7db089b209cce61bad96a785c787c16c0a4b1e",
+    "manifest.json": "698b5a9db18962a8429027ae8249d927a6109d7c81bab1a7c329f9bd0622cfba",
+    "summary.json": "a6a49f4c5c8ca64d822d9f9fb4c50f80db76ddff126ffa03ec1da192ebd4184d"
+  }
+}

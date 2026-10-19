@@ -1,0 +1,111 @@
+{
+  "protocol": {
+    "version": "s36-v5-final-multilinear",
+    "date": "2026-10-19",
+    "decision_scope": "Final bounded investment decision for MDL-driven dense correspondence on the current AST proxy setting; not a theorem about every MDL method. Failure closes this branch and does not launch MLP.",
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "identities": 20,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "patterns": [
+      "independent",
+      "shared_identity"
+    ],
+    "noise_sigma_diagonal": [
+      0.0,
+      1e-05
+    ],
+    "noise_draws": 1,
+    "layouts": [
+      "two_v2",
+      "six_spread"
+    ],
+    "caps": [
+      0.0025,
+      0.01
+    ],
+    "primary_cap": 0.01,
+    "energy_gradient_ratios": [
+      0.1,
+      1.0
+    ],
+    "delta": 1e-09,
+    "single_reference": 109.16412439918614,
+    "alignment": "One joint rigid GPA of 140 cached extracted meshes, proper rotations and translations only; fixed during the local diagnostic. No scale normalization.",
+    "chart": "Common grand-mean harmonic chart, previous neutral patch centers, six coefficients per shape; same chart and compact-support basis for all states. Original mesh boundary one-rings and patch exterior fixed. Original piecewise planar surfaces; not a complete TPS/L-BFGS reproduction.",
+    "joint_objective": "Subtract one grand mean shape across identities and expressions. G_id=A_(id) A_(id)^T / 7; G_expr=A_(expr) A_(expr)^T / 20. All 20 and 7 eigenvalues, including zeros. Each mode reference is its baseline trace divided by dimension, frozen. Objective is mean log spectrum for identity plus mean log spectrum for expression. Report actual ranks; never inherit single-state K=19.",
+    "single_objective": "Mean of seven existing within-state E_COMP/19, same full spectrum and fixed reference.",
+    "regularizer": "Paper-inspired mean squared double umbrella U^2 on sampled mesh vertex positions. Local changes include all affected two-ring rows. Same regularizer in all arms; no shrinkage of coefficients toward truth and no dense correspondence objective.",
+    "starts": "Geometry-valid synthetic independent-state or identity-shared chart corruption. Exact sparse LS nearest the corrupted input, two layouts. No repairs of invalid sparse starts; report all. Add exact uncorrupted controls once per seed/layout, never repeat them per pattern. 24 corrupted cohorts plus 6 controls.",
+    "arms": [
+      "regularizer",
+      "regularizer_single_0.1",
+      "regularizer_single_1",
+      "regularizer_joint_0.1",
+      "regularizer_joint_1"
+    ],
+    "directions": "At sparse optimum, no-noise directions projected into exact fitting-anchor nullspace; noisy directions use full space. Normalize projected regularizer and energy gradients separately, energy ratios fixed to 0.1 and 1 before results. Each Armijo objective freezes these weights during line search.",
+    "constraints": "Each shape fitting-anchor MSE increase at most 2*sigma_q^2+1e-12; no normal reversals, area ratio >=0.2, displacement <=1% diagonal. 12 Armijo halvings. No dense truth in steps or selection.",
+    "observations": "Same synthetic observations shared across arms. Disjoint fitting, 12 selection and 12 audit vertices. Dense evaluation excludes their union. Selection gain is averaged across 7 states within each identity before a fixed >max(1e-12,2*SE) heuristic. Not a formal significance test.",
+    "structure_controls": "Common identity permutation must preserve both scores; independent identity permutations per expression must preserve single scores. Joint-score response to broken pairing is descriptive only. Check finite differences and reduced/full Gram equality before outcome interpretation.",
+    "local_gate": {
+      "feasible_fraction_min": 0.8,
+      "selected_joint_fraction_min": 0.2,
+      "median_relative_gain_min": 0.01,
+      "median_absolute_gain_min": 1e-09,
+      "positive_states_min": 5,
+      "positive_seeds_min": 2,
+      "harmed_identity_fraction_max": 0.2,
+      "variance_floor": 0.99,
+      "selected_control_drift_max": 1e-09,
+      "require_each_corruption_pattern": true,
+      "require_noisy_case_gain": true,
+      "require_audit_gain": true,
+      "require_alternate_cap_gain": true
+    },
+    "conditional_closed_loop": "Run only if all local gates pass: reuse frozen inputs and weights, at most 80 accepted constrained steps, stop on relative projected-gradient <=1e-5; report line-search failure or cap as not converged. Same 3 scientific arms with ratios selected only by sparse selection observations. Network entry additionally requires >=80% convergence and repeatable >1% added final recovery with geometry and variance guards. If local gate fails, do not run or retune closed loop.",
+    "not_in_scope": "No neural training, new identities, archive reads, broad hyperparameter search, automatic pivot to model compression or additional v6. Heldout reconstruction is not a rescue criterion for correspondence.",
+    "limitations": "All identities previously viewed; AST correspondence proxy and synthetic observations; baseline-derived common chart and fixed rigid alignment; local six-parameter field and finite candidate pool. Failure is a final project-budget stop, not universal MDL impossibility."
+  },
+  "hashes": {
+    "code/stage36_final_protocol.json": "dfed5907895135798dfbfacce0d3cbd585d0570f966e9d3a6a6110b1262c5aa1",
+    "code/stage36_final.py": "0b5c54e85337deaccbc6ec31d955a54c0f960a86bad36bc8a07f09c79ada2a89",
+    "code/test_stage36_final.py": "05555877b20a0d8dbb14f9685fedcaec90ddfc5d269b3e3cef9bf5d71312867c",
+    "code/verify_stage36_final.py": "440ca30ae16a1216d1c1f0d87c24e94afbbfa4f5ec193a5aba5e7079e3b7dfb3",
+    "code/stage36_smooth.py": "8f3034b46f6da4327003da03d366275769798a0942ac4eb968a472923a6ba692",
+    "code/stage36_gradient.py": "ea87da0226098761f6554d85fc6a97dc67483e78d5077d18239a291c82e8542f",
+    "code/stage36_constraints.py": "9c7a93f6663b22b1e2946cde64beae205c0f8b51f2ca172af20dcb2144509c8b",
+    "code/stage36_information.py": "ff61c1a66ae842a967a05963cbc822d2c1e0d93abd586b425fec86ba083f6ab1",
+    "code/preprocessing.py": "23ca265599e951db2eede3b728ea3ce3bf1636934934c62f698c9bd709009f12",
+    "code/ecomp.py": "c7790f39891862d2ed84a613c2bdfd879dafc295c7390a453a3fb3a4d96add2a",
+    "code/reports/stage3_s35_v2/cache/metadata.json": "2da4c1e64212d04c29526f47109894fae66d1b9bc61050bee3ffd9656000e140",
+    "code/reports/stage3_s35_v2/cache/au0_raw.npy": "21b7a03bd57fd5e5f454f2c1bf66697019ff82750afbf101725ada18bfe68072",
+    "code/reports/stage3_s35_v2/cache/angry_raw.npy": "b7bd3c2253a8925fbb8e31551179f17d758b55dcd80e46ab5704ea74f3dd589d",
+    "code/reports/stage3_s35_v2/cache/disgust_raw.npy": "e34eab62df64f2d22c92802cf96b7690e277fa8d0070a3634cd1c6293a8139f0",
+    "code/reports/stage3_s35_v2/cache/fear_raw.npy": "d5e7a802f3e024185b72fa9392a0071528ee01984f5e3d61b6bbb4f6f5e34dbb",
+    "code/reports/stage3_s35_v2/cache/happy_raw.npy": "e9aaa8d8fc809e477e24f7f3cbb40fb8fdf2708c30eb82b93b26fd379c106e11",
+    "code/reports/stage3_s35_v2/cache/sad_raw.npy": "f4f7564709b7e42fbd2aa5be0006b081ddada4fc9f2622dbcddf3a0171b7af4e",
+    "code/reports/stage3_s35_v2/cache/surprise_raw.npy": "95e7e25f4bc414c69aef7b501e608d700d94d71c2631559cbbc9c2e398878d4f",
+    "code/reports/stage3_s35_v2/cache/au0_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "code/reports/stage3_s35_v2/cache/angry_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "code/reports/stage3_s35_v2/cache/disgust_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "code/reports/stage3_s35_v2/cache/fear_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "code/reports/stage3_s35_v2/cache/happy_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "code/reports/stage3_s35_v2/cache/sad_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "code/reports/stage3_s35_v2/cache/surprise_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "code/reports/stage3_s36_v1/patches/au0_0.npz": "56569725c2152405f16b706b6011c727a9a1ce9745d7cf7d796ada5e1a74b834",
+    "code/reports/stage3_s36_v1/patches/au0_1.npz": "eacdaa0cb76c957ded46eae3e4669a9d52f7344b41bb9d160f5b6dd31513013e",
+    "code/reports/stage3_s36_v1/patches/au0_2.npz": "eb2d6524ec3f07eadee284246aa7565fd6ebfb4587383e8bcb6dd4c8ca003f93"
+  }
+}

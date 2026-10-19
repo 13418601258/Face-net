@@ -1,0 +1,627 @@
+{
+  "version": "rigid-gpa-v3",
+  "config": {
+    "version": "rigid-gpa-v3",
+    "subjects": "1-15",
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "strengths": [
+      0.01,
+      0.05,
+      0.1,
+      0.25
+    ],
+    "modes": [
+      "common",
+      "single",
+      "independent"
+    ],
+    "single_subject": "ast001",
+    "delta": 1e-09,
+    "delta_checks": [
+      1e-06,
+      0.001
+    ],
+    "reference_scale": "pooled per-state rigid-GPA unperturbed samples; frozen once in v3",
+    "geometry_surface_samples": 2048,
+    "geometry_tolerance_diagonal_fraction": 0.001,
+    "invariance_atol": 1e-08,
+    "invariance_rtol": 1e-10,
+    "gpa": {
+      "max_iterations": 100,
+      "tolerance": 1e-09,
+      "initialization": "first_centered_sample",
+      "scale": "preserve",
+      "reflection": false
+    },
+    "missing_policy": "geometry_only",
+    "geometry_operations": {
+      "coordinate_noise": [
+        0.0001,
+        0.0005,
+        0.001,
+        0.003
+      ],
+      "smooth_local_deformation": [
+        0.001,
+        0.003,
+        0.01,
+        0.03
+      ],
+      "random_missing": [
+        0.01,
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    "rigid_strengths": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "geometry_subject": "ast001",
+    "pose_score_atol": 1e-05,
+    "baseline_repeat_score_atol": 1e-10,
+    "permutation_nondecreasing_atol": 1e-06,
+    "independent_signal_retention_min": 0.5,
+    "baseline_change_policy": "record_raw_to_GPA_shift; invariance_relative_to_reprocessed_baseline",
+    "choices_authorized": "user confirmed preserve scale and geometry-only missing evaluation"
+  },
+  "K": 14,
+  "N": 15,
+  "D": 100170,
+  "reference_variance": 111.74964914610983,
+  "raw_v2_reference_variance": 148.2273811350213,
+  "data_sha256": "3af367304e95fb5455cdd8d6d5254c0dd84cf7de508505a27b90472c168f8805",
+  "sources": [
+    {
+      "subject": "ast001",
+      "state": "au0",
+      "path": "ast001/Standardized Meshes/ast001_au0.obj"
+    },
+    {
+      "subject": "ast002",
+      "state": "au0",
+      "path": "ast002/Standardized Meshes/ast002_au0.obj"
+    },
+    {
+      "subject": "ast003",
+      "state": "au0",
+      "path": "ast003/Standardized Meshes/ast003_au0.obj"
+    },
+    {
+      "subject": "ast004",
+      "state": "au0",
+      "path": "ast004/Standardized Meshes/ast004_au0.obj"
+    },
+    {
+      "subject": "ast005",
+      "state": "au0",
+      "path": "ast005/Standardized Meshes/ast005_au0.obj"
+    },
+    {
+      "subject": "ast006",
+      "state": "au0",
+      "path": "ast006/Standardized Meshes/ast006_au0.obj"
+    },
+    {
+      "subject": "ast007",
+      "state": "au0",
+      "path": "ast007/Standardized Meshes/ast007_au0.obj"
+    },
+    {
+      "subject": "ast008",
+      "state": "au0",
+      "path": "ast008/Standardized Meshes/ast008_au0.obj"
+    },
+    {
+      "subject": "ast009",
+      "state": "au0",
+      "path": "ast009/Standardized Meshes/ast009_au0.obj"
+    },
+    {
+      "subject": "ast010",
+      "state": "au0",
+      "path": "ast010/Standardized Meshes/ast010_au0.obj"
+    },
+    {
+      "subject": "ast011",
+      "state": "au0",
+      "path": "ast011/Standardized Meshes/ast011_au0.obj"
+    },
+    {
+      "subject": "ast012",
+      "state": "au0",
+      "path": "ast012/Standardized Meshes/ast012_au0.obj"
+    },
+    {
+      "subject": "ast013",
+      "state": "au0",
+      "path": "ast013/Standardized Meshes/ast013_au0.obj"
+    },
+    {
+      "subject": "ast014",
+      "state": "au0",
+      "path": "ast014/Standardized Meshes/ast014_au0.obj"
+    },
+    {
+      "subject": "ast015",
+      "state": "au0",
+      "path": "ast015/Standardized Meshes/ast015_au0.obj"
+    },
+    {
+      "subject": "ast001",
+      "state": "angry",
+      "path": "ast001/Standardized Meshes/ast001_angry.obj"
+    },
+    {
+      "subject": "ast002",
+      "state": "angry",
+      "path": "ast002/Standardized Meshes/ast002_angry.obj"
+    },
+    {
+      "subject": "ast003",
+      "state": "angry",
+      "path": "ast003/Standardized Meshes/ast003_angry.obj"
+    },
+    {
+      "subject": "ast004",
+      "state": "angry",
+      "path": "ast004/Standardized Meshes/ast004_angry.obj"
+    },
+    {
+      "subject": "ast005",
+      "state": "angry",
+      "path": "ast005/Standardized Meshes/ast005_angry.obj"
+    },
+    {
+      "subject": "ast006",
+      "state": "angry",
+      "path": "ast006/Standardized Meshes/ast006_angry.obj"
+    },
+    {
+      "subject": "ast007",
+      "state": "angry",
+      "path": "ast007/Standardized Meshes/ast007_angry.obj"
+    },
+    {
+      "subject": "ast008",
+      "state": "angry",
+      "path": "ast008/Standardized Meshes/ast008_angry.obj"
+    },
+    {
+      "subject": "ast009",
+      "state": "angry",
+      "path": "ast009/Standardized Meshes/ast009_angry.obj"
+    },
+    {
+      "subject": "ast010",
+      "state": "angry",
+      "path": "ast010/Standardized Meshes/ast010_angry.obj"
+    },
+    {
+      "subject": "ast011",
+      "state": "angry",
+      "path": "ast011/Standardized Meshes/ast011_angry.obj"
+    },
+    {
+      "subject": "ast012",
+      "state": "angry",
+      "path": "ast012/Standardized Meshes/ast012_angry.obj"
+    },
+    {
+      "subject": "ast013",
+      "state": "angry",
+      "path": "ast013/Standardized Meshes/ast013_angry.obj"
+    },
+    {
+      "subject": "ast014",
+      "state": "angry",
+      "path": "ast014/Standardized Meshes/ast014_angry.obj"
+    },
+    {
+      "subject": "ast015",
+      "state": "angry",
+      "path": "ast015/Standardized Meshes/ast015_angry.obj"
+    },
+    {
+      "subject": "ast001",
+      "state": "disgust",
+      "path": "ast001/Standardized Meshes/ast001_disgust.obj"
+    },
+    {
+      "subject": "ast002",
+      "state": "disgust",
+      "path": "ast002/Standardized Meshes/ast002_disgust.obj"
+    },
+    {
+      "subject": "ast003",
+      "state": "disgust",
+      "path": "ast003/Standardized Meshes/ast003_disgust.obj"
+    },
+    {
+      "subject": "ast004",
+      "state": "disgust",
+      "path": "ast004/Standardized Meshes/ast004_disgust.obj"
+    },
+    {
+      "subject": "ast005",
+      "state": "disgust",
+      "path": "ast005/Standardized Meshes/ast005_disgust.obj"
+    },
+    {
+      "subject": "ast006",
+      "state": "disgust",
+      "path": "ast006/Standardized Meshes/ast006_disgust.obj"
+    },
+    {
+      "subject": "ast007",
+      "state": "disgust",
+      "path": "ast007/Standardized Meshes/ast007_disgust.obj"
+    },
+    {
+      "subject": "ast008",
+      "state": "disgust",
+      "path": "ast008/Standardized Meshes/ast008_disgust.obj"
+    },
+    {
+      "subject": "ast009",
+      "state": "disgust",
+      "path": "ast009/Standardized Meshes/ast009_disgust.obj"
+    },
+    {
+      "subject": "ast010",
+      "state": "disgust",
+      "path": "ast010/Standardized Meshes/ast010_disgust.obj"
+    },
+    {
+      "subject": "ast011",
+      "state": "disgust",
+      "path": "ast011/Standardized Meshes/ast011_disgust.obj"
+    },
+    {
+      "subject": "ast012",
+      "state": "disgust",
+      "path": "ast012/Standardized Meshes/ast012_disgust.obj"
+    },
+    {
+      "subject": "ast013",
+      "state": "disgust",
+      "path": "ast013/Standardized Meshes/ast013_disgust.obj"
+    },
+    {
+      "subject": "ast014",
+      "state": "disgust",
+      "path": "ast014/Standardized Meshes/ast014_disgust.obj"
+    },
+    {
+      "subject": "ast015",
+      "state": "disgust",
+      "path": "ast015/Standardized Meshes/ast015_disgust.obj"
+    },
+    {
+      "subject": "ast001",
+      "state": "fear",
+      "path": "ast001/Standardized Meshes/ast001_fear.obj"
+    },
+    {
+      "subject": "ast002",
+      "state": "fear",
+      "path": "ast002/Standardized Meshes/ast002_fear.obj"
+    },
+    {
+      "subject": "ast003",
+      "state": "fear",
+      "path": "ast003/Standardized Meshes/ast003_fear.obj"
+    },
+    {
+      "subject": "ast004",
+      "state": "fear",
+      "path": "ast004/Standardized Meshes/ast004_fear.obj"
+    },
+    {
+      "subject": "ast005",
+      "state": "fear",
+      "path": "ast005/Standardized Meshes/ast005_fear.obj"
+    },
+    {
+      "subject": "ast006",
+      "state": "fear",
+      "path": "ast006/Standardized Meshes/ast006_fear.obj"
+    },
+    {
+      "subject": "ast007",
+      "state": "fear",
+      "path": "ast007/Standardized Meshes/ast007_fear.obj"
+    },
+    {
+      "subject": "ast008",
+      "state": "fear",
+      "path": "ast008/Standardized Meshes/ast008_fear.obj"
+    },
+    {
+      "subject": "ast009",
+      "state": "fear",
+      "path": "ast009/Standardized Meshes/ast009_fear.obj"
+    },
+    {
+      "subject": "ast010",
+      "state": "fear",
+      "path": "ast010/Standardized Meshes/ast010_fear.obj"
+    },
+    {
+      "subject": "ast011",
+      "state": "fear",
+      "path": "ast011/Standardized Meshes/ast011_fear.obj"
+    },
+    {
+      "subject": "ast012",
+      "state": "fear",
+      "path": "ast012/Standardized Meshes/ast012_fear.obj"
+    },
+    {
+      "subject": "ast013",
+      "state": "fear",
+      "path": "ast013/Standardized Meshes/ast013_fear.obj"
+    },
+    {
+      "subject": "ast014",
+      "state": "fear",
+      "path": "ast014/Standardized Meshes/ast014_fear.obj"
+    },
+    {
+      "subject": "ast015",
+      "state": "fear",
+      "path": "ast015/Standardized Meshes/ast015_fear.obj"
+    },
+    {
+      "subject": "ast001",
+      "state": "happy",
+      "path": "ast001/Standardized Meshes/ast001_happy.obj"
+    },
+    {
+      "subject": "ast002",
+      "state": "happy",
+      "path": "ast002/Standardized Meshes/ast002_happy.obj"
+    },
+    {
+      "subject": "ast003",
+      "state": "happy",
+      "path": "ast003/Standardized Meshes/ast003_happy.obj"
+    },
+    {
+      "subject": "ast004",
+      "state": "happy",
+      "path": "ast004/Standardized Meshes/ast004_happy.obj"
+    },
+    {
+      "subject": "ast005",
+      "state": "happy",
+      "path": "ast005/Standardized Meshes/ast005_happy.obj"
+    },
+    {
+      "subject": "ast006",
+      "state": "happy",
+      "path": "ast006/Standardized Meshes/ast006_happy.obj"
+    },
+    {
+      "subject": "ast007",
+      "state": "happy",
+      "path": "ast007/Standardized Meshes/ast007_happy.obj"
+    },
+    {
+      "subject": "ast008",
+      "state": "happy",
+      "path": "ast008/Standardized Meshes/ast008_happy.obj"
+    },
+    {
+      "subject": "ast009",
+      "state": "happy",
+      "path": "ast009/Standardized Meshes/ast009_happy.obj"
+    },
+    {
+      "subject": "ast010",
+      "state": "happy",
+      "path": "ast010/Standardized Meshes/ast010_happy.obj"
+    },
+    {
+      "subject": "ast011",
+      "state": "happy",
+      "path": "ast011/Standardized Meshes/ast011_happy.obj"
+    },
+    {
+      "subject": "ast012",
+      "state": "happy",
+      "path": "ast012/Standardized Meshes/ast012_happy.obj"
+    },
+    {
+      "subject": "ast013",
+      "state": "happy",
+      "path": "ast013/Standardized Meshes/ast013_happy.obj"
+    },
+    {
+      "subject": "ast014",
+      "state": "happy",
+      "path": "ast014/Standardized Meshes/ast014_happy.obj"
+    },
+    {
+      "subject": "ast015",
+      "state": "happy",
+      "path": "ast015/Standardized Meshes/ast015_happy.obj"
+    },
+    {
+      "subject": "ast001",
+      "state": "sad",
+      "path": "ast001/Standardized Meshes/ast001_sad.obj"
+    },
+    {
+      "subject": "ast002",
+      "state": "sad",
+      "path": "ast002/Standardized Meshes/ast002_sad.obj"
+    },
+    {
+      "subject": "ast003",
+      "state": "sad",
+      "path": "ast003/Standardized Meshes/ast003_sad.obj"
+    },
+    {
+      "subject": "ast004",
+      "state": "sad",
+      "path": "ast004/Standardized Meshes/ast004_sad.obj"
+    },
+    {
+      "subject": "ast005",
+      "state": "sad",
+      "path": "ast005/Standardized Meshes/ast005_sad.obj"
+    },
+    {
+      "subject": "ast006",
+      "state": "sad",
+      "path": "ast006/Standardized Meshes/ast006_sad.obj"
+    },
+    {
+      "subject": "ast007",
+      "state": "sad",
+      "path": "ast007/Standardized Meshes/ast007_sad.obj"
+    },
+    {
+      "subject": "ast008",
+      "state": "sad",
+      "path": "ast008/Standardized Meshes/ast008_sad.obj"
+    },
+    {
+      "subject": "ast009",
+      "state": "sad",
+      "path": "ast009/Standardized Meshes/ast009_sad.obj"
+    },
+    {
+      "subject": "ast010",
+      "state": "sad",
+      "path": "ast010/Standardized Meshes/ast010_sad.obj"
+    },
+    {
+      "subject": "ast011",
+      "state": "sad",
+      "path": "ast011/Standardized Meshes/ast011_sad.obj"
+    },
+    {
+      "subject": "ast012",
+      "state": "sad",
+      "path": "ast012/Standardized Meshes/ast012_sad.obj"
+    },
+    {
+      "subject": "ast013",
+      "state": "sad",
+      "path": "ast013/Standardized Meshes/ast013_sad.obj"
+    },
+    {
+      "subject": "ast014",
+      "state": "sad",
+      "path": "ast014/Standardized Meshes/ast014_sad.obj"
+    },
+    {
+      "subject": "ast015",
+      "state": "sad",
+      "path": "ast015/Standardized Meshes/ast015_sad.obj"
+    },
+    {
+      "subject": "ast001",
+      "state": "surprise",
+      "path": "ast001/Standardized Meshes/ast001_surprise.obj"
+    },
+    {
+      "subject": "ast002",
+      "state": "surprise",
+      "path": "ast002/Standardized Meshes/ast002_surprise.obj"
+    },
+    {
+      "subject": "ast003",
+      "state": "surprise",
+      "path": "ast003/Standardized Meshes/ast003_surprise.obj"
+    },
+    {
+      "subject": "ast004",
+      "state": "surprise",
+      "path": "ast004/Standardized Meshes/ast004_surprise.obj"
+    },
+    {
+      "subject": "ast005",
+      "state": "surprise",
+      "path": "ast005/Standardized Meshes/ast005_surprise.obj"
+    },
+    {
+      "subject": "ast006",
+      "state": "surprise",
+      "path": "ast006/Standardized Meshes/ast006_surprise.obj"
+    },
+    {
+      "subject": "ast007",
+      "state": "surprise",
+      "path": "ast007/Standardized Meshes/ast007_surprise.obj"
+    },
+    {
+      "subject": "ast008",
+      "state": "surprise",
+      "path": "ast008/Standardized Meshes/ast008_surprise.obj"
+    },
+    {
+      "subject": "ast009",
+      "state": "surprise",
+      "path": "ast009/Standardized Meshes/ast009_surprise.obj"
+    },
+    {
+      "subject": "ast010",
+      "state": "surprise",
+      "path": "ast010/Standardized Meshes/ast010_surprise.obj"
+    },
+    {
+      "subject": "ast011",
+      "state": "surprise",
+      "path": "ast011/Standardized Meshes/ast011_surprise.obj"
+    },
+    {
+      "subject": "ast012",
+      "state": "surprise",
+      "path": "ast012/Standardized Meshes/ast012_surprise.obj"
+    },
+    {
+      "subject": "ast013",
+      "state": "surprise",
+      "path": "ast013/Standardized Meshes/ast013_surprise.obj"
+    },
+    {
+      "subject": "ast014",
+      "state": "surprise",
+      "path": "ast014/Standardized Meshes/ast014_surprise.obj"
+    },
+    {
+      "subject": "ast015",
+      "state": "surprise",
+      "path": "ast015/Standardized Meshes/ast015_surprise.obj"
+    }
+  ],
+  "reference_rule": "concatenate per-state GPA aligned unperturbed cohorts",
+  "numpy": "1.26.4",
+  "code_sha256": {
+    "preprocessing.py": "23ca265599e951db2eede3b728ea3ce3bf1636934934c62f698c9bd709009f12",
+    "validate_protocol_v3.py": "4c27753b4cbf89b94a89fd605b726395e9630724aaa7d50eacab44ba4638222a",
+    "validate_protocol.py": "221730c402f074f47dcd507481d9866fe11e465aed960bab981d38d193883447",
+    "index_protocol.py": "334dadf28fa632a91ee2f68709d4926a0b8cae641fde703dcf0f898afe5e13b6",
+    "ecomp.py": "c7790f39891862d2ed84a613c2bdfd879dafc295c7390a453a3fb3a4d96add2a",
+    "metrics.py": "8db0b2b649d08c712016f05c2380e4dd6065e28caf50c5ae8a93d255cc49daee",
+    "perturb.py": "b0786fb74ef0ffb6cd713d18b573e1ec0169ceb7e47bfbdbb1e57e84110b4523"
+  }
+}

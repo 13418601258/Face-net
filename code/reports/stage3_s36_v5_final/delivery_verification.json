@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": {
+    "utf8_no_bom": true,
+    "no_replacement_characters": true,
+    "outside_s36_unchanged": true,
+    "s36_balanced": true,
+    "all_active_links_exist": true,
+    "final_stop_written": true,
+    "scientific_outputs_unchanged": true
+  },
+  "missing_links": [],
+  "parse_errors": [],
+  "files": {
+    "log/方向/实验计划-阶段0至3.html": "407c05a00d06691a8946696b8b14039f8949737eeb66e97461a8d984cd0f8cb8",
+    "code/代码文件说明.txt": "636d62461af174c738792a21b7a58e391a018ef01d3b95457a58f369fb6f578d",
+    "code/reports/stage3_s36_v5_final/final_report.md": "a06344ed2b942c9a8cea8fce0ea0376e0355d4e86f1cadfac9567abb638cecdd",
+    "code/reports/stage3_s36_v5_final/summary.json": "6b34acad8ecf87587cd2ae4f167f9fe5621e2cc629b4bfd508beac2efe0d9f02"
+  }
+}

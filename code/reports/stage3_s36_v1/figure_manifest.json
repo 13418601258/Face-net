@@ -1,0 +1,54 @@
+[
+  {
+    "name": "energy_paths",
+    "sources": [
+      "gradient_curves.csv"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "direction_checks",
+    "sources": [
+      "gradient_curves.csv",
+      "finite_difference_checks.csv"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "actual_update_rmse",
+    "sources": [
+      "projected_updates.csv"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "tradeoffs",
+    "sources": [
+      "projected_updates.csv"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  },
+  {
+    "name": "geometry_controls",
+    "sources": [
+      "geometry_subjects.csv",
+      "geometry_summary.csv"
+    ],
+    "formats": [
+      "png",
+      "pdf"
+    ]
+  }
+]

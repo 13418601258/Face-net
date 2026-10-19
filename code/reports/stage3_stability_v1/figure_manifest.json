@@ -1,0 +1,10 @@
+{
+  "input_csv_sha256": "41d2cf51ba844f71c6ce9cc03bfd8716f225cfdc68eeb6623805f2c0ef22cb94",
+  "computation_manifest_sha256": "73b5d3328f4d486b4d67979a76ac701baaa6f1eeb922d36786ae3a0583824c75",
+  "renderer_sha256": "1faae8e4df881d25194f975f1ac2bc0bdd6e3305a70402eb459738b4b3263033",
+  "files": {
+    "identity_stability_heatmap.png": "e92ad99d2502375db21309109c5092b1af627ad659e858f46923b03de34d62e6",
+    "identity_stability_heatmap.pdf": "f02de4a698319973c673a397e85c02bcd80cff5034a9519788e99b30f8c3f8b1"
+  },
+  "note": "Presentation redraw only; all values read from identity_stability.csv"
+}

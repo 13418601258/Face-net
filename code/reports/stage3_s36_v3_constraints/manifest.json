@@ -1,0 +1,14 @@
+{
+  "files": {
+    "frozen_protocol.json": "fb2a352cfc85e80e12f8017eb5c8ac879e1049edc9e4d5a1a9e9433413c47e01",
+    "designs.csv": "233d2dee4734d2b831ddd5147e4717429e847d9f54bc63065f99e67c0f8640fa",
+    "constraint_results.csv": "d5af5032fcdffba73b376cc171567e2aa4dbb48f4af3ff710c9f534cbfa48f5f",
+    "constraint_subjects.csv": "b3b8c1845edccf18a7f2d03ab81a1afd09677be46172f081116ecf56311f29bf",
+    "scaled_energy_steps.csv": "28b1b0fb1c3a39b4e013afc94b9b5b46ff76b25c797a4b8a7209a76f8a4927c4",
+    "constraint_summary.json": "eadf5ac61a32da6de6f6c4ba92b42c5caf13447536351de41877b0e21e0759ff",
+    "constraint_diagnostics.png": "3c8a5cc2d2f6df9f950065f030f35e44aa108ffab153611adbc4c15ade160de5",
+    "constraint_diagnostics.pdf": "7f1b58a99c4f14933447e9d2720da9d9729b123648c37f88efa2b5a668e2fd4f",
+    "landmark_candidates.csv": "5a9c29ea746a075285b8f9031cdbb10fb8ecbf206ab3c951d444dce6b39aa986",
+    "landmark_audit.json": "d65ba97f38a35178f8a2321550c1d4a7ca3f9991c19a286ef9a4a7c992af6676"
+  }
+}

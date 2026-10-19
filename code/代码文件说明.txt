@@ -1,0 +1,269 @@
+﻿astface_loader.py
+作用：统一读取已解压的 AST-Face 网格、形变场和 landmark，并校验数据拓扑。
+如何使用：python code/astface_loader.py --data-dir data/ASTFace_Public --subjects 1-15 --validate --deep
+输出什么：数据模态数量、缺失项、网格形状和拓扑校验结果。
+
+perturb.py
+作用：对网格施加索引打乱、坐标噪声、局部平滑形变、随机缺失和刚体变换。
+如何使用：python code/perturb.py --input "data/ASTFace_Public/ast001/Standardized Meshes/ast001_angry.obj" --output code/reports/ast001_angry_noise.npz --type coordinate_noise --strength 0.001 --seed 0
+输出什么：包含 vertices、faces、valid_mask 和 metadata 的 NPZ 文件。
+
+perturb_config.json
+作用：固定 ast001-015 的扰动类型、强度等级、局部半径和随机种子。
+如何使用：由批量生成器读取，不直接运行。
+输出什么：一份可复现的扰动实验配置。
+
+generate_perturbations.py
+作用：按旧版配置生成扰动 NPZ 和可续跑索引，其中同种子的索引置换属于共同置换对照。
+如何使用：python code/generate_perturbations.py --data-dir data/ASTFace_Public --config code/perturb_config.json --output-dir code/reports/perturbations
+输出什么：扰动样本目录和记录身份、强度、种子、形状及输出路径的 manifest.jsonl。
+
+verify_perturbations.py
+作用：检查 manifest 的唯一性、NPZ 文件完整性以及抽样数组形状。
+如何使用：python code/verify_perturbations.py --root code/reports/perturbations --sample-count 20
+输出什么：行数、唯一键数、缺失文件数和抽样校验结果。
+
+model.py
+作用：将形状样本展平并用 SVD 实现线性 PCA、投影、重构和重构误差计算。
+如何使用：python code/model.py --input path/to/samples.npy --n-components 16 --output code/reports/pca_model.npz
+输出什么：主成分数、特征值、解释方差比和可选的 PCA 模型 NPZ。
+
+ecomp.py
+作用：以固定谱长度和未扰动基线的固定参考方差计算 E_COMP。
+如何使用：.\.venv\Scripts\python.exe code/ecomp.py --eigenvalues 4,1,0.25 --n-components 3 --reference-variance 5.25 --delta 1e-9
+输出什么：分数、固定维度 K、参考方差、delta 和协议版本。
+
+test_ecomp.py
+作用：验证固定谱计分的手算值、零方差处理、不变性和独立置换随机流。
+如何使用：.\.venv\Scripts\python.exe code/test_ecomp.py
+输出什么：数学与协议单元测试的通过或失败结果。
+
+index_protocol.py
+作用：区分共同、单样本、各样本独立置换，并保持随机流可复现。
+如何使用：由 validate_protocol.py 调用 perturb_group；独立调用时传入样本、身份、mode、strength 和 seed。
+输出什么：置换后的形状数组；permute_mesh 同步输出重映射面片。
+
+metrics.py
+作用：计算面积采样覆盖率、双向点到三角面距离和对应面片法向反转数。
+如何使用：.\.venv\Scripts\python.exe code/metrics.py --reference reference.npz --candidate candidate.npz --tolerance 0.002 --samples 2048 --output code/reports/geometry.json
+输出什么：覆盖率、距离、法向反转数、有效顶点比例、退化面片数及测量参数的 JSON。
+
+test_metrics.py
+作用：用解析几何验证距离、缺口覆盖率、重编号不变性、法向反转和退化输入。
+如何使用：.\.venv\Scripts\python.exe code/test_metrics.py
+输出什么：几何指标单元测试的通过或失败结果。
+
+protocol_config.json
+作用：固定 S2.6 v3 的数据范围、刚性 GPA、保留尺度、缺失处理和扰动验收参数。
+如何使用：由 validate_protocol.py 读取，不直接运行。
+输出什么：真实数据验证使用的可复现配置。
+
+validate_protocol.py
+作用：根据配置版本运行已解压网格的 v2 或 v3 扰动回归实验。
+如何使用：.\.venv\Scripts\python.exe code/validate_protocol.py --data-dir data/ASTFace_Public --config code/protocol_config.json
+输出什么：code/reports/protocol_v3 下的分数、几何指标、对齐记录、谱及变换、曲线和验收摘要。
+
+protocol_config_v2.json
+作用：保留 S2.4/S2.5 的原始 v2 配置以复现未对齐实验。
+如何使用：.\.venv\Scripts\python.exe code/validate_protocol.py --config code/protocol_config_v2.json --output-dir code/reports/protocol_v2_replay
+输出什么：指定目录下的 v2 对照结果。
+
+preprocessing.py
+作用：执行不含缩放和镜像的刚性 GPA、生成严格的共同或独立刚体扰动并标识缺失数据。
+如何使用：在 Python 中 from preprocessing import rigid_gpa，传入形状为 (N,V,3) 的有限坐标数组。
+输出什么：对齐坐标、均值、平移中心、旋转矩阵、迭代次数和收敛状态。
+
+test_preprocessing.py
+作用：验证姿态不变性、尺度保留、禁止镜像、变换复现及缺失数据拒绝策略。
+如何使用：.\.venv\Scripts\python.exe code/test_preprocessing.py
+输出什么：GPA 与刚体扰动单元测试的通过或失败结果。
+
+validate_protocol_v3.py
+作用：运行 S2.6 的三类索引置换、刚体扰动、噪声、局部形变和缺失数据回归。
+如何使用：由 .\.venv\Scripts\python.exe code/validate_protocol.py 使用默认 v3 配置调用。
+输出什么：protocol_v3 中的回归表、尺度诊断、基线对比、完整配置与哈希、几何和分数分歧及图表。
+
+test_protocol_v3.py
+作用：用小型合成网格验证完整 v3 实验流程、验收结果和缺失值导出。
+如何使用：.\.venv\Scripts\python.exe code/test_protocol_v3.py
+输出什么：端到端协议集成测试的通过或失败结果。
+
+requirements.txt
+作用：固定本阶段相互兼容的 NumPy、SciPy 和 Matplotlib 版本。
+如何使用：python -m venv .venv 然后运行 .\.venv\Scripts\python.exe -m pip install -r code/requirements.txt
+输出什么：项目独立环境中可运行测试、几何指标和曲线生成的依赖。
+
+geometry_batch.py
+作用：按三角形半径分组加速精确点到面距离，并计算与原协议同定义的几何指标。
+如何使用：由 stage3_analysis.py 调用 evaluate_batch_geometry；索引置换经表面恒等校验后调用 identical_geometry。
+输出什么：覆盖率、双向距离、法向反转、有效顶点及面片统计和计算方法说明。
+
+test_geometry_batch.py
+作用：核对加速距离与暴力搜索、原几何算法及缺失数据处理的一致性。
+如何使用：.\.venv\Scripts\python.exe code/test_geometry_batch.py
+输出什么：几何加速正确性测试的通过或失败结果。
+
+stage3_analysis.py
+作用：复用 v3 分数和变换，补齐全部身份几何指标并生成 S3.1 长表及 S3.2 曲线。
+如何使用：.\.venv\Scripts\python.exe code/stage3_analysis.py --workers 6，随后运行 .\.venv\Scripts\python.exe code/plot_stage3.py；相同输入与代码下再次运行可续跑。
+输出什么：code/reports/stage3_v3 下的实验长表、逐身份几何表、曲线统计、分歧记录、PNG/PDF 图表、来源清单和验收摘要。
+
+test_stage3_analysis.py
+作用：验证各类扰动的变换重放、长表汇总、实验缺行检测和种子误差棒数据。
+如何使用：.\.venv\Scripts\python.exe code/test_stage3_analysis.py
+输出什么：S3.1/S3.2 数据处理集成测试的通过或失败结果。
+
+plot_stage3.py
+作用：从已有曲线统计表重绘 S3.2 图表并调整小强度刻度，支持独立重绘。
+如何使用：.\.venv\Scripts\python.exe code/plot_stage3.py --input code/reports/stage3_v3
+输出什么：E_COMP、ΔE_COMP、完整几何及几何扰动放大图的 PNG/PDF，附 figure_manifest.json 图表来源清单。
+
+stage3_stability.py
+作用：用 ast016–020 和 ast001–020 检查 S3.3 的种子间波动与身份间曲线稳定性，并显式区分 K=4、14、19。
+如何使用：.\.venv\Scripts\python.exe code/stage3_stability.py
+输出什么：stage3_stability_v1 下的三 cohort 分数、种子噪声表、身份稳定性表、GPA 日志、图表和汇总 JSON。
+
+test_stage3_stability.py
+作用：验证 S3.3 的 K 记录、Spearman 曲线比较、单调性和种子噪声统计逻辑。
+如何使用：.\.venv\Scripts\python.exe code/test_stage3_stability.py
+输出什么：S3.3 稳定性分析单元测试的通过或失败结果。
+
+plot_stability.py
+作用：从 S3.3 已导出的种子和身份表重绘稳定性图，不重新计算实验。
+如何使用：.\.venv\Scripts\python.exe code/plot_stability.py --input code/reports/stage3_stability_v1
+输出什么：同时展示 base15 对 new5、all20 的身份 Spearman 热图及图表来源哈希。
+
+stage35_definition.py
+作用：执行 S3.5 的反例复核、形变稳定性、细尺度错配、逐步恢复和塌缩边界实验，支持同协议断点续跑。
+如何使用：.\.venv\Scripts\python.exe code/stage35_definition.py --workers 3，重复同一命令可续跑。
+输出什么：code/reports/stage3_s35_v2 下的 T1–T5 表格、逐身份几何指标、旧结果重放检查、配置与数据哈希、汇总及 PNG/PDF 图。
+
+plot_stage35.py
+作用：从 S3.5 已有结果绘制全部七状态的分数、几何、恢复和塌缩曲线。
+如何使用：.\.venv\Scripts\python.exe code/plot_stage35.py --input code/reports/stage3_s35_v2
+输出什么：结果目录中的 PNG/PDF 图表和 figure_manifest.json 图表来源清单。
+
+test_stage35_definition.py
+作用：验证谱收缩解析式、局部置换与逆面片恒等、嵌套恢复、权重不等式和配对种子统计。
+如何使用：.\.venv\Scripts\python.exe code/test_stage35_definition.py
+输出什么：S3.5 单元测试通过或失败结果。
+
+verify_stage35.py
+作用：核对 S3.5 条件网格、身份覆盖、几何汇总、旧分数重放、塌缩解析值及文件哈希是否完整一致。
+如何使用：.\.venv\Scripts\python.exe code/verify_stage35.py
+输出什么：控制台验收结果及 stage3_s35_v2/verification.json。
+
+stage36_gradient.py
+作用：验证三角片内连续局部滑移的 E_COMP 梯度、实际投影更新、身份方差和几何保护，并判断是否放行网络试验。
+如何使用：.\.venv\Scripts\python.exe code/stage36_gradient.py --workers 3，相同代码和协议下重复运行可续跑。
+输出什么：code/reports/stage3_s36_v1 下的冻结协议、路径与更新表、逐身份几何、数值校验、门槛结论及 PNG/PDF 图。
+
+test_stage36_gradient.py
+作用：验证完整谱等价、解析梯度、三角片欧氏投影、恢复方向符号和方差收缩性质。
+如何使用：.\.venv\Scripts\python.exe code/test_stage36_gradient.py
+输出什么：S3.6 数值与约束测试通过或失败结果。
+
+plot_stage36.py
+作用：从 S3.6 保存的结果绘制能量路径、梯度方向、实际对应更新和几何保护图。
+如何使用：.\.venv\Scripts\python.exe code/plot_stage36.py --input code/reports/stage3_s36_v1
+输出什么：结果目录中的五组 PNG/PDF 图及 figure_manifest.json。
+
+verify_stage36.py
+作用：独立核对 S3.6 条件完整性、逐身份汇总、梯度数值误差、三角片约束、门槛判定和文件哈希。
+如何使用：.\.venv\Scripts\python.exe code/verify_stage36.py
+输出什么：控制台审计结果及 stage3_s36_v1/verification.json，区分数据验收通过与实验关卡通过。
+
+diagnose_stage36.py
+作用：对第一关已出现的失败路径定位能量极小点并解释方向偏差，不修改原门槛。
+如何使用：.\.venv\Scripts\python.exe code/diagnose_stage36.py
+输出什么：failure_diagnosis.json、failure_zoom.csv 及失败路径放大 PNG/PDF 图。
+
+stage36_smooth.py
+作用：用调和曲面坐标、空间平滑低维场和明确标注的稀疏代理锚点执行 S3.6 v2 四组闭环机制测试。
+如何使用：.\.venv\Scripts\python.exe code/stage36_smooth.py --workers 3，同一冻结协议可断点续跑；--pilot 仅运行 happy/seed0。
+输出什么：code/reports/stage3_s36_v2_harmonic 中的冻结协议、轨迹、终点、逐身份对照、参数、收敛状态及 PNG/PDF 图。
+
+test_stage36_smooth.py
+作用：检查平滑场边界、稀疏锚点梯度与不可观测方向、门控驻停、局部翻面保护和曲面重建。
+如何使用：.\.venv\Scripts\python.exe code/test_stage36_smooth.py
+输出什么：S3.6 v2 数学与几何单元测试通过或失败结果。
+
+plot_stage36_smooth.py
+作用：从 S3.6 v2 保存的结果绘制四组终点、闭环轨迹和相对锚点对照的增益。
+如何使用：.\.venv\Scripts\python.exe code/plot_stage36_smooth.py --input code/reports/stage3_s36_v2_harmonic
+输出什么：三组 PNG/PDF 图及 figure_manifest.json。
+
+verify_stage36_smooth.py
+作用：核对 S3.6 v2 条件覆盖、逐身份汇总、实际接受迭代的几何有效性、收敛标记和输入输出哈希。
+如何使用：.\.venv\Scripts\python.exe code/verify_stage36_smooth.py
+输出什么：控制台检查结果和 v2 结果目录内的 verification.json。
+
+analyze_stage36_smooth.py
+作用：解析检查稀疏锚点的不可观测方向，测试固定锚点下紧凑项的更新，并量化梯度权重与迭代上限。
+如何使用：.\.venv\Scripts\python.exe code/analyze_stage36_smooth.py
+输出什么：anchor_nullspace_certificate.csv、nullspace_energy_probes.csv、mechanism_diagnosis.json 和独立诊断哈希清单，不改原实验判据。
+
+stage36_constraints.py
+作用：检验锚点布局与噪声的可辨识性、标定梯度量级后的紧凑项单步效果，并审计真实 landmarks 的坐标候选关系。
+如何使用：.\.venv\Scripts\python.exe code/stage36_constraints.py，可加 --mode constraints 或 --mode landmarks 分别执行。
+输出什么：stage3_s36_v3_constraints 下的冻结协议、布局与噪声表、逐身份误差、权重单步对照、坐标审计及 PNG/PDF 图。
+
+test_stage36_constraints.py
+作用：检验稀疏约束解析解、含噪残差梯度与保向相似变换的数学实现。
+如何使用：.\.venv\Scripts\python.exe code/test_stage36_constraints.py。
+输出什么：数学测试通过或失败结果。
+
+verify_stage36_constraints.py
+作用：独立核对 S3.6 v3 条件覆盖、解析最优性、门控与几何结果以及来源和输出哈希。
+如何使用：.\.venv\Scripts\python.exe code/verify_stage36_constraints.py。
+输出什么：控制台检查结果和 stage3_s36_v3_constraints/verification.json。
+
+review_stage36_constraints.py
+作用：复核裁剪索引重映射后的拓扑一致性，并区分噪声重复、几何无效解和门控失灵。
+如何使用：.\.venv\Scripts\python.exe code/review_stage36_constraints.py。
+输出什么：review.json、constraint_review.png/pdf 和独立复核哈希清单，保留原始审计记录。
+
+stage36_information.py
+作用：检验零空间与弱观测方向中 E 相对普通修正场平滑的额外纠错信息，以及仅用验证锚点选择更新的效果。
+如何使用：.\.venv\Scripts\python.exe code/stage36_information.py --workers 3，相同冻结协议下可续跑。
+输出什么：stage3_s36_v4_information 下的冻结协议、候选更新、选择策略、逐身份误差、参数、局部支持判定及哈希清单。
+
+test_stage36_information.py
+作用：核对零空间与弱方向投影、修正场平滑梯度和不读取稠密真值的更新选择逻辑。
+如何使用：.\.venv\Scripts\python.exe code/test_stage36_information.py。
+输出什么：数学与选择规则测试的通过或失败结果。
+
+review_stage36_information.py
+作用：独立重放 v4 的观测选择规则、参数与几何约束、逐身份汇总和哈希，并绘制额外纠错结果。
+如何使用：.\.venv\Scripts\python.exe code/review_stage36_information.py。
+输出什么：v4 目录中的 verification.json、review.json、information_review.png/pdf 和复核哈希清单。
+
+stage36_final.py
+作用：执行第一关最后一次身份—表情双谱与普通正则的恢复对照，并按冻结条件判定是否停止 MDL 对应路线。
+如何使用：.\.venv\Scripts\python.exe code/stage36_final.py，可用 --seed 0/1/2 分开运行后 --aggregate 汇总，同一冻结版本支持续跑。
+输出什么：stage3_s36_v5_final 下的冻结协议、参数、逐条件和逐身份表、梯度与置换检查、最终判定和 PNG/PDF 图。
+
+test_stage36_final.py
+作用：核验联合谱、逐状态谱、双拉普拉斯梯度及仅依赖观测的候选选择。
+如何使用：.\.venv\Scripts\python.exe code/test_stage36_final.py。
+输出什么：9 项数学测试的通过或失败结果。
+
+verify_stage36_final.py
+作用：独立重放最终实验的观测选择、稠密误差和几何约束，并核对输入输出哈希与判定。
+如何使用：.\.venv\Scripts\python.exe code/verify_stage36_final.py。
+输出什么：stage3_s36_v5_final/verification.json 和控制台复核结果。
+
+update_stage36_final_html.py
+作用：仅收缩 S3.6 活动计划并归档历史卡片，保持 HTML 为 UTF-8 无 BOM。
+如何使用：.\.venv\Scripts\python.exe code/update_stage36_final_html.py，计算完成后加 --results 写入最终决定。
+输出什么：更新后的实验计划 HTML、修改前备份和 S3.6 历史卡片。
+
+review_stage36_final.py
+作用：复核已保存的最终结果，去除满秩布局重复证据并解释原始更新和停止决定，不运行新实验。
+如何使用：.\.venv\Scripts\python.exe code/review_stage36_final.py。
+输出什么：stage3_s36_v5_final 下的 review.json、final_report.md 和 review_manifest.json。
+
+verify_stage36_delivery.py
+作用：核验最终 HTML 的 UTF-8 编码、标签、链接和 S3.6 以外内容未变，并复查科学结果哈希。
+如何使用：.\.venv\Scripts\python.exe code/verify_stage36_delivery.py。
+输出什么：stage3_s36_v5_final/delivery_verification.json 和控制台检查结果。

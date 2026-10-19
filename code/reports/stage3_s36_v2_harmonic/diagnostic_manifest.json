@@ -1,0 +1,9 @@
+{
+  "code_sha256": "98d9487ecac7c49d9ff69f110870f1c6f6c0f74941089c091a969d585cc814a6",
+  "source_manifest_sha256": "8cb4312d6a1d46f75a27b9448ed00d39bef09cad59db5660312162337cc45ebd",
+  "outputs": {
+    "anchor_nullspace_certificate.csv": "41813ff7d36b1f800b7eca3b8aa91ace57357235f9e3d21ba18ccff5c505683a",
+    "nullspace_energy_probes.csv": "e0315ef620f0eb3d7b547454e99ac64c08358542792276dc62cbf8a42564b6a7",
+    "mechanism_diagnosis.json": "d69ead9f17be50875dc927490ed3e995752b8520d9130fcf55634a79540615fd"
+  }
+}

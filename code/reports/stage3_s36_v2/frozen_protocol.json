@@ -1,0 +1,95 @@
+{
+  "protocol": {
+    "version": "s36-v2-smooth-proxy-pilot",
+    "date": "2026-10-19",
+    "status": "frozen_before_v2_outcomes",
+    "states": [
+      "au0",
+      "angry",
+      "disgust",
+      "fear",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "levels": [
+      0.0,
+      0.05,
+      0.1,
+      0.5,
+      1.0
+    ],
+    "arms": [
+      "anchor_only",
+      "anchor_fixed_e",
+      "anchor_gated_e",
+      "e_only"
+    ],
+    "N": 20,
+    "K": 19,
+    "reference_variance": 109.16412439918614,
+    "delta": 1e-09,
+    "chart": "Mean-face local planar chart with ORIGINAL triangle connectivity; barycentric surface sampling crosses triangles. Reject invalid charts, never silently substitute a planar surface.",
+    "basis": "Six common spatial modes per identity: two chart directions times (1,u,v) times compact C1 radial window. Reuse three v1 centers, include ALL vertices in the compact chart support (count varies), taper before chart boundary to avoid hard patch seams; 120 coefficients across 20 identities.",
+    "anchors": "Two seed-independent spatially separated patch samples per identity with exact AST proxy correspondence. Four scalar UV observations for six coefficients: intentionally underdetermined. Synthetic sparse supervision upper-bound mechanism test, NOT independently validated anatomical landmarks.",
+    "landmark_blocker": "Raw AST landmarks have coordinates of order 100 while standardized meshes have extent of order 1. No verified transform or template attachment available; do not invent a transform.",
+    "amplitude": "Initial coefficient directions drawn before scoring. Maximum chart displacement capped at 0.002 times mean mesh diagonal, then halved only to satisfy predeclared face quality. No energy/RMSE outcome used for this choice.",
+    "geometry": "At every accepted iterate all originally nondegenerate affected faces must retain positive reference-normal dot product and area ratio >=0.2. Chart samples must stay in original chart triangles. This does not certify absence of self-intersection.",
+    "weight": "E/K; fixed lambda=0.1 for both combined arms, exploratory declared value, not copied from T5. Anchor loss is mean squared anchor UV residual divided by fixed observable chart scale squared.",
+    "gate": "g=A/(A+1e-4); multiply E gradient by lambda*g. Gate held fixed within each backtracking search; this is a state-dependent update rule, NOT gradient of A+lambda*g(A)*E. No dense correspondence error used.",
+    "solver": "Preconditioned gradient using anchor design Gram plus 0.1I, geometry-constrained Armijo backtracking. Coefficient step cap 0.25. Stop on coefficient-gradient infinity norm <=1e-7, step infinity norm <=1e-8, no acceptable step, or 160 iterations. Log reason and do not call max-iteration convergence.",
+    "truth_access": "Dense truth used to construct synthetic corruption, sparse proxy observations, frozen surface/chart, and evaluation; not supplied as recovery direction, dense loss, step scale, stopping criterion, or gate. Existing all20 GPA/chart is benchmark infrastructure, not deployment preprocessing.",
+    "success_reporting": "Report all initial levels, end-to-end non-anchor NRMSE, per-identity changes, truth drift, convergence, local face validity, and anchor residual; pair combined arms against anchor_only. A valid solver termination is not correspondence recovery.",
+    "eligibility": "Always mechanism-only: no neural-training release until independent anchors/observable fidelity are validated. Gate-at-zero stationarity is constructed, not evidence of correspondence correctness.",
+    "preserve": "Do not alter v1 outputs, hashes, thresholds, or user HTML. Store v2 results separately. No network training or archive reads."
+  },
+  "provenance": {
+    "protocol_sha256": "b902f02cfc7a966fbb0da733213307d2244317def39923c2c40947b9610873fd",
+    "code_sha256": "9458054c289211c1159ddfaaa76f2cb60ea21695f5f2fa50cdb72f12e1d5be53",
+    "core_sha256": "ea87da0226098761f6554d85fc6a97dc67483e78d5077d18239a291c82e8542f",
+    "source_sha256": {
+      "code\\reports\\stage3_s35_v2\\cache\\all20_au0_baseline.npy": "ae8f2b37ec2b54d78ef9612f6579f8d05f374e0e6789729b187acc807e96d5c4",
+      "code\\reports\\stage3_s35_v2\\cache\\au0_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+      "code\\reports\\stage3_s35_v2\\cache\\all20_angry_baseline.npy": "62637907a1fbc5ba0d744f4eae861451098d26cdd59ad630c6cbaf6b89837e09",
+      "code\\reports\\stage3_s35_v2\\cache\\angry_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+      "code\\reports\\stage3_s35_v2\\cache\\all20_disgust_baseline.npy": "6a5b69f7d2e63841a8183b4646939cf828bc11dd1290789a006544739f474e50",
+      "code\\reports\\stage3_s35_v2\\cache\\disgust_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+      "code\\reports\\stage3_s35_v2\\cache\\all20_fear_baseline.npy": "82bcf6240a9bab393ba1c32b8e0ff5325cdaa8a9ee6ff1e0f0f828afd3d48223",
+      "code\\reports\\stage3_s35_v2\\cache\\fear_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+      "code\\reports\\stage3_s35_v2\\cache\\all20_happy_baseline.npy": "19d1e33c07d50c83200af6b52ee0d8388c5d55fadf804705d99826fc7b464c8a",
+      "code\\reports\\stage3_s35_v2\\cache\\happy_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+      "code\\reports\\stage3_s35_v2\\cache\\all20_sad_baseline.npy": "ca6f6ee69d82fb1f2168a465e28e9173261e8430363d8b9fae9d61443654c0f0",
+      "code\\reports\\stage3_s35_v2\\cache\\sad_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+      "code\\reports\\stage3_s35_v2\\cache\\all20_surprise_baseline.npy": "1c13a8f56be5ab994a946b38fe3bd88e3a334ba0de22b95b7f44f869e3beb5f1",
+      "code\\reports\\stage3_s35_v2\\cache\\surprise_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808"
+    },
+    "patch_sha256": {
+      "code\\reports\\stage3_s36_v1\\patches\\angry_0.npz": "7573ae7108daebe9214ca8130b9400028f564fabe642f4e41188155eb7857bc0",
+      "code\\reports\\stage3_s36_v1\\patches\\angry_1.npz": "d14a4cc6cae5189a0c6b3b089c085263ef5a6ee214f134ebc72ce5179fcf8e49",
+      "code\\reports\\stage3_s36_v1\\patches\\angry_2.npz": "19582290fb2dc64727e44ffd2f9a06add14c2ef4a345acca43019ba7389c29f4",
+      "code\\reports\\stage3_s36_v1\\patches\\au0_0.npz": "56569725c2152405f16b706b6011c727a9a1ce9745d7cf7d796ada5e1a74b834",
+      "code\\reports\\stage3_s36_v1\\patches\\au0_1.npz": "eacdaa0cb76c957ded46eae3e4669a9d52f7344b41bb9d160f5b6dd31513013e",
+      "code\\reports\\stage3_s36_v1\\patches\\au0_2.npz": "eb2d6524ec3f07eadee284246aa7565fd6ebfb4587383e8bcb6dd4c8ca003f93",
+      "code\\reports\\stage3_s36_v1\\patches\\disgust_0.npz": "4af065b01ab3e9a3a6fd7007574bdc5f01f6fb5db1498e5039b102a4e0c705ca",
+      "code\\reports\\stage3_s36_v1\\patches\\disgust_1.npz": "1e958e82ba9d3c305a5c00c076672f145cc0face407b487f32125f5428912ee8",
+      "code\\reports\\stage3_s36_v1\\patches\\disgust_2.npz": "8609bdca355439cba03f42bdf979c8375a1ec9d67dccd3b1050a7cde01606f20",
+      "code\\reports\\stage3_s36_v1\\patches\\fear_0.npz": "94ee2ad7d0626e6fa5028421a817cdd96757a56c6f73cc5e0afefd9b2bafff0c",
+      "code\\reports\\stage3_s36_v1\\patches\\fear_1.npz": "51d3fed91c9e972cf15d1df97acab3dbd13eee66c5b772d9bcbbc8385c8afd00",
+      "code\\reports\\stage3_s36_v1\\patches\\fear_2.npz": "21835afc7d18c1bfcd1fa9c8f7f063450f04b51ca5443f8039a284a9c668d586",
+      "code\\reports\\stage3_s36_v1\\patches\\happy_0.npz": "bfeefdc87221750717d16293eb53f3524878a61122260ad7486c2245449ae108",
+      "code\\reports\\stage3_s36_v1\\patches\\happy_1.npz": "14e711e8711f0c18fc74dfe631478bbd67b2ef2a26780727d21ed4a8a62772f3",
+      "code\\reports\\stage3_s36_v1\\patches\\happy_2.npz": "7edb328219b79f38c4e9238f669f7d90201c8942055d4599e312d844161a39d0",
+      "code\\reports\\stage3_s36_v1\\patches\\sad_0.npz": "408c96c8dfe268a19c3c026464f2ea65f2dc66f045a4a6492fe6fb338dbbc789",
+      "code\\reports\\stage3_s36_v1\\patches\\sad_1.npz": "c92f99264f708e8d5c97100ba35e98bf02354837b24664d5d183f763aae4c6a5",
+      "code\\reports\\stage3_s36_v1\\patches\\sad_2.npz": "6349012ee3f9763a4cff143951a1c139fad97c9ad3d663b8226b4c23d054969c",
+      "code\\reports\\stage3_s36_v1\\patches\\surprise_0.npz": "8d2275525a5d5b5457d131dd0ed8cd9e1bf428929d058d975b8a6babedab3af5",
+      "code\\reports\\stage3_s36_v1\\patches\\surprise_1.npz": "c5db08d9712b46b43cab80a801b3841b14dd6d7cf4a0bab196a4db8396003770",
+      "code\\reports\\stage3_s36_v1\\patches\\surprise_2.npz": "5307dd79ef994332f92e65b1e15b742d0fce592e21108a1a7b131567281ce3e0"
+    }
+  }
+}

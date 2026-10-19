@@ -1,0 +1,4274 @@
+{
+  "passed": true,
+  "check_count": 853,
+  "failed": [],
+  "selection_replayed": 180,
+  "selected_endpoints_remeasured": 90,
+  "checks": [
+    {
+      "name": "input:code/stage36_final_protocol.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/stage36_final.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/test_stage36_final.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/verify_stage36_final.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/stage36_smooth.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/stage36_gradient.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/stage36_constraints.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/stage36_information.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/preprocessing.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/ecomp.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/metadata.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/au0_raw.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/angry_raw.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/disgust_raw.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/fear_raw.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/happy_raw.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/sad_raw.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/surprise_raw.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/au0_faces.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/angry_faces.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/disgust_faces.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/fear_faces.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/happy_faces.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/sad_faces.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s35_v2/cache/surprise_faces.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s36_v1/patches/au0_0.npz",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s36_v1/patches/au0_1.npz",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input:code/reports/stage3_s36_v1/patches/au0_2.npz",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:frozen_protocol.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:joint_baseline.npy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:rigid_alignment.npz",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:alignment.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:starts.csv",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:candidates.csv",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:policies.csv",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:subjects.csv",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:summary.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:structure_checks.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:gradient_checks.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:final_decision.png",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:final_decision.pdf",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:parameters/seed_0.npz",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:parameters/seed_1.npz",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:parameters/seed_2.npz",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:checkpoints/seed_0.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:checkpoints/seed_1.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "output:checkpoints/seed_2.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chart:0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "numeric:0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "structure:0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "spectra:0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "disjoint:0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_independent_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_independent_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_independent_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_independent_1e-05_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_independent_1e-05_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_independent_1e-05_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_independent_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_independent_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_independent_1e-05_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_shared_identity_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_shared_identity_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_shared_identity_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_shared_identity_1e-05_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_shared_identity_1e-05_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_shared_identity_1e-05_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_shared_identity_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_shared_identity_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_shared_identity_1e-05_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_control_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_control_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_control_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_control_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_control_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_control_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_control_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:0_control_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_control_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_control_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_control_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_control_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:0_control_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:0_control_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:0_control_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:0_control_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:0_control_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chart:1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "numeric:1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "structure:1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "spectra:1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "disjoint:1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_independent_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_independent_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_independent_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_independent_1e-05_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_independent_1e-05_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_independent_1e-05_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_independent_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_independent_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_independent_1e-05_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_shared_identity_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_shared_identity_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_shared_identity_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_shared_identity_1e-05_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_shared_identity_1e-05_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_shared_identity_1e-05_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_shared_identity_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_shared_identity_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_shared_identity_1e-05_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_control_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_control_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_control_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_control_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_control_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_control_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_control_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:1_control_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_control_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_control_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_control_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_control_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:1_control_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:1_control_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:1_control_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:1_control_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:1_control_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chart:2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "numeric:2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "structure:2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "spectra:2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "disjoint:2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_independent_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_independent_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_independent_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_independent_1e-05_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_independent_1e-05_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_independent_1e-05_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_independent_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_independent_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_independent_1e-05_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_shared_identity_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_shared_identity_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_shared_identity_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_shared_identity_1e-05_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_1e-05_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_1e-05_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_1e-05_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_shared_identity_1e-05_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_1e-05_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_1e-05_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_shared_identity_1e-05_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_shared_identity_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_shared_identity_1e-05_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_shared_identity_1e-05_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_control_0_two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_two_v2:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_two_v2:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_two_v2:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_two_v2:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_control_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_control_0_two_v2:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_two_v2:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_control_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_control_0_two_v2:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_two_v2:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_control_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_control_0_two_v2:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_two_v2:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "start:2_control_0_six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_six_spread:0.0025:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_six_spread:0.0025:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_six_spread:0.0025:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_six_spread:0.01:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_control_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_control_0_six_spread:regularizer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_six_spread:0.01:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_control_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_control_0_six_spread:single",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection:2_control_0_six_spread:0.01:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "measure:2_control_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subjects:2_control_0_six_spread:joint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:regularizer_0_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:regularizer_0_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:single_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:single_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:single_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:single_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:joint_0.1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:joint_0.1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:joint_1_0.0025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "constraints:2_control_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "rejection_stays:2_control_0_six_spread:joint_1_0.01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "30_unique_starts",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "6_controls",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "policy_rows",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "subject_rows",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate:two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "median:two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection_count:two_v2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate:six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "median:six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "selection_count:six_spread",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "network_closed_if_gate_failed",
+      "passed": true,
+      "details": null
+    }
+  ]
+}

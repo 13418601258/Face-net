@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "All 21 chart attempts are present, including any rejected chart",
+      "passed": true
+    },
+    {
+      "check": "No chart rejection is silently dropped",
+      "passed": true
+    },
+    {
+      "check": "All four arms and five levels are complete and unique",
+      "passed": true
+    },
+    {
+      "check": "Twenty unique subject outcomes per endpoint",
+      "passed": true
+    },
+    {
+      "check": "Three pairwise comparisons per baseline condition",
+      "passed": true
+    },
+    {
+      "check": "Finite nonnegative error and anchor results",
+      "passed": true
+    },
+    {
+      "check": "Every accepted trajectory point passes affected-face guards",
+      "passed": true
+    },
+    {
+      "check": "All endpoint displacements respect one percent cap",
+      "passed": true
+    },
+    {
+      "check": "All analytic surface-field derivative checks pass",
+      "passed": true
+    },
+    {
+      "check": "Two sparse anchors leave coefficient nullspace",
+      "passed": true
+    },
+    {
+      "check": "Iteration budget exhaustion never counts as convergence",
+      "passed": true
+    },
+    {
+      "check": "Gate is zero at true baseline without forced recovery",
+      "passed": true
+    },
+    {
+      "check": "Group results equal independently aggregated subject means",
+      "passed": true
+    },
+    {
+      "check": "Endpoint equals last recorded iterate",
+      "passed": true
+    },
+    {
+      "check": "No neural release from synthetic anchor experiments",
+      "passed": true
+    },
+    {
+      "check": "Result hashes match",
+      "passed": true
+    },
+    {
+      "check": "Code hashes match",
+      "passed": true
+    },
+    {
+      "check": "Frozen model source matches",
+      "passed": true
+    },
+    {
+      "check": "Original cached surfaces and patches are unmodified",
+      "passed": true
+    },
+    {
+      "check": "All three PNG and PDF plot pairs exist",
+      "passed": true
+    },
+    {
+      "check": "Diagnostic source and output hashes match",
+      "passed": true
+    },
+    {
+      "check": "Nullspace certificates cover every valid chart once",
+      "passed": true
+    },
+    {
+      "check": "Both post-hoc probes cover each valid chart",
+      "passed": true
+    },
+    {
+      "check": "Accepted probes preserve sparse anchors and decrease energy",
+      "passed": true
+    },
+    {
+      "check": "Probe summary independently matches truth",
+      "passed": true
+    },
+    {
+      "check": "Probe summary independently matches exact_anchor_minimizer",
+      "passed": true
+    }
+  ],
+  "network_eligible": false,
+  "note": "Integrity passes do not establish recovery, convergence or independent-anchor validity"
+}

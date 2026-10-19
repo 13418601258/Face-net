@@ -1,0 +1,20 @@
+{
+  "subjects": "1-15",
+  "states": ["au0", "angry", "disgust", "fear", "happy", "sad", "surprise"],
+  "seeds": [0, 1, 2],
+  "operations": [
+    {"type": "baseline", "strengths": [0.0]},
+    {"type": "shuffle_indices", "strengths": [0.01, 0.05, 0.10, 0.25]},
+    {"type": "coordinate_noise", "strengths": [0.0001, 0.0005, 0.001, 0.003]},
+    {"type": "smooth_local_deformation", "strengths": [0.001, 0.003, 0.010, 0.030], "radius": 0.22},
+    {"type": "random_missing", "strengths": [0.01, 0.05, 0.10, 0.20]},
+    {"type": "rigid_transform", "strengths": [0.25, 0.50, 1.00]}
+  ],
+  "notes": {
+    "coordinate_noise": "strength 是包围盒对角线的比例",
+    "smooth_local_deformation": "strength 是包围盒对角线的比例；radius 是局部高斯半径比例",
+    "random_missing": "输出 valid_mask；第一轮不删除面片",
+    "rigid_transform": "负对照；不应改变对应关系",
+    "au0": "公共数据没有 deformation field，但有 mesh 和 landmark"
+  }
+}

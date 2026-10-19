@@ -1,0 +1,114 @@
+[
+  {
+    "cohort": "new5",
+    "state": "au0",
+    "iterations": 4,
+    "relative_change": 9.487436736641146e-13,
+    "objective": 0.0002751336945931471,
+    "converged": true
+  },
+  {
+    "cohort": "new5",
+    "state": "angry",
+    "iterations": 5,
+    "relative_change": 4.616228300132993e-12,
+    "objective": 0.000682009649879663,
+    "converged": true
+  },
+  {
+    "cohort": "new5",
+    "state": "disgust",
+    "iterations": 4,
+    "relative_change": 5.382040359125948e-10,
+    "objective": 0.0006732822447720315,
+    "converged": true
+  },
+  {
+    "cohort": "new5",
+    "state": "fear",
+    "iterations": 4,
+    "relative_change": 2.799713904054186e-10,
+    "objective": 0.0005883736485013997,
+    "converged": true
+  },
+  {
+    "cohort": "new5",
+    "state": "happy",
+    "iterations": 5,
+    "relative_change": 7.227390156890586e-12,
+    "objective": 0.0008640142731094455,
+    "converged": true
+  },
+  {
+    "cohort": "new5",
+    "state": "sad",
+    "iterations": 4,
+    "relative_change": 4.345711943437049e-10,
+    "objective": 0.0006060400985057888,
+    "converged": true
+  },
+  {
+    "cohort": "new5",
+    "state": "surprise",
+    "iterations": 4,
+    "relative_change": 7.193518230069768e-10,
+    "objective": 0.0005581461377529376,
+    "converged": true
+  },
+  {
+    "cohort": "all20",
+    "state": "au0",
+    "iterations": 4,
+    "relative_change": 6.178146060938232e-12,
+    "objective": 0.0005075343252608278,
+    "converged": true
+  },
+  {
+    "cohort": "all20",
+    "state": "angry",
+    "iterations": 4,
+    "relative_change": 3.6385916415817527e-10,
+    "objective": 0.0008979359636069185,
+    "converged": true
+  },
+  {
+    "cohort": "all20",
+    "state": "disgust",
+    "iterations": 4,
+    "relative_change": 6.708306053237814e-10,
+    "objective": 0.0009249719736642263,
+    "converged": true
+  },
+  {
+    "cohort": "all20",
+    "state": "fear",
+    "iterations": 4,
+    "relative_change": 3.5344510377317164e-10,
+    "objective": 0.0008644260793896289,
+    "converged": true
+  },
+  {
+    "cohort": "all20",
+    "state": "happy",
+    "iterations": 5,
+    "relative_change": 1.0392037043821131e-11,
+    "objective": 0.0010996267262869087,
+    "converged": true
+  },
+  {
+    "cohort": "all20",
+    "state": "sad",
+    "iterations": 4,
+    "relative_change": 5.185220601898079e-10,
+    "objective": 0.0009137454234686694,
+    "converged": true
+  },
+  {
+    "cohort": "all20",
+    "state": "surprise",
+    "iterations": 4,
+    "relative_change": 7.838815551247806e-10,
+    "objective": 0.0009874285675346673,
+    "converged": true
+  }
+]

@@ -1,0 +1,195 @@
+{
+  "passed": true,
+  "count": 46,
+  "checks": [
+    {
+      "name": "frozen_source_and_inputs_match",
+      "passed": true
+    },
+    {
+      "name": "original_output_hashes_match",
+      "passed": true
+    },
+    {
+      "name": "all_21_checkpoints",
+      "passed": true
+    },
+    {
+      "name": "441_unique_starts",
+      "passed": true
+    },
+    {
+      "name": "twelve_candidates_per_feasible_start",
+      "passed": true
+    },
+    {
+      "name": "eight_policy_records_per_feasible_start",
+      "passed": true
+    },
+    {
+      "name": "no_invalid_start_silently_repaired",
+      "passed": true
+    },
+    {
+      "name": "exact_sparse_normal_equation",
+      "passed": true
+    },
+    {
+      "name": "all_exported_candidates_geometry_valid",
+      "passed": true
+    },
+    {
+      "name": "observation_bounds_respected",
+      "passed": true
+    },
+    {
+      "name": "rejected_candidates_stay_put",
+      "passed": true
+    },
+    {
+      "name": "energy_only_accepted_updates_lower_energy",
+      "passed": true
+    },
+    {
+      "name": "smooth_only_accepted_updates_lower_smoothness",
+      "passed": true
+    },
+    {
+      "name": "selected_candidates_pass_geometry",
+      "passed": true
+    },
+    {
+      "name": "no_network_release",
+      "passed": true
+    },
+    {
+      "name": "local_decisions_equal_frozen_checks",
+      "passed": true
+    },
+    {
+      "name": "twenty_distinct_identities_per_policy",
+      "passed": true
+    },
+    {
+      "name": "group_errors_equal_identity_means",
+      "passed": true
+    },
+    {
+      "name": "63_design_records",
+      "passed": true
+    },
+    {
+      "name": "holdout_sets_are_disjoint",
+      "passed": true
+    },
+    {
+      "name": "selection_and_audit_have_12_points",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_angry_0",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_angry_1",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_angry_2",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_au0_0",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_au0_1",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_au0_2",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_disgust_0",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_disgust_1",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_disgust_2",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_fear_0",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_fear_1",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_fear_2",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_happy_0",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_happy_1",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_happy_2",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_sad_0",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_sad_1",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_sad_2",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_surprise_0",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_surprise_1",
+      "passed": true
+    },
+    {
+      "name": "correction_prior_surprise_2",
+      "passed": true
+    },
+    {
+      "name": "all_selectors_reproduced_without_truth",
+      "passed": true
+    },
+    {
+      "name": "all_candidate_parameter_and_observation_bounds_replayed",
+      "passed": true
+    },
+    {
+      "name": "selected_geometry_and_dense_error_replayed",
+      "passed": true
+    },
+    {
+      "name": "dense_diagnostic_gradient_matches_finite_difference",
+      "passed": true
+    }
+  ],
+  "selector_replays": 3160,
+  "geometry_replays": 395,
+  "max_dense_gradient_fd_error": 1.2650600021823649e-17,
+  "reviewer_sha256": "4dfb9d9d3ece2102914e1e6cc9a6a36fb38c16dafd413cfa51e62a76b584ade3",
+  "network_eligible": false
+}

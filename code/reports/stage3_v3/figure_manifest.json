@@ -1,0 +1,16 @@
+{
+  "input_csv_sha256": "a40f37a071fdaf6b8983c02dd8212e694c05e1ac46fbced69a73692da2a640e6",
+  "computation_manifest_sha256": "698b5a9db18962a8429027ae8249d927a6109d7c81bab1a7c329f9bd0622cfba",
+  "renderer_sha256": "6f1f0a59cf631fe476db5125733d722f470d714f3b6e5bddbf28f34ea7314f95",
+  "files": {
+    "ecomp_curves.png": "a9fc0a79296c12409d1b9f3230e4078e4238c1016c65a7771a6100ba38739f89",
+    "ecomp_curves.pdf": "2d7fa5686fb5ba95add49fc3aecb975d567ed40501be20e8996cf8f2d858c2e6",
+    "ecomp_delta_curves.png": "b22ebeb60ced14439c5273d9344f362f322b338eb4dc4b4439de02351f12c219",
+    "ecomp_delta_curves.pdf": "6a441bf94aad8849217153a8b2fce19602a4de6997fa884c48dfc88665f40ab5",
+    "geometry_curves.png": "f8ff594b852188fad9a3370d3695b2d95f47627d0c141397c39c38c17c0623e5",
+    "geometry_curves.pdf": "8c8f60d7c32b343e5a11d578debcdb6536da8853b305564312c4c8f75ace4f1a",
+    "geometry_perturbations.png": "9fbfdfb77beec2621584376c3fa4421eb0d70a1904320dab1bd0bc28eb5f7c3b",
+    "geometry_perturbations.pdf": "3f1307cc9bea57ea74e413fd01ade4a43f1e9f3b13beeeccb2646f24feb1e6f4"
+  },
+  "note": "Presentation redraw only; same means and seed SD as curve_summary.csv"
+}

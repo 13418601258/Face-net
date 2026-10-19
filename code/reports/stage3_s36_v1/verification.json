@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "All 231 path conditions unique and complete",
+      "passed": true
+    },
+    {
+      "check": "All 693 step conditions unique and complete",
+      "passed": true
+    },
+    {
+      "check": "All 4620 identity updates unique and complete",
+      "passed": true
+    },
+    {
+      "check": "All 630 finite differences present and within frozen tolerance",
+      "passed": true
+    },
+    {
+      "check": "Full native K=19 retained",
+      "passed": true
+    },
+    {
+      "check": "No nonfinite score or RMSE values",
+      "passed": true
+    },
+    {
+      "check": "All updated points lie inside their triangles",
+      "passed": true
+    },
+    {
+      "check": "Actual slide stays within 1 percent diagonal cap",
+      "passed": true
+    },
+    {
+      "check": "Each condition contains all twenty identities",
+      "passed": true
+    },
+    {
+      "check": "Group RMSE matches independent subject aggregation",
+      "passed": true
+    },
+    {
+      "check": "RMSE improvement flags match actual measurements",
+      "passed": true
+    },
+    {
+      "check": "Energy descent flags match actual measurements",
+      "passed": true
+    },
+    {
+      "check": "All 2520 geometry records complete and unique",
+      "passed": true
+    },
+    {
+      "check": "Geometry uses 2048 samples and separate fixed sampling seed",
+      "passed": true
+    },
+    {
+      "check": "Gate decision equals all predeclared positive conditions",
+      "passed": true
+    },
+    {
+      "check": "Source code matches frozen hashes",
+      "passed": true
+    },
+    {
+      "check": "All output hashes match",
+      "passed": true
+    },
+    {
+      "check": "All checkpoints and patch hashes match",
+      "passed": true
+    },
+    {
+      "check": "Five PNG and PDF figure pairs exist",
+      "passed": true
+    }
+  ],
+  "first_gate_pass": false,
+  "note": "Integrity PASS is distinct from experimental gate PASS"
+}

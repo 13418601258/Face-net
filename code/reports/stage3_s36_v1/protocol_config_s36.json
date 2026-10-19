@@ -1,0 +1,99 @@
+{
+  "version": "s36-gradient-v1",
+  "states": [
+    "au0",
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "N": 20,
+  "K": 19,
+  "reference_variance": 109.16412439918614,
+  "delta": 1e-09,
+  "input_digest": "d403c8e9453492ae7500808dfbf99ced53ca824ef4963a85b6a3d04fc766ee03",
+  "cache_sha256": {
+    "all20_au0_baseline.npy": "ae8f2b37ec2b54d78ef9612f6579f8d05f374e0e6789729b187acc807e96d5c4",
+    "au0_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "all20_angry_baseline.npy": "62637907a1fbc5ba0d744f4eae861451098d26cdd59ad630c6cbaf6b89837e09",
+    "angry_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "all20_disgust_baseline.npy": "6a5b69f7d2e63841a8183b4646939cf828bc11dd1290789a006544739f474e50",
+    "disgust_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "all20_fear_baseline.npy": "82bcf6240a9bab393ba1c32b8e0ff5325cdaa8a9ee6ff1e0f0f828afd3d48223",
+    "fear_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "all20_happy_baseline.npy": "19d1e33c07d50c83200af6b52ee0d8388c5d55fadf804705d99826fc7b464c8a",
+    "happy_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "all20_sad_baseline.npy": "ca6f6ee69d82fb1f2168a465e28e9173261e8430363d8b9fae9d61443654c0f0",
+    "sad_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808",
+    "all20_surprise_baseline.npy": "1c13a8f56be5ab994a946b38fe3bd88e3a334ba0de22b95b7f44f869e3beb5f1",
+    "surprise_faces.npy": "50f72e6b1ef0220c35194fbf0140ddd0164e01af39e88e130844fd7a320a4808"
+  },
+  "source_manifest_sha256": "e2dbfdfb5a66c37d050042e2a9ff226ce8164b0735a558078a5cba25c4d11c2c",
+  "patch_size": 512,
+  "patch_selection": "512 nearest mean-shape vertices to seed-fixed interior center; common indices",
+  "rays": "independent incident faces per identity; interior barycentric sum=.65; displacement capped at .01*individual diagonal",
+  "primary_alignment": "frozen baseline rigid GPA, preserve individual scale",
+  "secondary_alignment": "fresh rigid GPA directional finite differences and primary-update scores",
+  "energy": "logdet(H.T X X.T H/((N-1)*reference)+delta I); H orthonormal to ones; full K=N-1; exact derivative",
+  "fd_steps": [
+    0.01,
+    0.001,
+    0.0001
+  ],
+  "fd_tolerance": "abs error <= 1e-7+1e-4*abs(analytic derivative); positive slope >1e-8",
+  "update": "negative Cartesian gradient projected to each triangle plane, normalized RMS then exact closest-triangle projection; no true recovery vector used",
+  "step_fractions": [
+    0.01,
+    0.03,
+    0.1
+  ],
+  "primary_step": 0.03,
+  "baseline_drift_step": "0.1*endpoint RMS reference",
+  "variance_floors": [
+    0.99,
+    0.995,
+    0.999
+  ],
+  "primary_variance_floor": 0.99,
+  "gate": "All 210 positive conditions: correct frozen+reGPA direction, numeric checks, primary step lowers E and RMSE, global/local variance >= .99 baseline, E after reGPA lower",
+  "geometry": "2048 surface samples each direction, all20, t=.1/.5/1 before+after primary step; full affected-face normals all conditions",
+  "geometry_samples": 2048,
+  "geometry_tolerance_fraction": 0.001,
+  "limitations": [
+    "Exploratory gate on previously observed identities, no blind test or trained network",
+    "Same-face displacement cap may be far below 1% diagonal; no claim to cross-face or large slides",
+    "A point stays on the original surface, but reconnecting moved points changes mesh faces",
+    "Frozen aligned gradient is not the derivative through re-GPA; secondary re-GPA path checks address only path sensitivity",
+    "A strict gate failure limits this setup, not all neural parameterizations and not automatic evaluation validity",
+    "Three seeds are perturbation repeats; anatomy truth is the standardized AST correspondence proxy",
+    "Variance and geometry tolerances are declared diagnostic thresholds, not significance tests"
+  ],
+  "code_sha256": {
+    "stage36_gradient.py": "ea87da0226098761f6554d85fc6a97dc67483e78d5077d18239a291c82e8542f",
+    "ecomp.py": "c7790f39891862d2ed84a613c2bdfd879dafc295c7390a453a3fb3a4d96add2a",
+    "preprocessing.py": "23ca265599e951db2eede3b728ea3ce3bf1636934934c62f698c9bd709009f12",
+    "geometry_batch.py": "da32b31c9bf58269f25bcd3a6651e2872d8a70ac8e45c9d16f27982cb4fdc70c",
+    "metrics.py": "8db0b2b649d08c712016f05c2380e4dd6065e28caf50c5ae8a93d255cc49daee",
+    "index_protocol.py": "334dadf28fa632a91ee2f68709d4926a0b8cae641fde703dcf0f898afe5e13b6"
+  }
+}

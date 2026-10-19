@@ -1,0 +1,56 @@
+{
+  "version": "rigid-gpa-v3",
+  "rows": 693,
+  "geometry_rows": 385,
+  "scored_rows": 609,
+  "missing_geometry_only_rows": 84,
+  "fixed_K": 14,
+  "reference_variance": 111.74964914610983,
+  "all_protocol_checks_passed": true,
+  "failures": [],
+  "max_iterations_used": 7,
+  "max_common_rigid_delta": 5.684341886080802e-14,
+  "max_independent_rigid_delta": 5.684341886080802e-14,
+  "max_common_index_delta": 7.815970093361102e-14,
+  "min_independent_signal_retention": 1.0316167791460507,
+  "max_rigid_geometry_distance_over_tolerance": 3.0693241463458744e-12,
+  "acceptance_scope": "v3 processing checks; raw baseline unchanged condition assessed separately in baseline_comparison.csv",
+  "raw_to_aligned_baseline_change": [
+    {
+      "state": "au0",
+      "delta": -2.532353057354058
+    },
+    {
+      "state": "angry",
+      "delta": -3.8476280239806755
+    },
+    {
+      "state": "disgust",
+      "delta": -3.8731747103385032
+    },
+    {
+      "state": "fear",
+      "delta": -4.179295476347441
+    },
+    {
+      "state": "happy",
+      "delta": -3.979890478826178
+    },
+    {
+      "state": "sad",
+      "delta": -3.961779398247266
+    },
+    {
+      "state": "surprise",
+      "delta": -4.1119752738964195
+    }
+  ],
+  "geometry_score_disagreement_count": 21,
+  "limits": [
+    "GPA uses candidate correspondences; regression is empirical, not universal invariance",
+    "baseline raw-to-aligned score changes are not treated as zero; baseline is reprocessed",
+    "scale preserved by user decision; missing data is geometry-only and NOT scored",
+    "geometry computed for configured subject only, group score uses all 15 identities",
+    "negative score with degraded geometry is possible; not validated as neural training loss"
+  ]
+}

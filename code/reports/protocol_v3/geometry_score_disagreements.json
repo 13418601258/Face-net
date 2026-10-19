@@ -1,0 +1,191 @@
+[
+  {
+    "state": "au0",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.001,
+    "change": -0.0055497023273716195,
+    "coverage": 1.0,
+    "distance": 0.000165682983471542
+  },
+  {
+    "state": "angry",
+    "kind": "smooth_local_deformation",
+    "seed": 1,
+    "strength": 0.001,
+    "change": -0.024627486275363708,
+    "coverage": 1.0,
+    "distance": 0.00022205101224967812
+  },
+  {
+    "state": "angry",
+    "kind": "smooth_local_deformation",
+    "seed": 1,
+    "strength": 0.003,
+    "change": -0.06176799656998355,
+    "coverage": 1.0,
+    "distance": 0.0006672463413644685
+  },
+  {
+    "state": "angry",
+    "kind": "smooth_local_deformation",
+    "seed": 1,
+    "strength": 0.01,
+    "change": -0.056933379239701765,
+    "coverage": 0.57275390625,
+    "distance": 0.002227399230616593
+  },
+  {
+    "state": "angry",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.001,
+    "change": -0.0046947424721039965,
+    "coverage": 1.0,
+    "distance": 0.00023120462932426747
+  },
+  {
+    "state": "disgust",
+    "kind": "smooth_local_deformation",
+    "seed": 0,
+    "strength": 0.001,
+    "change": -0.013224503386361164,
+    "coverage": 1.0,
+    "distance": 0.00019592527608014898
+  },
+  {
+    "state": "disgust",
+    "kind": "smooth_local_deformation",
+    "seed": 0,
+    "strength": 0.003,
+    "change": -0.027730317534988558,
+    "coverage": 1.0,
+    "distance": 0.0005863543199627437
+  },
+  {
+    "state": "disgust",
+    "kind": "smooth_local_deformation",
+    "seed": 1,
+    "strength": 0.001,
+    "change": -0.0022052107300467583,
+    "coverage": 1.0,
+    "distance": 0.00015916681805378698
+  },
+  {
+    "state": "fear",
+    "kind": "smooth_local_deformation",
+    "seed": 1,
+    "strength": 0.001,
+    "change": -0.003275100319150681,
+    "coverage": 1.0,
+    "distance": 0.0001819220967866414
+  },
+  {
+    "state": "fear",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.001,
+    "change": -0.023432778616545136,
+    "coverage": 1.0,
+    "distance": 0.00022070623823060753
+  },
+  {
+    "state": "fear",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.003,
+    "change": -0.055207944461287184,
+    "coverage": 0.9580078125,
+    "distance": 0.0006608424053538382
+  },
+  {
+    "state": "fear",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.01,
+    "change": -0.008700385008381772,
+    "coverage": 0.6806640625,
+    "distance": 0.0022161518646246106
+  },
+  {
+    "state": "happy",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.001,
+    "change": -0.008361932864623611,
+    "coverage": 1.0,
+    "distance": 0.00019203774880748544
+  },
+  {
+    "state": "happy",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.003,
+    "change": -0.017530433930062372,
+    "coverage": 1.0,
+    "distance": 0.0005755319629336057
+  },
+  {
+    "state": "sad",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.001,
+    "change": -0.004146586404587538,
+    "coverage": 1.0,
+    "distance": 0.0001817208787233554
+  },
+  {
+    "state": "surprise",
+    "kind": "smooth_local_deformation",
+    "seed": 0,
+    "strength": 0.001,
+    "change": -0.03992376292848121,
+    "coverage": 1.0,
+    "distance": 0.00023433552187570667
+  },
+  {
+    "state": "surprise",
+    "kind": "smooth_local_deformation",
+    "seed": 0,
+    "strength": 0.003,
+    "change": -0.10858992779496646,
+    "coverage": 0.99658203125,
+    "distance": 0.0007049299121641476
+  },
+  {
+    "state": "surprise",
+    "kind": "smooth_local_deformation",
+    "seed": 0,
+    "strength": 0.01,
+    "change": -0.22629850259506412,
+    "coverage": 0.52685546875,
+    "distance": 0.0023460153050787226
+  },
+  {
+    "state": "surprise",
+    "kind": "smooth_local_deformation",
+    "seed": 1,
+    "strength": 0.001,
+    "change": -0.0016597755637235423,
+    "coverage": 1.0,
+    "distance": 0.00022919429693865455
+  },
+  {
+    "state": "surprise",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.001,
+    "change": -0.0037188354239603427,
+    "coverage": 1.0,
+    "distance": 0.0002383682808946171
+  },
+  {
+    "state": "surprise",
+    "kind": "smooth_local_deformation",
+    "seed": 2,
+    "strength": 0.003,
+    "change": -0.00036267558687796964,
+    "coverage": 0.99658203125,
+    "distance": 0.000717715218359917
+  }
+]

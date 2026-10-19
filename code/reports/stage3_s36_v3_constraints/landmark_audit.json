@@ -1,0 +1,37 @@
+{
+  "sample_count": 140,
+  "candidate_rows": 280,
+  "crop_vertices": 33390,
+  "crop_faces": 66190,
+  "exact_faces_match": false,
+  "unoriented_faces_match": false,
+  "candidate_keypoint_count": 68,
+  "candidates": [
+    {
+      "index_base": 0,
+      "count": 140,
+      "median_heldout_nrmse": 0.01835015968675686,
+      "median_fit_nrmse": 0.017140331251195275,
+      "fitted_scale_min": 0.008466425499870332,
+      "fitted_scale_max": 0.016563453336748055,
+      "available_pairs_min": 36
+    },
+    {
+      "index_base": 1,
+      "count": 140,
+      "median_heldout_nrmse": 0.01857263103677436,
+      "median_fit_nrmse": 0.017398501016999558,
+      "fitted_scale_min": 0.008436736924453452,
+      "fitted_scale_max": 0.016576887785737574,
+      "available_pairs_min": 36
+    }
+  ],
+  "status": "candidate_coordinate_audit_only_not_independent_validation",
+  "blockers": [
+    "BFM.mat kpt_ind equivalence to public text index list is not established.",
+    "Sample-specific release similarity transforms and original fitted templates are absent from extracted subject folders.",
+    "Landmarks participate in original registration; agreement with registered meshes is not independent anatomical accuracy.",
+    "No fitted scale is applied to the experimental baseline or used for downstream recovery."
+  ],
+  "source_manifest_sha256": "5dd4096e50740209331e1dde7e1e5314822c20edd4bec9b0e29ed5cbebde9b1f"
+}

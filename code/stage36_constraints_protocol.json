@@ -1,0 +1,20 @@
+{
+  "version": "s36-v3-constraint-diagnostic",
+  "date": "2026-10-19",
+  "scope": "Synthetic sparse-observation mechanism audit, not neural training or an independent anatomical benchmark",
+  "states": ["au0", "angry", "disgust", "fear", "happy", "sad", "surprise"],
+  "seeds": [0, 1, 2],
+  "N": 20,
+  "K": 19,
+  "layouts": ["two_v2", "three_spread", "six_spread", "three_clustered"],
+  "layout_selection": "Two v2 anchors unchanged; spread adds maximum smallest-singular-value points within radius 0.65; cluster chooses three nearest centre vertices. No energy or dense outcome used.",
+  "noise_sigma_chart_diag": [0.0, 0.000001, 0.00001, 0.0001],
+  "noise_replicates": [0, 1, 2],
+  "noise_units": "Per UV coordinate Gaussian sigma / mean baseline mesh diagonal. Synthetic stress test, not estimated detector error; not 3D physical displacement.",
+  "exact_solver": "q*=Y pinv(D)^T + q_initial (I-pinv(D)D)^T, nearest unconstrained least-squares optimum. D uses sparse observations only. Geometry feasibility is audited after solution, never assumed or repaired with truth.",
+  "dense_evaluation": "Exclude union of all four layouts from evaluation for identical evaluation vertices across arms; report all identities, invalid geometry separately.",
+  "gate_test": "A is residual to noisy sparse observations, not zero truth. g=A/(A+1e-4). Measure gate at truth and exact sparse optimum.",
+  "energy_probes": "At t=1 with exact anchors, fixed initial lambda=rho*norm(grad A)/norm(grad E/K), rho=0.01,0.1,1. Same bounded coefficient step 0.01 and geometry-checked Armijo for anchor-only and A+lambda E. Single-step scale audit, NOT converged closed-loop gain.",
+  "landmarks": "Audit all 20 identities x 7 states; test both 0/1-based interpretations of publicly provided 68-point template index list. Fit proper similarity on even entries of the published 36-point correspondence, evaluate odd entries. Coordinate diagnostic only: sample release transforms and BFM.mat kpt_ind equivalence are not assumed. No fitted scale is applied to the baseline meshes.",
+  "preserve": "Read extracted data only. Do not modify v1/v2 code, results, or dataset. No archive access. No neural-training release."
+}

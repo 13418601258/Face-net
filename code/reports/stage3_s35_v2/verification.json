@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "T2 complete unique 441-condition grid",
+      "passed": true
+    },
+    {
+      "check": "T3 complete unique 462-condition grid",
+      "passed": true
+    },
+    {
+      "check": "T4 complete unique 126-condition grid",
+      "passed": true
+    },
+    {
+      "check": "T5 complete unique 56-condition grid",
+      "passed": true
+    },
+    {
+      "check": "Every score is finite and K equals N minus one",
+      "passed": true
+    },
+    {
+      "check": "T3/T4 inverse-face certificates all pass",
+      "passed": true
+    },
+    {
+      "check": "T4 all endpoints exact and within numeric tolerance",
+      "passed": true
+    },
+    {
+      "check": "T5 all analytic spectrum scores agree",
+      "passed": true
+    },
+    {
+      "check": "4060 geometry rows cover 203 conditions and every identity",
+      "passed": true
+    },
+    {
+      "check": "Every sampled geometry row uses 2048 samples and seed zero",
+      "passed": true
+    },
+    {
+      "check": "No missing or nonfinite geometry measurements",
+      "passed": true
+    },
+    {
+      "check": "Every aggregate geometry loss matches its twenty subjects",
+      "passed": true
+    },
+    {
+      "check": "All 252 frozen old scores replay within tolerance",
+      "passed": true
+    },
+    {
+      "check": "Conditional bound prevents every tested negative candidate beating baseline",
+      "passed": true
+    },
+    {
+      "check": "All frozen output hashes match",
+      "passed": true
+    },
+    {
+      "check": "All checkpoint hashes match",
+      "passed": true
+    },
+    {
+      "check": "Scoring and preprocessing source hashes match protocol",
+      "passed": true
+    },
+    {
+      "check": "All nine figures exist in PNG and PDF",
+      "passed": true
+    }
+  ],
+  "score_rows": 1085,
+  "geometry_rows": 4060,
+  "figures": 9
+}

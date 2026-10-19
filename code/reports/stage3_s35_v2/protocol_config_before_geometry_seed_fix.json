@@ -1,0 +1,196 @@
+{
+  "version": "stage3-s35-v2",
+  "states": [
+    "au0",
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "cohorts": {
+    "base15": {
+      "N": 15,
+      "K": 14,
+      "subjects": [
+        "ast001",
+        "ast002",
+        "ast003",
+        "ast004",
+        "ast005",
+        "ast006",
+        "ast007",
+        "ast008",
+        "ast009",
+        "ast010",
+        "ast011",
+        "ast012",
+        "ast013",
+        "ast014",
+        "ast015"
+      ],
+      "reference_variance": 111.74964914610983,
+      "baseline_scores": {
+        "au0": -63.47756558384753,
+        "angry": -51.54736763220242,
+        "disgust": -50.38853046909199,
+        "fear": -51.80909751726821,
+        "happy": -49.8368496278989,
+        "sad": -53.08194875319244,
+        "surprise": -50.50117327474486
+      }
+    },
+    "new5": {
+      "N": 5,
+      "K": 4,
+      "subjects": [
+        "ast016",
+        "ast017",
+        "ast018",
+        "ast019",
+        "ast020"
+      ],
+      "reference_variance": 77.45819933818038,
+      "baseline_scores": {
+        "au0": -11.889951046702212,
+        "angry": -6.488923538298858,
+        "disgust": -7.579297435896203,
+        "fear": -7.341259128876141,
+        "happy": -6.323435757781112,
+        "sad": -7.755763168683631,
+        "surprise": -7.245452095754333
+      }
+    },
+    "all20": {
+      "N": 20,
+      "K": 19,
+      "subjects": [
+        "ast001",
+        "ast002",
+        "ast003",
+        "ast004",
+        "ast005",
+        "ast006",
+        "ast007",
+        "ast008",
+        "ast009",
+        "ast010",
+        "ast011",
+        "ast012",
+        "ast013",
+        "ast014",
+        "ast015",
+        "ast016",
+        "ast017",
+        "ast018",
+        "ast019",
+        "ast020"
+      ],
+      "reference_variance": 109.16412439918614,
+      "baseline_scores": {
+        "au0": -96.54724475704174,
+        "angry": -80.57820862535995,
+        "disgust": -78.8882423365873,
+        "fear": -80.31471499801916,
+        "happy": -78.2530384017198,
+        "sad": -81.54721490202738,
+        "surprise": -78.95379885372351
+      }
+    }
+  },
+  "input_digest": "d403c8e9453492ae7500808dfbf99ced53ca824ef4963a85b6a3d04fc766ee03",
+  "original_levels": [
+    0.001,
+    0.003,
+    0.01,
+    0.03
+  ],
+  "added_levels": [
+    0.014,
+    0.02,
+    0.045
+  ],
+  "global_levels": [
+    0.005,
+    0.01,
+    0.02,
+    0.04,
+    0.08,
+    0.16,
+    0.32,
+    0.64
+  ],
+  "local_levels": [
+    0.001,
+    0.003,
+    0.005,
+    0.01,
+    0.02,
+    0.03,
+    0.05
+  ],
+  "restoration_levels": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "shrink_levels": [
+    1.0,
+    0.8,
+    0.6,
+    0.4,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "geometry_samples": 2048,
+  "geometry_seed": 0,
+  "geometry_tolerance_fraction": 0.001,
+  "geometry_scope": "T2 and T5: every all20 identity and every condition; T2 subcohorts: scores only",
+  "preprocessing": "T2-T4: rigid GPA, no scale/reflection; T5: frozen baseline GPA frame, no re-GPA",
+  "smooth_seed": "sample_seed(seed, subject/state/smooth_local_deformation), identical to v3",
+  "index_seed": "sample_seed(seed, subject/state/family), nested sets within each seed",
+  "K_policy": "K=N-1, all eigenvalues including zeros; delta/K does not remove cohort/rank effects",
+  "T1": "Keep individual negative counterexamples; add mean<0 and -mean>2*sampleSD reproducibility label; not a significance test",
+  "T2": "Positive signed adjacent step > SD or 2SD; report old, added and full grids separately; identity rho>=.8, signs match, both nondecreasing",
+  "T3": "Detectable: mean delta>2SD and every seed positive; robust step: paired adjacent mean>3*pairedSD; report each state",
+  "T4": "Every seed checked for nonincreasing score; exact identity endpoint, tolerance atol=1e-8+rtol=1e-10*abs(baseline)",
+  "T5": "L=delta_E/K + lambda_geom*G; G=(1-coverage)+symmetric_distance/tolerance+normal_rate; lambda>=(-delta_E/K)/G for tested negative candidates only",
+  "T5_equivalent": "For L=G+mu_comp*delta_E/K, mu_comp<=G/(-delta_E/K); bounds cover finite sampled paths only, not all collapse",
+  "T5_geometry_threshold": "No external acceptability threshold invented; compare each sampled candidate with baseline",
+  "numerical_tolerance": {
+    "atol": 1e-08,
+    "rtol": 1e-10
+  },
+  "delta": 1e-09,
+  "source_hashes": {
+    "code\\reports\\stage3_v3\\experiments.csv": "7fd48c7868067f92c660819b5a7db089b209cce61bad96a785c787c16c0a4b1e",
+    "code\\reports\\stage3_v3\\geometry_subjects.csv": "635bf36799a60ef18e69dd294490673d16c1719f04d3b9c69c7cfdf330bf4d6c",
+    "code\\reports\\stage3_stability_v1\\cohort_scores.csv": "03ef1c3a5afa6a1d595cc870fc1715caf4cd8a938280c7e3818fcd046c420c3e"
+  },
+  "code_sha256": {
+    "stage35_definition.py": "b3cc72bc80956ac5e689d714b0915e95fed6b043c52eb886e213ff90de1d5d7b",
+    "astface_loader.py": "5c0cf657ad8678ad14a70c5e21937e10e9721830483a345bf3adbf7f210169ac",
+    "preprocessing.py": "23ca265599e951db2eede3b728ea3ce3bf1636934934c62f698c9bd709009f12",
+    "ecomp.py": "c7790f39891862d2ed84a613c2bdfd879dafc295c7390a453a3fb3a4d96add2a",
+    "perturb.py": "b0786fb74ef0ffb6cd713d18b573e1ec0169ceb7e47bfbdbb1e57e84110b4523",
+    "index_protocol.py": "334dadf28fa632a91ee2f68709d4926a0b8cae641fde703dcf0f898afe5e13b6",
+    "geometry_batch.py": "da32b31c9bf58269f25bcd3a6651e2872d8a70ac8e45c9d16f27982cb4fdc70c",
+    "metrics.py": "8db0b2b649d08c712016f05c2380e4dd6065e28caf50c5ae8a93d255cc49daee"
+  },
+  "limitations": [
+    "three perturbation seeds are not independent identity replicates",
+    "all20 overlaps base15 and new5",
+    "T3/T4 discrete permutation ordering does not demonstrate a useful continuous training gradient",
+    "standardized AST meshes are a proxy for correct correspondence, not external anatomical ground truth"
+  ]
+}

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多线性模型逐步推演 · 从数据到重建</title>
+<style>
+:root{
+  --fg:#1A1B1C; --muted:#6B7280; --bg:#FFFFFF; --card:#F5F8FA;
+  --border:rgba(0,0,0,.10); --accent:#2E6E9E; --warm:#B4635C;
+  --ok:#2E7D5B; --hi:#EAF3FA;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; padding:16px; background:var(--bg); color:var(--fg);
+  font-family:'PingFang SC','Microsoft YaHei','Segoe UI',Arial,sans-serif;
+  font-size:13.5px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.wrap{width:100%; max-width:800px; margin:0 auto;
+  border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+.head{padding:14px 16px; background:var(--card); border-bottom:1px solid var(--border);}
+.head h1{margin:0; font-size:16px; font-weight:600;}
+.head p{margin:4px 0 0; font-size:12px; color:var(--muted);}
+.bar{display:flex; align-items:center; gap:8px; padding:10px 16px;
+  border-bottom:1px solid var(--border); overflow-x:auto;}
+.dot{flex:0 0 auto; min-width:44px; min-height:44px; border-radius:10px;
+  border:1px solid var(--border); background:#fff; color:var(--muted);
+  font-size:12px; font-family:inherit; cursor:pointer;
+  transition:background .25s,color .25s,border-color .25s;}
+.dot.on{background:var(--accent); color:#fff; border-color:var(--accent);}
+.stagebox{padding:0 16px;}
+.stage{position:relative; width:720px; height:330px; margin:12px 0;}
+.scroller{overflow-x:auto; scrollbar-gutter:stable;}
+.it{position:absolute; display:flex; align-items:center; justify-content:center;
+  border-radius:8px; font-size:13px; font-variant-numeric:tabular-nums;
+  white-space:nowrap; transition:left .6s cubic-bezier(.4,0,.2,1),
+  top .6s cubic-bezier(.4,0,.2,1), opacity .4s, background-color .4s,
+  border-color .4s, color .4s, transform .4s;}
+.it.v{width:68px; height:34px; background:#fff; border:1px solid var(--border);}
+.it.v.hot{background:var(--hi); border-color:#8FBBDC;}
+.it.v.res{background:#E8F5EE; border-color:#8CC7A8; font-weight:600; color:var(--ok);}
+.it.l{background:transparent; border:none; color:var(--muted); font-size:12px;}
+.it.m{background:transparent; border:none; color:var(--fg); font-size:13px; font-weight:600;}
+.it.q{background:transparent; border:none; color:var(--accent); font-size:12px;}
+.it.big{width:88px; height:34px;}
+.panel{padding:12px 16px; border-top:1px solid var(--border); background:var(--card);}
+.panel h2{margin:0 0 6px; font-size:13.5px; font-weight:600; color:var(--accent);}
+.fml{margin:0 0 8px; padding:8px 10px; background:#fff; border:1px solid var(--border);
+  border-radius:8px; font-family:'Cambria Math','Times New Roman',serif;
+  font-size:14px; color:var(--fg); overflow-x:auto;}
+.calc{margin:0; font-size:12.5px; line-height:1.75;}
+.calc b{color:var(--accent); font-weight:600;}
+.calc em{color:var(--warm); font-style:normal;}
+.calc .mx{font-family:'Cambria Math','Times New Roman',serif; font-size:13px;}
+.ctl{display:flex; gap:10px; align-items:center; padding:12px 16px;
+  border-top:1px solid var(--border);}
+button{min-width:44px; min-height:44px; padding:0 18px; border-radius:10px;
+  border:1px solid var(--border); background:#fff; color:var(--fg);
+  font-size:13px; cursor:pointer; font-family:inherit; transition:background .2s;}
+button:hover{background:var(--card);}
+button.pri{background:var(--accent); color:#fff; border-color:var(--accent);}
+button:disabled{opacity:.4; cursor:not-allowed;}
+.spacer{flex:1;}
+.stepno{font-size:12px; color:var(--muted);}
+.note{padding:10px 16px; border-top:1px solid var(--border); font-size:12px;
+  color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>多线性模型逐步推演：从数据到重建</h1>
+    <p>3 个身份 × 2 种表情 × 2 个坐标的小例子，全部数值可复核</p>
+  </div>
+  <div class="bar" id="dots"></div>
+  <div class="stagebox"><div class="scroller"><div class="stage" id="stage"></div></div></div>
+  <div class="panel">
+    <h2 id="ptitle"></h2>
+    <p class="fml" id="pfml"></p>
+    <p class="calc" id="pcalc">本页用「3 个身份 × 2 种表情 × 2 个坐标」的小例子，逐步演示多线性模型的构建：<br>① 原始数据 → ② 减去平均脸 → ③ 排成张量 A → ④⑤⑥ 三种展开 → ⑦ 奇异值分解 → ⑧ 截断得因子矩阵 → ⑨ 组装核心张量 M → ⑩ 重建验证。<br><br>每一步都给出公式与对应计算，数字块会沿路径移动到新位置。如果浏览器禁用了脚本，交互演示无法运行，但上述步骤说明依然有效。</p>
+  </div>
+  <div class="ctl">
+    <button id="prev">上一步</button>
+    <button id="next" class="pri">下一步</button>
+    <span class="spacer"></span>
+    <span class="stepno" id="stepno"></span>
+    <button id="reset">重置</button>
+  </div>
+  <div class="note">
+    数字块会沿路径移动到新位置，用来示意张量展开时数据的重排过程。坐标为教学示意，非真实人脸数据。
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- 基础数据 ---------- */
+var RAW  = [[[0,0],[1,0]], [[0,2],[2,2]], [[0,4],[3,4]]];   // [身份][表情][坐标]
+var MEAN = [1,2];
+var CEN  = [[[-1,-2],[0,-2]], [[-1,0],[1,0]], [[-1,2],[2,2]]];
+
+function f(v){
+  if (Math.abs(v) < 1e-9) return "0";
+  var s = (Math.round(v*1000)/1000).toString();
+  return s.replace("-", "\u2212");
+}
+
+/* 数据块 id：d + 身份 + 表情 + 坐标 */
+function did(i,e,c){ return "d"+i+e+c; }
+
+/* ---------- 布局函数 ---------- */
+var X0 = 40, Y0 = 30;
+
+/* 步骤1/2：3 行（身份） × 4 列（表情×坐标） */
+function layGrid(){
+  var o = {};
+  o["g_hdr"] = {x:120, y:Y0-6, s:"表情1\u00b7坐标1　　表情1\u00b7坐标2　　表情2\u00b7坐标1　　表情2\u00b7坐标2", v:"l"};
+  var i,e,c;
+  for(i=0;i<3;i++){
+    o["g_rl"+i] = {x:X0+30, y:96+i*58, s:"身份"+(i+1), v:"l"};
+    for(e=0;e<2;e++){
+      for(c=0;c<2;c++){
+        o[did(i,e,c)] = {x:130+(e*2+c)*94, y:88+i*58};
+      }
+    }
+  }
+  return o;
+}
+
+/* 步骤3：张量 A，两块 2×3 切片（行=坐标，列=身份） */
+function layTensor(){
+  var o = {}, i,e,c;
+  for(e=0;e<2;e++){
+    o["t_sn"+e] = {x:X0+80+e*340, y:Y0-4, s:"A[:,:,"+(e+1)+"]　表情"+(e+1), v:"m"};
+    for(i=0;i<3;i++){
+      o["t_ch"+e+i] = {x:X0+110+e*340+i*80, y:66, s:"身份"+(i+1), v:"l"};
+    }
+    for(c=0;c<2;c++){
+      o["t_cr"+e+c] = {x:X0+30+e*340, y:112+c*58, s:"坐标"+(c+1), v:"l"};
+      for(i=0;i<3;i++){
+        o[did(i,e,c)] = {x:X0+110+e*340+i*80, y:104+c*58};
+      }
+    }
+  }
+  return o;
+}
+
+/* 步骤4：三种展开。k=0 → A_(1) 2×6；k=1 → A_(2) 3×4；k=2 → A_(3) 2×6 */
+function layUnfold(k){
+  var o = {}, i,e,c;
+  if(k===0){
+    o["mn"] = {x:X0+240, y:Y0-8, s:"A(1)　2 行 × 6 列", v:"m"};
+    for(i=0;i<3;i++){
+      for(e=0;e<2;e++){
+        o["u0_ch"+i+e] = {x:X0+70+(i+3*e)*92, y:62, s:"i"+(i+1)+"e"+(e+1), v:"l"};
+      }
+    }
+    for(c=0;c<2;c++){
+      o["u0_cr"+c] = {x:X0+6, y:118+c*58, s:"坐标"+(c+1), v:"l"};
+      for(i=0;i<3;i++){
+        for(e=0;e<2;e++){
+          o[did(i,e,c)] = {x:X0+70+(i+3*e)*92, y:110+c*58};
+        }
+      }
+    }
+  } else if(k===1){
+    o["mn"] = {x:X0+240, y:Y0-8, s:"A(2)　3 行 × 4 列", v:"m"};
+    for(c=0;c<2;c++){
+      for(e=0;e<2;e++){
+        o["u1_ch"+c+e] = {x:X0+56+(c+2*e)*92, y:62, s:"c"+(c+1)+"e"+(e+1), v:"l"};
+      }
+    }
+    for(i=0;i<3;i++){
+      o["u1_rl"+i] = {x:X0+2, y:118+i*58, s:"身份"+(i+1), v:"l"};
+      for(c=0;c<2;c++){
+        for(e=0;e<2;e++){
+          o[did(i,e,c)] = {x:X0+56+(c+2*e)*92, y:110+i*58};
+        }
+      }
+    }
+  } else {
+    o["mn"] = {x:X0+240, y:Y0-8, s:"A(3)　2 行 × 6 列", v:"m"};
+    for(c=0;c<2;c++){
+      for(i=0;i<3;i++){
+        o["u2x_ch"+c+i] = {x:X0+70+(c+2*i)*92, y:62, s:"c"+(c+1)+"i"+(i+1), v:"l"};
+      }
+    }
+    for(e=0;e<2;e++){
+      o["u2x_rl"+e] = {x:X0+6, y:118+e*58, s:"表情"+(e+1), v:"l"};
+      for(c=0;c<2;c++){
+        for(i=0;i<3;i++){
+          o[did(i,e,c)] = {x:X0+70+(c+2*i)*92, y:110+e*58};
+        }
+      }
+    }
+  }
+  return o;
+}
+
+/* ---------- 步骤7：SVD —— 保留 A(2) 布局，右侧出现奇异值 ---------- */
+function laySVD(){
+  var o = layUnfold(1), i;
+  o["mn"] = {x:X0+120, y:Y0-8, s:"A(2)　3 行 × 4 列", v:"m"};
+  var cols = ["A(1)","A(2)","A(3)"];
+  var vals = [["4.202","2.519",""], ["4.299","2.349","0"], ["4.135","2.627",""]];
+  var rows = ["2 行", "3 行", "2 行"];
+  var k, r;
+  o["shlbl"] = {x:452, y:Y0-14, s:"每个展开矩阵各做一次 SVD", v:"q"};
+  for(k=0;k<3;k++){
+    o["sh"+k] = {x:470+k*90, y:64, s:cols[k], v:(k===1 ? "m" : "l")};
+    for(r=0;r<3;r++){
+      if(vals[k][r] === "") continue;
+      o["sv"+k+r] = {x:470+k*90, y:96+r*44, s:vals[k][r]};
+    }
+    o["sr"+k] = {x:470+k*90, y:240, s:rows[k], v:"l"};
+  }
+  return o;
+}
+
+/* ---------- 步骤8：截断 → 因子矩阵 ---------- */
+function layFactors(){
+  var o = {}, i, p, e, q;
+  var U2 = [[0.583,0.703],[-0.111,0.567],[-0.805,0.430]];
+  var U3 = [[-0.634,-0.773],[-0.773,0.634]];
+  o["t2"] = {x:60, y:Y0-4, s:"U₂　身份因子　3 × 2", v:"m"};
+  for(p=0;p<2;p++){
+    o["h2"+p] = {x:150+p*92, y:74, s:"p"+(p+1), v:"l"};
+    for(i=0;i<3;i++){
+      o["u2"+i+p] = {x:150+p*92, y:112+i*58, s:f(U2[i][p])};
+    }
+  }
+  for(i=0;i<3;i++){
+    o["r2"+i] = {x:60, y:126+i*58, s:"身份"+(i+1), v:"l"};
+  }
+  o["t3"] = {x:430, y:Y0-4, s:"U₃　表情因子　2 × 2", v:"m"};
+  for(q=0;q<2;q++){
+    o["h3"+q] = {x:490+q*92, y:74, s:"q"+(q+1), v:"l"};
+    for(e=0;e<2;e++){
+      o["u3"+e+q] = {x:490+q*92, y:112+e*58, s:f(U3[e][q])};
+    }
+  }
+  for(e=0;e<2;e++){
+    o["r3"+e] = {x:400, y:126+e*58, s:"表情"+(e+1), v:"l"};
+  }
+  return o;
+}
+
+/* ---------- 步骤9：核心张量 M ---------- */
+function layCore(){
+  var o = {}, q, r, p;
+  var M = [
+    [[1.120,-0.026],[3.906,0.767]],
+    [[-1.349,2.219],[0.387,0.076]]
+  ];   // M[q][坐标][p]
+  for(q=0;q<2;q++){
+    o["t"+q] = {x:70+q*330, y:Y0-4, s:"M[:,:,"+(q+1)+"]", v:"m"};
+    for(p=0;p<2;p++){
+      o["hc"+q+p] = {x:120+q*330+p*92, y:74, s:"p"+(p+1), v:"l"};
+    }
+    for(r=0;r<2;r++){
+      o["hr"+q+r] = {x:30+q*330, y:126+r*58, s:"坐标"+(r+1), v:"l"};
+      for(p=0;p<2;p++){
+        o["m"+q+r+p] = {x:120+q*330+p*92, y:112+r*58, s:f(M[q][r][p])};
+      }
+    }
+  }
+  return o;
+}
+
+/* ---------- 步骤10：重建 —— 两行数据各算一个坐标 ---------- */
+function layRebuild(){
+  var o = {};
+  var C = [112, 186, 260, 334];          /* 4 列 = (p,q) 的 4 种组合 */
+  var PR = ["\u00d7 0.622", "\u00d7 (\u22120.510)", "\u00d7 (\u22120.332)", "\u00d7 0.273"];
+  var MR = [[1.120,-1.349,-0.026,2.219],[3.906,0.387,0.767,0.076]];
+  var CO = [[0.697,0.688,0.009,0.605],[2.432,-0.197,-0.255,0.021]];
+  var SUM = ["2.000","2.000"], FB = ["1","2"], RES = ["3","4"];
+  var c, k, y;
+
+  o["tt"]  = {x:16, y:16, s:"以「身份3 \u00b7 表情2」为例：M 的每一行算一个坐标", v:"m"};
+  o["w2l"] = {x:16, y:50, s:"身份3 的系数  w\u2082 = [\u22120.805, 0.430]", v:"l"};
+  o["w3l"] = {x:380, y:50, s:"表情2 的系数  w\u2083 = [\u22120.773, 0.634]", v:"l"};
+  o["ph"]  = {x:16, y:84, s:"系数乘积", v:"l"};
+  for(k=0;k<4;k++){
+    o["pd"+k] = {x:C[k], y:84, s:PR[k], v:"l"};
+  }
+
+  for(c=0;c<2;c++){
+    y = 108 + c*98;
+    o["ml"+c] = {x:16, y:y+10,  s:"坐标"+(c+1)+"  M 行", v:"l"};
+    o["cl"+c] = {x:16, y:y+54,  s:"四项贡献", v:"l"};
+    for(k=0;k<4;k++){
+      o["mm"+c+k] = {x:C[k], y:y,      s:f(MR[c][k])};
+      o["mc"+c+k] = {x:C[k], y:y+44,   s:f(CO[c][k])};
+    }
+    o["sl"+c] = {x:418, y:y+10, s:"\u56db\u9879\u76f8\u52a0 = "+SUM[c], v:"l"};
+    o["fl"+c] = {x:544, y:y+10, s:"\uff0bf\u0304["+c+"] = "+FB[c], v:"l"};
+    o["rr"+c] = {x:626, y:y,    s:RES[c], v:"v", res:true};
+  }
+
+  o["fin"] = {x:16, y:296, s:"两个坐标合起来 = 一张完整的脸 [3, 4]，与原始数据一致", v:"q"};
+  return o;
+}
+
+/* ---------- 步骤定义 ---------- */
+function withData(items, which, hot){
+  var i,e,c;
+  for(i=0;i<3;i++){
+    for(e=0;e<2;e++){
+      for(c=0;c<2;c++){
+        var id = did(i,e,c);
+        if(!items[id]) continue;
+        items[id].s = f(which === "raw" ? RAW[i][e][c] : CEN[i][e][c]);
+        if(hot) items[id].hot = true;
+      }
+    }
+  }
+  return items;
+}
+
+var STEPS = [
+  {
+    t:"① 原始数据",
+    f:"f(i, e) ∈ ℝ²　　i = 身份，e = 表情",
+    c:"3 个身份 × 2 种表情 = <b>6 张脸</b>，每张脸用 2 个坐标值表示。"
+     +"<br>「笑」相对「中性」的位移是：[<em>1</em>,0]、[<em>2</em>,0]、[<em>3</em>,0]。"
+     +"<br>方向相同、幅度逐级放大——<b>同一种表情，在不同身份上强度不同</b>。这就是必须建模的交互效应。",
+    items:function(){ return withData(layGrid(), "raw"); }
+  },
+  {
+    t:"② 减去平均脸",
+    f:"f̃ = f − f̄　　f̄ = (1/6)·Σ f(i, e)",
+    c:"先求和。第一个坐标：0+1+0+2+0+3 = <b>6</b>；第二个坐标：0+0+2+2+4+4 = <b>12</b>。"
+     +"<br>再除以 6，得平均脸 f̄ = <b>[1, 2]</b>。"
+     +"<br>逐个相减，例如身份1·中性：[0,0] − [1,2] = <em>[−1, −2]</em>。"
+     +"<br>框内即为<b>中心化后的值</b>，共 12 个数，后面每一步都只用它们。",
+    items:function(){ return withData(layGrid(), "cen", true); }
+  },
+  {
+    t:"③ 排成张量 A",
+    f:"A ∈ ℝ^(2×3×2)　　mode1 = 坐标，mode2 = 身份，mode3 = 表情",
+    c:"同样这 12 个数，按三根轴摆好：<b>指标轴</b>（2 个坐标）、<b>身份轴</b>（3 人）、<b>表情轴</b>（2 种）。"
+     +"<br>沿表情轴切开，就是两个 2×3 的矩阵切片。"
+     +"<br>关键：<b>身份和表情各占一根独立的轴</b>，这是它们能被解耦的结构基础——线性 PCA 只有一个「形状」轴，两者只能混在一起。",
+    items:function(){ return withData(layTensor(), "cen"); }
+  },
+  {
+    t:"④ 展开成矩阵 A(1)",
+    f:"A(1)[i, (j−1)·I₃ + k] = A[i, j, k]",
+    c:"SVD 只能作用于矩阵，所以要把张量「摊平」。"
+     +"<br>A(1) 沿 <b>mode1 展开</b>：行 = 坐标，列 = (身份, 表情) 的全部组合，列为 3×2 = <b>6</b> 列。"
+     +"<br>列的顺序按列优先：先固定表情1、走完 3 个身份，再换表情2。"
+     +"<br><b>注意看数字块怎么走位</b>——还是那 12 个数，只是换了排布。",
+    items:function(){ return withData(layUnfold(0), "cen"); }
+  },
+  {
+    t:"⑤ 展开成矩阵 A(2)",
+    f:"A(2)[j, (i−1)·I₃ + k] = A[i, j, k]",
+    c:"同一批数再摊一次，这次沿 <b>mode2 展开</b>：行 = 身份（3 行），列 = (坐标, 表情) 组合（2×2 = <b>4</b> 列）。"
+     +"<br>形状从 2×6 变成 3×4，<b>总数仍是 12</b>——展开只改变排布，不增减数据。"
+     +"<br>这个展开矩阵是后面求身份因子的依据。",
+    items:function(){ return withData(layUnfold(1), "cen"); }
+  },
+  {
+    t:"⑥ 展开成矩阵 A(3)",
+    f:"A(3)[k, (i−1)·I₂ + j] = A[i, j, k]",
+    c:"第三次，沿 <b>mode3 展开</b>：行 = 表情（2 行），列 = (坐标, 身份) 组合（2×3 = <b>6</b> 列）。"
+     +"<br>三种展开共用同一份 12 个数，只是行与列的归属不同。"
+     +"<br><b>记法</b>：i\u2099e\u2098 表示第 n 个身份、第 m 种表情；c\u2099 表示第 n 个坐标。",
+    items:function(){ return withData(layUnfold(2), "cen"); }
+  },
+  {
+    t:"⑦ 对展开矩阵做 SVD",
+    f:"A(n) = Uₙ · Sₙ · Vₙᵀ　→　取 Uₙ 的前 mₙ 列",
+    c:"<b>三个展开矩阵各做一次 SVD</b>，得到三组奇异值。左侧画面上只有 A(2)，另外两个没画出来："
+     +"<br>　A(1)（2×6）→ 4.202、2.519"
+     +"<br>　A(2)（3×4）→ <b>4.299、2.349、0</b>"
+     +"<br>　A(3)（2×6）→ 4.135、2.627"
+     +"<br><b>规律</b>：奇异值的个数 = 该展开矩阵的<b>行数</b>（m×n 矩阵最多有 min(m,n) 个）。"
+     +"<br><b>对应关系</b>：A(1) 管坐标轴、A(2) 管身份轴、A(3) 管表情轴——每做一次 SVD，就从那根轴里抽出一组基。"
+     +"<br>A(2) 的第三个奇异值为 <b>0</b>，说明身份方向实际只有 <em>2</em> 个——第 3 列可以直接砍掉。"
+     +"<br><b>旁证</b>：三组的 Σσ² 都等于 <b>24</b>，正好是这 12 个数的平方和。展开不改变数据，能量当然一样。"
+     +"<br><b>符号说明</b>：奇异值对角矩阵在这里写作 <b>Sₙ</b>，这是论文原文的写法（A(n) = UₙSₙVₙᵀ）；很多教材写作 <b>Σₙ</b>。两者是同一个矩阵，只是符号不同，本页统一用 Sₙ。",
+    items:function(){ return withData(laySVD(), "cen"); }
+  },
+  {
+    t:"⑧ 截断得到因子矩阵",
+    f:"U₂ ∈ ℝ^(d₂×m₂)　U₃ ∈ ℝ^(d₃×m₃)　取 m₂ = 2, m₃ = 2",
+    c:"保留前 m 列，其余丢弃。两个因子矩阵的<b>每一列都是单位正交向量</b>，它们定义了身份空间和表情空间的坐标轴。"
+     +"<br>注意 U₂ 有 3 行、U₃ 有 2 行：<b>行对应原来的身份个数和表情种类</b>。"
+     +"<br>从这 3+2 行的矩阵里，任意抽取一行就得到某个身份的系数 w₂，或某种表情的系数 w₃。"
+     +"<br><b>但要注意</b>：真正被截掉的只有 U₂ —— 它截断前是 3×3，砍掉第 3 列才变成 3×2（那一列乘以 σ₃=0，所以零损失）。"
+     +"<br>U₃ 截断前就是 2×2（因为 A(3) 只有 2 行，短边就是 2），m₃=2 时<b>一列都没砍</b>。",
+    items:function(){ return layFactors(); }
+  },
+  {
+    t:"⑨ 组装核心张量 M",
+    f:"M = A ×₂ U₂ᵀ ×₃ U₃ᵀ　　M ∈ ℝ^(2×2×2)",
+    c:"把数据张量沿 mode2 用 U₂ᵀ 收缩、沿 mode3 用 U₃ᵀ 收缩，得到<b>核心张量 M</b>——论文里就称它为「多线性模型」。"
+     +"<br>形状是 2×2×2：2 个坐标 × 2 个身份分量 × 2 个表情分量，一共 8 个数。"
+     +"<br>原来 12 个数的信息被压进 8 个数的核里，这就是「<b>低秩</b>」——模型参数比原始数据还少。"
+     +"<br><b>但要注意一个陷阱</b>：截断 HOSVD 虽然是每个展开矩阵的最优秩-k 近似（Eckart–Young 定理），但组装出来的张量 <b>并不是</b> A 的最优近似——论文原文明确指出了这一点。"
+     +"<br>本例恰好没有截断损失（三个方向的秩刚好都是 2），所以重建是精确的；一旦真的砍掉非零奇异值，就只能得到近似。",
+    items:function(){ return layCore(); }
+  },
+  {
+    t:"⑩ 重建一张脸",
+    f:"f = f̄ + M ×₂ w₂ᵀ ×₃ w₃ᵀ = f̄ + Σ M[:, p, q] · w₂[p] · w₃[q]　（对 p、q 求和）",
+    c:"上面画的就是完整算式：<b>M 的每一行</b> × <b>同一组系数乘积</b> → 四项贡献 → 相加 → 加回平均脸 → 得到一个坐标。"
+     +"<br><br><b>按坐标逐步计算</b>（两个坐标各算一遍，公式与系数乘积完全相同）："
+     +"<br>坐标1：M 的第一行"
+     +"<br>　<span class='mx'>M[0,0,0]·w₂[0]·w₃[0] = 1.120 × (−0.805) × (−0.773) = 0.697</span>"
+     +"<br>　<span class='mx'>M[0,0,1]·w₂[0]·w₃[1] = −1.349 × (−0.805) × 0.634 = 0.688</span>"
+     +"<br>　<span class='mx'>M[0,1,0]·w₂[1]·w₃[0] = −0.026 × 0.430 × (−0.773) = 0.009</span>"
+     +"<br>　<span class='mx'>M[0,1,1]·w₂[1]·w₃[1] = 2.219 × 0.430 × 0.634 = 0.605</span>"
+     +"<br>　四项相加 = <b>2.000</b>，加回 f̄[0] = 1 → <b>3</b>"
+     +"<br>坐标2：M 的第二行"
+     +"<br>　<span class='mx'>M[1,0,0]·w₂[0]·w₃[0] = 3.906 × (−0.805) × (−0.773) = 2.432</span>"
+     +"<br>　<span class='mx'>M[1,0,1]·w₂[0]·w₃[1] = 0.387 × (−0.805) × 0.634 = −0.197</span>"
+     +"<br>　<span class='mx'>M[1,1,0]·w₂[1]·w₃[0] = 0.767 × 0.430 × (−0.773) = −0.255</span>"
+     +"<br>　<span class='mx'>M[1,1,1]·w₂[1]·w₃[1] = 0.076 × 0.430 × 0.634 = 0.021</span>"
+     +"<br>　四项相加 = <b>2.000</b>，加回 f̄[1] = 2 → <b>4</b>",
+    items:function(){ return layRebuild(); }
+  }
+];
+
+/* ---------- 渲染：数字块沿路径移动 ---------- */
+var stageEl = document.getElementById("stage");
+var dotsEl  = document.getElementById("dots");
+var pool    = {};
+
+function render(k){
+  var items = STEPS[k].items();
+  var fresh = [];
+  var id, el, it, cls;
+  for(id in items){
+    it  = items[id];
+    el  = pool[id];
+    cls = "it " + (it.v || "v") + (it.hot ? " hot" : "") + (it.res ? " res" : "");
+    if(!el){
+      el = document.createElement("div");
+      el.style.left = it.x + "px";
+      el.style.top  = it.y + "px";
+      el.style.opacity = "0";
+      el.className = cls;
+      el.textContent = it.s || "";
+      stageEl.appendChild(el);
+      pool[id] = el;
+      fresh.push(el);
+    } else {
+      el.className = cls;
+      el.textContent = it.s || "";
+      el.style.left = it.x + "px";
+      el.style.top  = it.y + "px";
+      el.style.opacity = "1";
+    }
+  }
+  for(id in pool){
+    if(!items[id]) pool[id].style.opacity = "0";
+  }
+  if(fresh.length){
+    requestAnimationFrame(function(){
+      var i;
+      for(i = 0; i < fresh.length; i++){ fresh[i].style.opacity = "1"; }
+    });
+  }
+}
+
+/* ---------- 步骤控制 ---------- */
+var cur = 0;
+
+function show(k){
+  cur = Math.max(0, Math.min(STEPS.length - 1, k));
+  var st = STEPS[cur];
+  document.getElementById("ptitle").textContent = st.t;
+  document.getElementById("pfml").textContent   = st.f;
+  document.getElementById("pcalc").innerHTML    = st.c;
+  document.getElementById("stepno").textContent = "第 " + (cur + 1) + " / " + STEPS.length + " 步";
+  document.getElementById("prev").disabled = (cur === 0);
+  document.getElementById("next").disabled = (cur === STEPS.length - 1);
+  var i;
+  for(i = 0; i < dotsEl.children.length; i++){
+    dotsEl.children[i].className = "dot" + (i === cur ? " on" : "");
+  }
+  render(cur);
+}
+
+(function buildDots(){
+  var i;
+  for(i = 0; i < STEPS.length; i++){
+    (function(idx){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "dot";
+      b.textContent = String(idx + 1);
+      b.onclick = function(){ show(idx); };
+      dotsEl.appendChild(b);
+    })(i);
+  }
+})();
+
+document.getElementById("prev").onclick  = function(){ show(cur - 1); };
+document.getElementById("next").onclick  = function(){ show(cur + 1); };
+document.getElementById("reset").onclick = function(){ show(0); };
+
+document.addEventListener("keydown", function(ev){
+  if(ev.key === "ArrowRight"){ show(cur + 1); }
+  if(ev.key === "ArrowLeft"){ show(cur - 1); }
+});
+
+try{
+  show(0);
+}catch(err){
+  document.getElementById("pcalc").textContent = "渲染出错：" + err.message;
+}
+
+})();
+</script>
+</body>
+</html>
