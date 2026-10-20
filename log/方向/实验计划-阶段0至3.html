@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>实验执行计划 · 阶段 0 至 3</title>
+    <title>实验执行计划 · 阶段 0 至 3（已暂停投入）</title>
     <style>
       :root {
         --ink: #17263b;
@@ -762,6 +762,28 @@
         margin-bottom: 8px;
         letter-spacing: 0.02em;
       }
+      .pause-banner {
+        margin: 22px 0 8px;
+        padding: 18px 20px;
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-left: 4px solid var(--seal);
+        border-radius: 3px;
+        box-shadow: var(--shadow);
+      }
+      .pause-tag {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        color: #fff;
+        background: var(--seal);
+        padding: 3px 10px;
+        margin-bottom: 10px;
+      }
+      .pause-banner p {
+        margin: 0;
+      }
     </style>
   </head>
   <body>
@@ -814,10 +836,7 @@
         <a href="#s1"><span class="num">02</span>扰动数据集</a>
         <a href="#s2"><span class="num">03</span>评价内核</a>
         <a href="#s3"><span class="num">04</span>试金石实验</a>
-        <a href="#criteria"><span class="num">05</span>通过判据</a>
-        <a href="#pitfalls"><span class="num">06</span>常见陷阱</a>
-        <a href="#refs"><span class="num">07</span>资料与数据</a>
-        <a href="#next"><span class="num">08</span>计划之外</a>
+        <a href="#paused"><span class="num">05</span>已暂停投入</a>
       </nav>
       <main>
         <section id="overview">
@@ -2961,407 +2980,108 @@
           </div>
         </section>
 
-        <section id="criteria">
-          <div class="sec-head">
-            <div class="sec-kicker">05 / Criteria</div>
-            <h2>通过判据</h2>
-            <p class="sec-intro">
-              判据必须在看结果之前定好，否则很容易事后调整阈值说服自己。下面四条建议原样写进实验记录，跑完再逐条打勾。
-            </p>
+        <section id="paused">
+        <div class="sec-head">
+          <div class="sec-kicker">05 / Stopped</div>
+          <h2>方向测试总结</h2>
+          <p class="sec-intro">
+            00–04 是实际执行过的全部内容。其后的计划性内容（通过判据、常见陷阱、资料与数据、计划之外）已按「做到哪算到哪」删除。
+          </p>
+        </div>
+
+        <div class="pause-banner">
+          <div class="pause-tag">已暂停投入</div>
+          <p>
+            <strong>2026-10-20 停止。</strong>S3.6 第一关最后一次验算（身份—表情联合紧凑项，v5）未通过——「两档步长的 72 条接受联合更新<strong>没有一次</strong>降低稠密误差」。据此结束 MDL 驱动对应这条支线：不进入第二关 MLP，不追加调参，不扩数据，不进入阶段 4 / 5。
+          </p>
+        </div>
+
+        <h3>一句话结论</h3>
+        <p>
+          <strong>失败的是「把群体紧凑度当作可优化的目标」，成功的是「把群体紧凑度当作评估对应质量的指标」。</strong>两者用同一个数、同一套代码，方向相反。
+        </p>
+
+        <h3>一 · 为什么「驱动」这条路不行</h3>
+        <p>
+          机制级原因：<strong>E_COMP 度量的是「群体有多紧凑」，它的极小点是「所有形状挤成一团」，而真值天然不是它的极小点。</strong>零谱解 &minus;393.74，正常基线 &minus;96.55——塌缩解比正确答案好 297 分。这不是实现缺陷，是定义决定的，所以换参数化、调权重、加门控都救不回来。
+        </p>
+        <table class="tbl">
+          <caption>表 &nbsp;四条互相独立的证据</caption>
+          <thead>
+            <tr><th style="width: 7%">#</th><th style="width: 17%">来源</th><th>证据</th><th style="width: 22%">排除了哪种退路</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>T5 塌缩边界</td><td>49 个退化候选<strong>全部</strong>降低 E_COMP；向均值收缩时分数单调下降</td><td>不是偶发</td></tr>
+            <tr><td>2</td><td>S3.6 第一关 v1</td><td><strong>21/21 正确基线被推离</strong>；真值处单步引入 1.0&times;10<sup>&minus;6</sup> ~ 1.3&times;10<sup>&minus;5</sup>，而 t=0.1 单步只改善 9.7&times;10<sup>&minus;8</sup></td><td>真值<strong>不是驻点</strong>，且推离比拉近大 1–2 个数量级</td></tr>
+            <tr><td>3</td><td>S3.6 v2</td><td>换成完全不同的参数化（六参数平滑场 + 锚点）后，零空间里 21/21 <strong>仍是</strong>能量下降而对应变差</td><td><strong>不是参数化的问题</strong></td></tr>
+            <tr><td>4</td><td>S3.6 v3 / v4</td><td>E 权重 1% &rarr; 10% &rarr; 100%，改善次数 <strong>8 &rarr; 7 &rarr; 1</strong>，配对差中位数单调增大；v4 三种布局的选择后额外收益中位数<strong>均为零</strong></td><td><strong>不是权重或布局没调对</strong></td></tr>
+          </tbody>
+        </table>
+        <p>
+          第 3、4 条是关键：v1 的失败模式在 v2 用完全不同的参数化原样复现，v3/v4 又证明提高权重、更换布局只会更糟。四种观测布局、三档权重、两类参数化、多轮验算，全部指向同一个机制。
+        </p>
+
+        <h3>二 · 还获得了什么</h3>
+
+        <h4>1 · 一个可用的评测指标（正面资产）</h4>
+        <p>
+          同一批数据里，E_COMP 作为<strong>评测指标</strong>的证据强度反而更高，而且是罕见的干净结果：<strong>「在没有正确答案的条件下判断对应质量」本身就有用</strong>——配准评估通常需要稠密真值，而真值恰恰最难拿到。这条线不需要网络、不需要 landmarks、不需要训练。
+        </p>
+        <table class="tbl">
+          <caption>表 &nbsp;评测指标方向的正面证据</caption>
+          <thead>
+            <tr><th style="width: 16%">属性</th><th style="width: 44%">证据</th><th>数字</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>纯变量性</td><td>C2：几何<strong>完全不变</strong>时指标显著变差</td><td>覆盖率 1.000、表面距离 0，&Delta;E_COMP 从 +2.21 升到 +68.2</td></tr>
+            <tr><td>精确不变性</td><td>C3：共同刚体三档强度</td><td>&Delta;E_COMP = <strong>0.0000</strong>（浮点零）；独立刚体 11.2 / 17.8 / 25.9 作对照</td></tr>
+            <tr><td>分辨力</td><td>T3：相邻顶点交换</td><td>0.1% 顶点错配即可检出；三族 154/154 检出、63/63 种子曲线单调</td></tr>
+            <tr><td>单向性</td><td>T4：索引嵌套恢复</td><td>21/21 单调下降，终点<strong>精确回到基线</strong>（最大残差 5.68&times;10<sup>&minus;14</sup>）</td></tr>
+            <tr><td>可复现</td><td>S3.3：跨身份集</td><td>对应类扰动种子间 252/252、身份间 42/42</td></tr>
+          </tbody>
+        </table>
+
+        <h4>2 · 一个可发表的机制结论</h4>
+        <p>
+          「为什么配准领域普遍用几何损失，而不用统计紧致度？」——现在有定量答案而不是直觉：紧致度的极小点与对应正确性无关；真值处梯度非零且推离量级大于拉近量级；约束最紧的位置不在塌缩终点，而在<strong>部分塌缩的「肩部」</strong>（t &asymp; 0.8 处所需 &lambda; 最大 1.5062，而那时分数已掉 8.5、几何损失才 0.65）；权重越大越差，不是单调有益。
+        </p>
+
+        <details class="fold">
+          <summary>3 · 方法论上可复用的结论</summary>
+          <div class="fold-body">
+            <ul>
+              <li><strong>判据必须按扰动类型分开。</strong>同一条「破坏越重、指标越差」，在<strong>对应关系类</strong>扰动上 252/252 成立，在<strong>几何类</strong>上不成立。合并成一条会得出错误结论——这是阶段 3 判定必须拆成 C1a / C1b 的原因。</li>
+              <li><strong>方向判定要用噪声相对阈值，不能用绝对阈值。</strong>21 条「反例」是用 <code>change &lt; &minus;1e&minus;8</code> 判出来的，它们的 |&Delta;E_COMP| 全部 &le; 0.23，而在同扰动的高档是 6.08。改成「&gt; 2 &times; 种子 SD」后归零。这条适用于任何扰动实验。</li>
+              <li><strong>「可检出」&ne;「可微」&ne;「可训练」。</strong>T3/T4 很强（0.1% 可检出、恢复路径完全单调），但它们是<strong>离散置换序</strong>，不提供连续梯度。S3.6 证明这个跳跃是危险的：离散上完美单调，连续上一步就把真值推离。</li>
+              <li><strong>「真值处驻停性」必须单列为第一门禁。</strong>v1 的常规门禁几乎全过——方向 209/210、能量下降 210/210、方差 210/210——唯独真值被推离暴露了根本问题。</li>
+              <li><strong>门禁要有分辨力，否则是空跑。</strong>方差项三档阈值（0.99 / 0.995 / 0.999）全部 210/210 通过；全局覆盖率恒在 99.95% 以上。几何信号其实在<strong>局部</strong>——144/210 个条件存在局部法向反转，受影响面片内最高 14.13%。</li>
+              <li><strong>零空间诊断比多跑几轮更有效。</strong>算设计矩阵的秩、条件数、零空间维度，直接分析「优化会往哪里跑」。靠这个在一步之内定位了「锚点残差为零但对应仍错」的 21/21 可行解。</li>
+              <li><strong>参数化维度与观测秩的两难。</strong>零空间维度 <code>d &minus; r = 0</code> 时指标没有话语空间，无增益可言；<code>d &minus; r &gt; 0</code> 时指标在零空间里钻空子，净负。这不是 E_COMP 特有的问题，是任何附加正则项都会遇到的。</li>
+              <li><strong>门控不能用「观测拟合程度」当开关。</strong>双向失灵：两个原锚点在最优解处门控关闭但对应仍错，六个分散锚点门控开着却不能驻停。问题在观测量语义，不在阈值。</li>
+              <li><strong>第三方 landmarks 不能直接当约束。</strong>坐标尺度与网格相差约百倍；landmarks 本身参与过原始注册，不构成独立解剖精度；发布侧缺 per-sample 变换参数。</li>
+            </ul>
           </div>
+        </details>
 
-          <table class="tbl">
-            <caption>
-              表 2 &nbsp;阶段 3 的四条判据
-            </caption>
-            <thead>
-              <tr>
-                <th style="width: 6%">#</th>
-                <th style="width: 26%">判据</th>
-                <th>含义与观察方式</th>
-                <th style="width: 14%">性质</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>C1</td>
-                <td>索引敏感的单调性</td>
-                <td>
-                  破坏越严重，E_COMP 越大体变差（允许局部波动，趋势必须清楚）
-                </td>
-                <td class="good">必须</td>
-              </tr>
-              <tr>
-                <td>C2</td>
-                <td>索引扰动显著恶化</td>
-                <td>
-                  仅重排顶点编号（几何完全不变）就能让 E_COMP
-                  明显变差。这条支持其对已测试索引错配敏感；共同重编号是不变性对照，不能由此断言通用的解剖对应质量
-                </td>
-                <td class="good">必须</td>
-              </tr>
-              <tr>
-                <td>C3</td>
-                <td>刚体变换不敏感</td>
-                <td>
-                  整体旋转平移后指标基本不变。这是负对照，用来排除「指标其实在度量别的东西」
-                </td>
-                <td class="good">必须</td>
-              </tr>
-              <tr>
-                <td>C4</td>
-                <td>多种子稳定性</td>
-                <td>种子间波动明显小于档位间差异，相对排序可重复</td>
-                <td class="amber">必须</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>判定后的分叉</h3>
-          <table class="tbl">
-            <thead>
-              <tr>
-                <th style="width: 34%">结果</th>
-                <th>含义与下一步</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="good">C1、C2、C3 全部成立</td>
-                <td>
-                  支持在已测试范围内开展下一步试验。须结合 S3.5 的局部分辨力、恢复路径及塌缩结果，不能省略连续梯度与身份留出检验。
-                </td>
-              </tr>
-              <tr>
-                <td>C1 或 C3 不成立</td>
-                <td>
-                  先回到 S2.3 检查计分、S0.3 检查拓扑及 S2.6 检查对齐。排除实现问题后，仍应允许指标在该扰动下无效，而非预设方法必然正确。
-                </td>
-              </tr>
-              <tr>
-                <td>C2 不成立</td>
-                <td>
-                  若独立错配在所需范围内无法检出，先量化分辨率和噪声，再修订指标或限制用途；共同置换不应变差，不属于此处的失败。
-                </td>
-              </tr>
-              <tr>
-                <td>仅 C4 不成立</td>
-                <td>
-                  区分扰动重复波动、身份异质性和小样本秩限制。增加数据或调整 delta 必须建立新协议并重跑，不能为追求通过率直接改动冻结参数。
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="callout">
-            <div class="callout-title">关于「通过」的含义</div>
-            <p>
-              当前结果只支持：<strong>群体描述长度在部分受控扰动下可以作为点云对应一致性的辅助信号。</strong>它不意味着
-              E_COMP
-              是通用或独立的训练损失，也不意味着神经残差场一定更好——网络收益仍需阶段
-              5 的身份留出实验验证。
-            </p>
+        <details class="fold">
+          <summary>4 · 工程与数据资产（可直接复用）</summary>
+          <div class="fold-body">
+            <p><strong>代码：</strong>完整谱 E_COMP；对偶技巧（<code>gram = x@x.T if n &lt;= d else x.T@x</code>，避免 100,170&times;100,170 协方差矩阵）；精确三角形距离 + 质心 KD 树加速（单网格 1.14s &rarr; 0.38s）；刚性 GPA（禁镜像、不求缩放）；六类扰动管线与三层哈希追溯；门禁框架（种子间 / 身份间、按类型拆分、噪声相对阈值、零空间诊断）。</p>
+            <p><strong>数据事实：</strong>AST-Face 规格 33,390 顶点 / 66,190 面片、面片索引 1 起始、形变场 = 该表情网格 &minus; 中性网格（已验证）；命名异常 <code>superise</code> / <code>disguest</code>；98 身份中 10 个不完整；20 身份 &times; 7 状态拓扑哈希完全一致；7 个状态已用，另有 9 种 AU 未用。</p>
           </div>
-        </section>
+        </details>
 
-        <style>
-          .callout {
-            background: linear-gradient(
-              180deg,
-              rgba(31, 99, 107, 0.06),
-              rgba(31, 99, 107, 0.02)
-            );
-            border: 1px solid rgba(31, 99, 107, 0.22);
-            border-left: 3px solid var(--jade);
-            padding: 20px 24px;
-            margin-top: 26px;
-          }
-          .callout-title {
-            font-family: var(--font-display);
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--jade);
-            margin-bottom: 10px;
-          }
-          .callout p {
-            margin-bottom: 0;
-            font-size: 14.5px;
-          }
-        </style>
+        <h3>三 · 边界与遗留</h3>
+        <ul>
+          <li><strong>「E 无训练增益」不等于方向作废。</strong>E 作为评测指标的证据链（C2 / C3 / T3 / T4）完全不依赖「E 能当损失」，那条线是完好的。</li>
+          <li>最坏的结果不是方向失败，而是<strong>方向重定位</strong>：从「用 MDL 驱动网络舒展点云」收缩为「用群体描述长度评估对应质量」。</li>
+          <li>评测指标这条线仍差两块拼图：<strong>在真实配准输出上检验</strong>（不只是合成扰动），以及<strong>在未见身份上复现</strong>（数据集还有 78 个身份可解压）。</li>
+        </ul>
 
-        <section id="pitfalls">
-          <div class="sec-head">
-            <div class="sec-kicker">06 / Pitfalls</div>
-            <h2>常见陷阱</h2>
-            <p class="sec-intro">
-              下面每一条都会「安静地」毁掉结论——不报错、不崩溃，只是让你得到错误的答案。
-            </p>
-          </div>
-
-          <div class="pitfall">
-            <span class="pn">01</span>
-            <div>
-              <h4>把假设当成已知</h4>
-              <p>
-                「AST-Face
-                的所有网格共享拓扑」是一个<strong>需要验证的假设</strong>，不是已知事实。跳过
-                S0.3 直接跑，一旦有个别文件拓扑不同，E_COMP
-                会给出一个看起来正常的数值，而你不会察觉。
-              </p>
-            </div>
-          </div>
-
-          <div class="pitfall">
-            <span class="pn">02</span>
-            <div>
-              <h4>E_COMP 算错却无人发现</h4>
-              <p>
-                特征值取对数、delta
-                的位置、归一化方式、求和范围——任何一处偏差都会导致「能跑出曲线」但「曲线无意义」。<strong>手算玩具例子是唯一可靠的防线</strong>，它只要一小时。
-              </p>
-            </div>
-          </div>
-
-          <div class="pitfall">
-            <span class="pn">03</span>
-            <div>
-              <h4>只看描述长度，不看几何</h4>
-              <p>
-                描述长度下降可以有两条原因：对应变好了，或者几何被破坏了。必须同时报告覆盖率与距离指标。只报
-                E_COMP 的结论是不成立的。
-              </p>
-            </div>
-          </div>
-
-          <div class="pitfall">
-            <span class="pn">04</span>
-            <div>
-              <h4>把折叠和对应错误混在一起</h4>
-              <p>
-                自交折叠同时破坏拓扑与对应关系。若把它放进扰动集合，当指标变差时你无法判断是「对应被破坏」还是「几何被破坏」。所以第一轮不要引入折叠。
-              </p>
-            </div>
-          </div>
-
-          <div class="pitfall">
-            <span class="pn">05</span>
-            <div>
-              <h4>强度档位挤在一端</h4>
-              <p>
-                如果所有档位都太轻，曲线是平的，看不出趋势；都太重，则全部饱和。理想情况是档位覆盖从「几乎无影响」到「明显失效」的完整区间。看到结果后调整档位是正常流程。
-              </p>
-            </div>
-          </div>
-
-          <div class="pitfall">
-            <span class="pn">06</span>
-            <div>
-              <h4>事后挑阈值</h4>
-              <p>
-                判据一旦放出来，就要在跑之前写死。若结果出来后才选定「哪个强度算失效」，结论就不可信了——这也是评审最容易质疑的地方。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <style>
-          .pitfall {
-            display: flex;
-            gap: 20px;
-            background: var(--card);
-            border: 1px solid var(--rule);
-            border-left: 3px solid var(--amber);
-            padding: 18px 24px;
-            margin-bottom: 12px;
-            box-shadow: var(--shadow);
-          }
-          .pn {
-            font-family: var(--font-mono);
-            font-size: 22px;
-            font-weight: 700;
-            color: rgba(169, 118, 28, 0.35);
-            line-height: 1;
-            flex-shrink: 0;
-            padding-top: 2px;
-          }
-          .pitfall h4 {
-            font-family: var(--font-display);
-            font-size: 16.5px;
-            font-weight: 600;
-            margin-bottom: 7px;
-            color: var(--ink);
-          }
-          .pitfall p {
-            font-size: 14.5px;
-            margin-bottom: 0;
-          }
-        </style>
-
-        <section id="refs">
-          <div class="sec-head">
-            <div class="sec-kicker">07 / References</div>
-            <h2>资料与数据</h2>
-          </div>
-
-          <h3>本阶段用到的数据</h3>
-          <table class="tbl">
-            <thead>
-              <tr>
-                <th style="width: 24%">资源</th>
-                <th>地址与说明</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>AST-Face 项目页</td>
-                <td>
-                  <a href="https://osf.io/xk4f6/" target="_blank" rel="noopener"
-                    >osf.io/xk4f6</a
-                  >
-                  &nbsp;OSF 公开项目，含数据使用协议
-                </td>
-              </tr>
-              <tr>
-                <td>AST-Face 数据论文</td>
-                <td>
-                  <a
-                    href="https://www.nature.com/articles/s41597-026-07098-2"
-                    target="_blank"
-                    rel="noopener"
-                    >Scientific Data 13, 735 (2026)</a
-                  >
-                  &nbsp;写明处理管线为 FLAME 拟合 + 边缘约束非刚性 ICP
-                </td>
-              </tr>
-              <tr>
-                <td>本地数据</td>
-                <td>
-                  <code>data/ASTFace_Public.zip</code>（1.4 GB，4562 个文件）与
-                  DUA 协议
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>后续阶段会用到的资源（现在不必处理）</h3>
-          <table class="tbl">
-            <thead>
-              <tr>
-                <th style="width: 24%">资源</th>
-                <th>地址与说明</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>FLAME 模型</td>
-                <td>
-                  <a
-                    href="https://flame.is.tue.mpg.de/"
-                    target="_blank"
-                    rel="noopener"
-                    >flame.is.tue.mpg.de</a
-                  >
-                  &nbsp;注册后即时下载，5023 顶点；用于构造带真值的合成验证集
-                </td>
-              </tr>
-              <tr>
-                <td>Bolkart &amp; Wuhrer (ICCV 2015)</td>
-                <td>
-                  被复现的基线方法，本地已有：<code
-                    >论文/bolkart/bolkart-iccv15.pdf</code
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>BU-3DFE</td>
-                <td>
-                  需申请。Bolkart 使用的数据库之一（其子集取 50 身份 × 7 表情）
-                </td>
-              </tr>
-              <tr>
-                <td>Bosphorus</td>
-                <td>需申请。Bolkart 使用的第二个数据库</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="callout" style="margin-top: 30px">
-            <div class="callout-title">阶段 3 完成后的唯一结论</div>
-            <p>
-              一句话即可：「E_COMP
-              能在索引破坏和坐标噪声下提供稳定的对应一致性信号，但必须结合几何保真约束，不能单独作为网络损失。」
-            </p>
-          </div>
-        </section>
-
-        <section id="next">
-          <div class="sec-head">
-            <div class="sec-kicker">08 / Beyond</div>
-            <h2>计划之外的后续事项</h2>
-            <p class="sec-intro">
-              本区块收录<strong>不属于阶段 0–3 完成条件</strong
-              >的事项：可选扩展与后续阶段预告。各阶段的必做项已收在其所属区块内，例如阶段
-              2 的 <a href="#s26">S2.6</a>。
-            </p>
-          </div>
-
-          <details class="fold-wide">
-            <summary>可选扩展</summary>
-            <div class="fold-body">
-              <h4>覆盖度补齐</h4>
-              <ul>
-                <li>9 种 AU 状态纳入（当前仅 7 个状态）</li>
-                <li>单样本置换覆盖更多身份（当前仅 ast001）</li>
-              </ul>
-              <p>
-                这两项<strong>不阻塞阶段 3 的判定</strong>，可在阶段 3
-                完成后按需扩展。纳入 AU 状态时需要重新冻结
-                <code>reference_variance</code>，新数值与当前结果不可直接比较。
-              </p>
-            </div>
-          </details>
-
-          <details class="fold-wide">
-            <summary>后续阶段预告</summary>
-            <div class="fold-body">
-              <table class="tbl">
-                <thead>
-                  <tr>
-                    <th style="width: 14%">阶段</th>
-                    <th>内容</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>阶段 4</td>
-                    <td>
-                      复现 Bolkart 基线（TPS，不含神经网络），建立干净对照
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>阶段 5</td>
-                    <td>
-                      神经残差场：比较几何损失、E_COMP 单独和几何约束 + E_COMP
-                      的复合目标——<strong>神经网络首次登场</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>阶段 6</td>
-                    <td>可微码率：学习熵模型，直接优化编码代价</td>
-                  </tr>
-                  <tr>
-                    <td>阶段 7</td>
-                    <td>完整 MDL：模型代价 + 数据代价</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p>
-                进入后续网络实验前，必须冻结训练身份的参考统计，按身份划分验证集，并预先写入几何保真约束；阶段
-                3 只支持 E_COMP 作为辅助信号，不支持单独优化。
-              </p>
-            </div>
-          </details>
-        </section>
+        <p class="fold-note">
+          完整历史（v1–v4 逐轮记录）保留在 <code>code/reports/stage3_s36_v5_final/s36_v1_v4_history.html</code>；各轮原始产物仍留在 <code>code/reports/</code> 下的对应目录中。
+        </p>
+      </section>
       </main>
     </div>
 
@@ -3427,7 +3147,7 @@
           pct.textContent = Math.round(ratio * 100) + "%";
           document.title =
             (done ? "(" + done + "/" + boxes.length + ") " : "") +
-            "实验执行计划 · 阶段 0 至 3";
+            "实验执行计划 · 阶段 0 至 3（已暂停投入）";
         }
 
         boxes.forEach(function (b) {
