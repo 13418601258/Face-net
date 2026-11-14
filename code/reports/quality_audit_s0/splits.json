@@ -1,0 +1,28 @@
+{
+  "development": [
+    "ast001",
+    "ast002",
+    "ast003",
+    "ast004",
+    "ast005",
+    "ast006",
+    "ast007",
+    "ast008",
+    "ast009",
+    "ast010",
+    "ast011",
+    "ast012",
+    "ast013",
+    "ast014",
+    "ast015"
+  ],
+  "held_out": [
+    "ast016",
+    "ast017",
+    "ast018",
+    "ast019",
+    "ast020"
+  ],
+  "unit": "subject",
+  "inheritance": "all expressions, perturbations and seeds"
+}

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>三维人脸稠密对应质量审核研究报告</title>
+<style>
+:root{
+  --ink:#162b3b;--ink2:#435767;--muted:#6e7f89;--paper:#f7f9f8;--white:#fff;
+  --line:#d9e2e0;--teal:#146b67;--teal2:#e8f3f1;--coral:#ad4938;--coral2:#fbefec;
+  --gold:#8a6417;--gold2:#f7f1df;--blue:#315f8b;--blue2:#edf3f8;
+  --display:"Palatino Linotype",Palatino,"Noto Serif SC","SimSun",serif;
+  --body:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+  --mono:Consolas,"Cascadia Code","Courier New",monospace;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.78 var(--body)}
+.page{max-width:1080px;margin:0 auto;padding:0 30px 78px}
+.hero{padding:64px 0 34px;border-bottom:2px solid var(--ink)}
+.eyebrow{color:var(--teal);font:700 12px/1.4 var(--mono);text-transform:uppercase}
+h1,h2{font-family:var(--display);font-weight:650}
+h1{font-size:38px;line-height:1.25;margin:13px 0 14px;max-width:850px}
+.lead{font-size:17px;line-height:1.75;color:var(--ink2);max-width:900px;margin:0}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border:1px solid var(--line);border-radius:4px;background:var(--white);font-size:12px;color:var(--ink2)}
+.badge strong{color:var(--teal)}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 0}
+.nav a{font-size:13px;color:var(--teal);text-decoration:none;border-bottom:1px solid #9abbb7;padding:2px 0}
+.nav a:hover{color:var(--coral);border-color:var(--coral)}
+section{margin-top:48px;scroll-margin-top:18px}
+.section-head{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:18px}
+.num{font:700 12px var(--mono);color:var(--coral)}
+h2{font-size:27px;line-height:1.3;margin:0}
+h3{font-size:17px;line-height:1.45;margin:18px 0 7px}
+h4{font-size:14px;margin:16px 0 6px;color:var(--teal)}
+p{margin:9px 0}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:5px;padding:20px 23px;margin:12px 0}
+.panel.teal{border-left:4px solid var(--teal)}.panel.coral{border-left:4px solid var(--coral)}.panel.gold{border-left:4px solid var(--gold)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.tile{padding:16px 17px;background:var(--white);border:1px solid var(--line);border-radius:5px}
+.tile h3{margin:2px 0 7px}
+.tile p{color:var(--ink2);font-size:14px}
+.label{display:inline-block;font:700 11px var(--mono);padding:3px 8px;border-radius:3px;margin-bottom:7px}
+.label.teal{color:var(--teal);background:var(--teal2)}.label.coral{color:var(--coral);background:var(--coral2)}.label.gold{color:var(--gold);background:var(--gold2)}.label.blue{color:var(--blue);background:var(--blue2)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:13px 0;background:var(--white)}
+th,td{padding:10px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{color:#fff;background:var(--ink);font-size:12px;font-weight:650}
+tbody tr:nth-child(even){background:#f5f8f7}
+code{font:12px var(--mono);background:#edf1ef;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}
+.eq{overflow-x:auto;background:#f1f5f3;border:1px solid var(--line);border-radius:4px;padding:13px 16px;margin:13px 0;font:14px/1.75 var(--mono);white-space:pre;}
+.eq .comment{color:var(--muted)}
+.flow{background:var(--white);border:1px solid var(--line);border-radius:5px;padding:15px;overflow:hidden}
+svg{display:block;width:100%;height:auto}svg text{font-family:var(--body);fill:var(--ink2);font-size:13px}
+.caption{font-size:12px;color:var(--muted);margin-top:7px}
+.callout{padding:15px 17px;background:var(--teal2);border-radius:4px;margin:13px 0}
+.warning{padding:15px 17px;background:var(--coral2);border-radius:4px;margin:13px 0}
+.muted{font-size:13px;color:var(--muted)}
+.formula-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.step{display:grid;grid-template-columns:54px 1fr;gap:13px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:0}.stepno{font:700 13px var(--mono);color:var(--coral);padding-top:3px}
+.step h3{margin:0 0 5px}.step p{margin:5px 0;color:var(--ink2)}
+.status{font-size:11px;font-weight:700;border:1px solid currentColor;border-radius:3px;padding:2px 7px;margin-left:6px;white-space:nowrap}
+.status.known{color:var(--teal)}.status.proposed{color:var(--gold)}
+.result-row{display:grid;grid-template-columns:145px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.result-row:last-child{border-bottom:0}.result-key{font-weight:700;color:var(--ink)}.result-value{color:var(--ink2)}
+ol,ul{padding-left:22px;margin:8px 0}li{margin:5px 0}
+footer{border-top:1px solid var(--line);margin-top:55px;padding-top:18px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:760px){.page{padding:0 17px 54px}.hero{padding-top:40px}h1{font-size:30px}h2{font-size:23px}.grid2,.grid3{grid-template-columns:1fr}.panel{padding:17px}.result-row{grid-template-columns:1fr;gap:3px}.step{grid-template-columns:42px 1fr}.eq{font-size:12px}}
+@media print{body{background:#fff}.page{max-width:none;padding:0}.nav{display:none}.panel,.tile,.flow{break-inside:avoid}.hero{padding-top:20px}section{break-inside:auto}}
+</style>
+</head>
+<body>
+<main class="page">
+<header class="hero">
+  <div class="eyebrow">Research Direction · 3D Correspondence Quality</div>
+  <h1>三维人脸稠密对应质量审核与人工复核筛选</h1>
+  <p class="lead">本报告把 Sobolev 形状度量、局部几何失真、曲率、自交检测和对应一致性整合为一个可检验的研究方向。核心任务不是再训练一个对应生成器，而是在模型输出后判断它是否可信、错误在哪里、哪些样本值得人工复核。</p>
+  <div class="badges">
+    <span class="badge">研究对象 <strong>对应模型输出</strong></span>
+    <span class="badge">学习任务 <strong>风险评分与区域定位</strong></span>
+    <span class="badge">第一应用 <strong>人脸网格稠密对应</strong></span>
+    <span class="badge">研究状态 <strong>假设待验证</strong></span>
+  </div>
+  <nav class="nav" aria-label="报告章节">
+    <a href="#claim">主张</a><a href="#steps">步骤</a><a href="#results">结果</a><a href="#decision">判定标准</a><a href="#references">参考</a>
+  </nav>
+</header>
+
+<section id="claim">
+  <div class="section-head"><span class="num">01</span><h2>主张</h2></div>
+  <div class="panel teal">
+    <p><strong>拟研究主张：</strong>不同类型的对应失败会留下不同的局部几何与映射一致性信号。把这些可解释信号输入面片级或顶点级神经网络，可以在稠密真值不可用或不完整时，估计对应输出的风险、定位可疑区域，并将有限人工复核资源优先分配给高风险结果。</p>
+    <p>该系统作为对应生成模型之后的质量审核器。它预测质量与失败风险，不通过质量分数反向驱动对应变形。</p>
+  </div>
+  <div class="flow">
+    <svg viewBox="0 0 960 270" role="img" aria-label="质量审核流程图">
+      <defs><marker id="arrow" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#6e7f89"/></marker></defs>
+      <rect x="18" y="88" width="150" height="80" rx="5" fill="#edf3f8" stroke="#315f8b" stroke-width="1.5"/><text x="93" y="119" text-anchor="middle" font-weight="700">对应模型输出</text><text x="93" y="143" text-anchor="middle">网格 + 映射 f</text>
+      <rect x="220" y="35" width="190" height="75" rx="5" fill="#e8f3f1" stroke="#146b67" stroke-width="1.5"/><text x="315" y="66" text-anchor="middle" font-weight="700">确定性几何探针</text><text x="315" y="89" text-anchor="middle">应变 / 曲率 / 退化 / 碰撞</text>
+      <rect x="220" y="148" width="190" height="75" rx="5" fill="#f7f1df" stroke="#8a6417" stroke-width="1.5"/><text x="315" y="179" text-anchor="middle" font-weight="700">映射一致性检查</text><text x="315" y="202" text-anchor="middle">邻域 / 覆盖 / 循环 / 语义</text>
+      <line x1="168" y1="110" x2="220" y2="83" stroke="#6e7f89" stroke-width="1.6" marker-end="url(#arrow)"/><line x1="168" y1="145" x2="220" y2="182" stroke="#6e7f89" stroke-width="1.6" marker-end="url(#arrow)"/>
+      <rect x="465" y="88" width="185" height="80" rx="5" fill="#e8f3f1" stroke="#146b67" stroke-width="1.5"/><text x="557" y="119" text-anchor="middle" font-weight="700">质量评估网络</text><text x="557" y="143" text-anchor="middle">Mesh GNN / Transformer</text>
+      <line x1="410" y1="73" x2="465" y2="112" stroke="#6e7f89" stroke-width="1.6" marker-end="url(#arrow)"/><line x1="410" y1="186" x2="465" y2="146" stroke="#6e7f89" stroke-width="1.6" marker-end="url(#arrow)"/>
+      <rect x="710" y="35" width="220" height="75" rx="5" fill="#fbefec" stroke="#ad4938" stroke-width="1.5"/><text x="820" y="66" text-anchor="middle" font-weight="700">局部风险图</text><text x="820" y="89" text-anchor="middle">定位面片 / 解剖区域</text>
+      <rect x="710" y="148" width="220" height="75" rx="5" fill="#edf3f8" stroke="#315f8b" stroke-width="1.5"/><text x="820" y="179" text-anchor="middle" font-weight="700">复核优先级</text><text x="820" y="202" text-anchor="middle">样本分数 + 置信度</text>
+      <line x1="650" y1="113" x2="710" y2="78" stroke="#6e7f89" stroke-width="1.6" marker-end="url(#arrow)"/><line x1="650" y1="145" x2="710" y2="182" stroke="#6e7f89" stroke-width="1.6" marker-end="url(#arrow)"/>
+      <text x="480" y="255" text-anchor="middle" fill="#6e7f89">质量探针提供可解释证据；网络学习它们与真实失败、下游风险之间的关系</text>
+    </svg>
+    <p class="caption">图 1. 计划中的审核流程。质量分数应保留多维输出，不能只依赖一个加权总分。</p>
+  </div>
+
+  <h3>1.1 研究对象与目标边界</h3>
+  <div class="grid2">
+    <article class="tile"><span class="label teal">研究对象</span><h3>输出后的质量控制</h3><p>输入是已有对应算法产生的网格形变或稠密映射；输出是样本级风险、局部风险热图、可能失败类型和复核建议。</p></article>
+    <article class="tile"><span class="label coral">不作为目标</span><h3>不直接优化对应</h3><p>不把紧致性、Sobolev 能量或质量分类分数直接当作对应网络的训练目标，避免质量代理成为错误的优化方向。</p></article>
+  </div>
+
+  <h3>1.2 三个概念不能混为一谈</h3>
+  <table>
+    <thead><tr><th>对象</th><th>数学含义</th><th>本研究中的用途</th><th>不能推出什么</th></tr></thead>
+    <tbody>
+      <tr><td>Sobolev 度量</td><td>定义形变速度的内积，并可通过路径长度定义形状间距离</td><td>理解平滑形变、正则性和形状空间邻近关系</td><td>不能单独证明语义对应正确或没有自交</td></tr>
+      <tr><td>几何能量 / 质量泛函</td><td>对给定映射 f 计算一个或多个失真量</td><td>作为审核特征或独立门禁</td><td>不自动满足距离公理，也不代表整体质量</td></tr>
+      <tr><td>曲面拓扑</td><td>连通、边界、孔洞、亏格等离散结构</td><td>检测网格结构改变及映射邻接异常</td><td>标准人脸拓扑大多相同，Betti 数难区分细微对应错误</td></tr>
+    </tbody>
+  </table>
+  <div class="warning"><strong>关键定位：</strong>“度量诱导拓扑”指距离在形状空间上定义邻域；它不是用度量推导人脸表面的拓扑类别。若把参数化映射商掉，甚至可能把本研究要检查的对应差异一并抹去。</div>
+
+  <h3>1.3 候选几何探针</h3>
+  <p>公式中的各项先作为独立的可解释检查量，不预先合并成单一质量分。</p>
+  <div class="eq">E_strain(f) = ∫_M || log(ḡ^(-1/2) g_f ḡ^(-1/2)) ||_F² dA_ḡ
+
+E_curv(f)   = ∫_M || II_f - IĪ ||²_(ḡ, ambient) dA_ḡ
+
+E_collision(f) = 非邻接面片相交 / 穿透深度 / 相交面积的检测或惩罚
+
+q_geom(f) = [E_strain, E_curv, E_collision,
+             面片退化率, 局部 Jacobian 奇异值, 法向异常率]</div>
+  <div class="grid3">
+    <article class="tile"><span class="label teal">内在几何</span><h3>度量应变</h3><p><code>g_f=f*δ</code> 描述形变后的第一基本形式；对数项总结局部主方向拉伸。它对坐标表述较稳健，但纯等距弯曲可能不明显。</p></article>
+    <article class="tile"><span class="label gold">外在几何</span><h3>第二基本形式</h3><p>反映弯曲差异。比较前需要统一刚体坐标、参数化与法向方向，并区分合法表情弯曲和错误形变。</p></article>
+    <article class="tile"><span class="label coral">有效性</span><h3>碰撞与退化</h3><p>统计自交、穿透、近零面积和极端拉伸。软碰撞惩罚不能替代显式的三角形相交检测。</p></article>
+  </div>
+  <div class="panel gold"><h3>另一个 Sobolev 量：路径平滑性</h3><div class="eq">G_f(h,k) = ∫_M [⟨h,k⟩ + ℓ²⟨∇^f h, ∇^f k⟩] dA_f
+d_S(F₀,F₁) = inf_{f(0)∈F₀, f(1)∈F₁} ∫₀¹ √G_f(f_t,f_t) dt</div><p>这是形变速度上的度量及其路径距离，和上面的静态 <code>E_strain(f)</code> 不是同一个东西。Sobolev 论文证明其特定形状空间中，至少达到 H¹ 强度可避免测地距离退化为零；但低阶 Sobolev 距离不必控制点的最大位移。落到人脸对应时，还必须注意：对 Diff(M) 取商会忽略参数化，而参数化正是对应信息的一部分。</p></div>
+</section>
+
+<section id="steps">
+  <div class="section-head"><span class="num">02</span><h2>步骤</h2></div>
+  <div class="panel">
+    <div class="step" id="s0"><div class="stepno">S0</div><div><h3>固定对象表示与审核范围 <span class="status known">已执行 · 2026-11-14</span></h3><p>第一轮限定共享模板拓扑上的人脸网格及对应/形变结果；只读取已解压的 AST-Face。以 ast001 中性脸固定编号与连接关系，以每个身份自己的中性脸作为表情形变参考。保留个体尺度，每个身份仅拟合一次无反射刚体变换并保存正逆参数，不改写、平滑或修复原始网格；重采样及点云重建暂不纳入。</p><p><strong>实测：</strong>ast001–ast020 共 320 个网格、300 个形变数组、320 个关键点文件，共 940 个资产；320 个样本均通过本轮输入检查。网格均为 33,390 顶点、66,190 三角面，有序拓扑哈希一致；包含 590 条边界边、2 个边界环，允许开放边界，未检出退化面、重复面、非流形边、绕向冲突或未使用顶点。形变与“表情减中性”最大分量误差为 1.191×10<sup>−7</sup> 原始单位，刚体正逆变换最大分量误差为 3.553×10<sup>−15</sup>。</p><p><strong>固定划分：</strong>ast001–ast015 为开发集（240 样本），ast016–ast020 为留出集（80 样本）；同一身份的后续扰动与随机种子继承其划分。中性脸与六种基本表情共 140 个样本作为首轮探针验证子集；留出数据本轮只检查完整性，不用于阈值选择。</p><p><strong>限制：</strong>关键点均为 84 点，其包围盒对角线与网格之比约为 54.93–104.64；此比值不是精确的单位换算系数，暂不自动缩放或作为独立真值。尚未接入真实模型预测，也未进行自交、翻折、顶点邻域流形性或语义对应验证；S0 通过只说明可以开展 S1，不代表审核方法已有效。</p><p><strong>复现与输出：</strong>项目根目录运行 <code>python code/run_quality_s0.py</code>。已通过 5 项针对性测试及导出文件哈希、身份隔离、变换检查。详见 <a href="../../code/reports/quality_audit_s0/s0_protocol.json">输入协议</a>、<a href="../../code/reports/quality_audit_s0/assets.csv">资产清单</a>、<a href="../../code/reports/quality_audit_s0/sample_checks.csv">逐样本检查</a>、<a href="../../code/reports/quality_audit_s0/s0_validation.json">检查汇总</a>、<a href="../../code/reports/quality_audit_s0/transforms.json">正逆变换</a>及 <a href="../../code/reports/quality_audit_s0/splits.json">身份划分</a>。</p></div></div>
+    <div class="step" id="s1"><div class="stepno">S1</div><div><h3>实现确定性质量探针 <span class="status proposed">几何探针已完成 · 自交候选已导出</span></h3><p>对 ast001–ast020 的全部 320 个状态，以每个身份的中性脸为参考，计算面片曲面 Jacobian 的两个奇异值、面积比、三条边长比、法向点积/夹角和退化统计；每个样本另存面片级压缩数组。局部曲面 Jacobian 按 <code>3×2</code> 切平面映射处理，不使用普通三维行列式。</p><p><strong>几何实测：</strong>320/320 个样本可计算，0 个无效 Jacobian，0 个退化目标面；中性脸自比较的加权奇异值和面积比均为 1、法向角为 0。300 个表情状态中，法向夹角超过 45° 的面片累计 489,326 个，法向点积为负的面片累计 195,268 个；加权 <code>sigma_min</code> 的中位数为 0.885，加权 <code>sigma_max</code> 的中位数为 1.170，加权面积比中位数为 1.024。不同表情均出现这些变化，说明它们是候选特征，不能直接当作失败标签或翻折证明。各表情汇总见 <a href="../../code/reports/quality_audit_s1/state_summary.csv">状态汇总</a>。</p><p><strong>自交实测：</strong>采用中位数切分 BVH 做宽相位，再用 float64 三角形 SAT 与线段-平面/重心坐标窄相位；共享顶点或边的相邻面片被排除。320 个网格产生 7,233,252 个宽相位候选对，其中 154,305 个严格穿越候选、102,905 个接触候选、0 个共面重叠。结果对已知相交/不相交/共面/共享边样例、随机网格的 BVH 与暴力集合对比均通过；刚体变换不改变面片对集合。由于不同身份的中性网格结果差异很大，这些面片对仍是需要可视化和拓扑复核的几何候选，不直接作为对应错误标签。</p><p><strong>对应探针边界：</strong>当前没有真实模型的前向/反向映射，因此覆盖率和循环一致性记为 <code>not_applicable</code>；自交检测判断的是单个输出网格的几何有效性，不是对应语义正确性。</p><p><strong>复现与输出：</strong>运行 <code>python code/s1_probes.py --all-states</code> 计算几何探针，运行 <code>python code/run_self_intersection.py</code> 执行自交筛查。详见 <a href="../../code/reports/quality_audit_s1/s1_summary.json">S1 汇总</a>、<a href="../../code/reports/quality_audit_s1/sample_probes.csv">逐样本探针</a>、<a href="../../code/reports/quality_audit_s1/self_intersection/summary.json">自交汇总</a>、<a href="../../code/reports/quality_audit_s1/self_intersection/self_intersection.csv">逐网格自交统计</a>、<a href="../../code/reports/quality_audit_s1/self_intersection/intersection_pairs.csv">面片对</a>和 <code>code/reports/quality_audit_s1/face_metrics/</code> 面片数组；使用 <code>python -m unittest discover -s code -p "test_s1_probes.py" -v</code> 与 <code>python -m unittest discover -s code -p "test_self_intersection.py" -v</code> 可复核测试。</p></div></div>
+    <div class="step"><div class="stepno">S2</div><div><h3>制造可控错误并验证探针 <span class="status proposed">拟执行</span></h3><p>分别注入局部翻折、三角形压扁、局部置换、嘴角/眼睑偏移、平滑错误漂移、重复映射、自交和覆盖缺失；同时设置刚体变换、合法表情和高曲率区域作为误报控制。</p><p><strong>输出：</strong>每类错误的检出率、误报率、强度曲线与局部定位结果。不能用同一种错误同时选择阈值和报告最终效果。</p></div></div>
+    <div class="step"><div class="stepno">S3</div><div><h3>定义“需要人工复核”的监督目标 <span class="status proposed">拟执行</span></h3><p>这是对应质量检测的主要环节。它需要真实模型输出的前向映射 <code>f:X→Y</code>，最好同时有反向映射 <code>g:Y→X</code>，再把几何探针与具体后果绑定：稠密对应误差超过阈值、解剖关键区域错配、纹理/分割传递失败、前后向循环不一致，或模型间对应不稳定。标签可以分成样本级风险和面片/区域级风险。</p><p><strong>S1 与 S3 的关系：</strong>S1 的 Jacobian、法向变化、退化和自交候选只是输入特征；S3 才用真实对应输出、独立 landmark/人工复核或下游传递结果建立“对应是否正确”的监督目标。没有这些数据时，不能把 S1 的自交候选直接称为对应失败。</p><p><strong>数据边界：</strong>AST-Face 的共享拓扑和现有对应可用于构造对照及离线验证，但它不是无争议的绝对语义真值。需显式声明该假设，并用独立 landmark、人工复核或下游任务补充验证。</p></div></div>
+    <div class="step"><div class="stepno">S4</div><div><h3>训练质量评估网络 <span class="status proposed">拟执行</span></h3><p>以面片/顶点图神经网络或 mesh transformer 聚合局部探针和几何特征，输出多个维度：几何有效性、对应一致性、传递风险、局部风险概率及不确定度。采用样本级和身份级隔离划分，避免同一身份的变体泄漏到测试集。</p><p><strong>基线：</strong>单一翻折率、E_COMP、landmark 误差、逻辑回归/随机森林、只输入模型身份的基线。神经网络必须证明在这些基线上有增益。</p></div></div>
+    <div class="step"><div class="stepno">S5</div><div><h3>验证人工复核效用与泛化 <span class="status proposed">拟执行</span></h3><p>在留出身份、不同表情、不同随机种子以及至少一种不同来源的对应输出上评估。用风险覆盖曲线回答：只复核最高风险的 10% 或 20% 样本时，能找回多少真实失败、漏掉多少严重错误。</p><p><strong>目标：</strong>证明审核器减少人工检查量，同时把漏检风险控制在预先声明的范围，而不只是提升分类准确率。</p></div></div>
+  </div>
+  <h3>2.1 评价指标</h3>
+  <table><thead><tr><th>层面</th><th>建议指标</th><th>回答的问题</th></tr></thead><tbody>
+    <tr><td>探针检出</td><td>灵敏度、特异度、AUROC/AUPRC、错误强度曲线</td><td>单项几何量能否识别其目标缺陷？是否对正常变化误报？</td></tr>
+    <tr><td>对应质量</td><td>稠密误差排序相关、关键区域误差、特征传递误差</td><td>几何/拓扑探针是否与真实对应失败有关？</td></tr>
+    <tr><td>局部定位</td><td>区域 Top-k 命中、面片风险 IoU、定位召回率</td><td>能否告诉人工“哪里需要看”？</td></tr>
+    <tr><td>复核效用</td><td>风险覆盖曲线、固定漏检率下的复核比例、校准误差</td><td>是否减少人工工作量且没有隐藏严重失败？</td></tr>
+    <tr><td>泛化</td><td>身份留出、表情留出、模型/种子留出性能</td><td>网络是否学到失败信号，而不是记住人或生成器？</td></tr>
+  </tbody></table>
+</section>
+
+<section id="results">
+  <div class="section-head"><span class="num">03</span><h2>结果</h2></div>
+  <div class="panel teal">
+    <p><strong>当前可下的结论：</strong>方向在概念上可行，且比“只做翻折检测”更有研究空间；但新质量审核器尚未完成验证，不能把候选公式写成已证实的质量度量或论文贡献。</p>
+  </div>
+  <h3>3.1 已有依据</h3>
+  <div class="result-row"><div class="result-key">Sobolev 论文</div><div class="result-value">提供了在嵌入/浸入空间上定义 Sobolev 度量、路径距离和重参数化商空间的严格框架，并证明特定条件下测地距离不退化。它支持“用形变空间的几何来定义距离”，不支持“该距离等价于对应正确性”。</div></div>
+  <div class="result-row"><div class="result-key">对应综述</div><div class="result-value">把质量拆成真值误差、局部畸变、几何一致性、双射/连续性、拓扑和可视化/下游用途。它支持多轴评估，而非单一分数。</div></div>
+  <div class="result-row"><div class="result-key">SSRN 预印本</div><div class="result-value">显示确定性探针可以检测被明确定义的网格缺陷，但感知评分相关性弱、不同特征有交叉响应；几何有效性不能替代人工或语义判断。该文尚未同行评审，且研究对象是生成物体网格，不能直接外推到人脸对应。</div></div>
+  <div class="result-row"><div class="result-key">既有项目实验</div><div class="result-value">此前 E_COMP 作为优化目标使正确基线被推离，支持将其保留为候选审核信号而不作为对应网络的训练目标。旧报告中的稳定性和扰动结果仍需在真实对应输出、身份留出条件下补足。</div></div>
+
+  <h3>3.2 新方向预期交付物 <span class="status proposed">尚待实验</span></h3>
+  <div class="grid2">
+    <article class="tile"><h3>方法结果</h3><p>一组定义明确、可复现的几何与映射探针；一个输出样本风险和局部风险图的审核网络；一个面向人工复核的风险覆盖策略。</p></article>
+    <article class="tile"><h3>论文证据</h3><p>探针消融、错误类型分析、正常变化误报、模型/身份留出泛化、与简单基线比较，以及人工复核节省量与漏检风险。</p></article>
+  </div>
+
+  <h3>3.3 可能的论文贡献边界</h3>
+  <div class="callout"><strong>若实验通过，可主张：</strong>提出针对三维人脸稠密对应输出的多轴质量审核框架，证明局部几何与映射一致性特征能在特定留出条件下预测对应/传递失败，并以风险覆盖实验验证其人工复核价值。</div>
+  <div class="warning"><strong>不能预先声称：</strong>零翻折保证、全局无自交、拓扑被网络自动学会、无真值质量评价已经解决，或 Sobolev 能量本身就是对应正确性的标准答案。</div>
+</section>
+
+<section id="decision">
+  <div class="section-head"><span class="num">04</span><h2>判定标准</h2></div>
+  <div class="grid2">
+    <div class="panel teal"><span class="label teal">进入论文阶段</span><ul><li>审核器在身份留出测试上稳定优于 E_COMP、单一翻折率和简单分类基线。</li><li>至少一种局部风险图能够定位真实对应或下游传递失败区域。</li><li>结果跨随机种子、不同表情和至少两个模型/设置保持一致。</li><li>风险覆盖曲线显示可减少人工复核量，同时控制严重错误漏检。</li><li>正常刚体变化、合法表情和高曲率区域不会造成不可接受的误报。</li></ul></div>
+    <div class="panel coral"><span class="label coral">停止或收缩</span><ul><li>几何探针只能识别人工注入的合成错误，不能预测真实输出质量。</li><li>只在随机划分有效，身份留出后性能消失。</li><li>拓扑指标恒定，或提升完全由一个简单确定性门禁解释。</li><li>审核模型不能比人工 landmark 或单项几何检查提供额外复核价值。</li><li>提高召回必须付出大量误报，风险覆盖曲线没有实用操作点。</li></ul></div>
+  </div>
+  <p><strong>最小下一步：</strong>先不要训练复杂网络。选一批已有对应输出，完成“确定性探针 + 已知误差/传递失败对照 + 身份留出”的小实验。若这些信号无法预测真实失败，再决定是否值得训练审核网络。</p>
+</section>
+
+<section id="references">
+  <div class="section-head"><span class="num">05</span><h2>参考与阅读定位</h2></div>
+  <div class="panel">
+    <ol>
+      <li>Bauer, Harms, Michor. <em>Sobolev Metrics on Shape Space of Surfaces.</em> Journal of Geometric Mechanics, 3(4), 389–438, 2011. DOI: 10.3934/jgm.2011.3.389. 重点：Sobolev 度量定义、H¹ 非退化距离、低阶度量不控制 Fréchet 距离。</li>
+      <li>Heuschling, Meinhold, Kobbelt. <em>Establishing Shape Correspondences: A Survey.</em> Computer Graphics Forum, Eurographics 2026. 重点：质量指标、几何一致性、拓扑方面和可视化诊断。</li>
+      <li><em>Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets.</em> SSRN 7544212, preprint. 重点：探针的可检测范围、交叉响应、阈值与人工质量的区别。</li>
+      <li>本工作区既有记录：<em>三维人脸稠密对应的质量评估</em>及已停止的 MDL 驱动对应实验报告。既有失败结论可约束新方向的训练目标，但不等于新审核器已验证。</li>
+    </ol>
+    <p class="muted">本报告将论文结论、既有项目观察和新研究假设分开陈述。新方向所有性能结论均须由后续身份留出实验建立。</p>
+  </div>
+</section>
+
+<footer><span>三维人脸分析 · 研究方向报告</span><span>主张 / 步骤 / 结果 · 2026-11-13</span></footer>
+</main>
+</body>
+</html>

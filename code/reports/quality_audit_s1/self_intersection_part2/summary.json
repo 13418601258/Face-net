@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "stage": "S1_self_intersection",
+  "status": "CANDIDATE_SCREEN_COMPLETE",
+  "algorithm": "median-split triangle BVH broad phase + float64 triangle SAT and plane-intersection narrow phase",
+  "subjects": [
+    "ast006",
+    "ast007",
+    "ast008",
+    "ast009",
+    "ast010"
+  ],
+  "states": [
+    "au0",
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "au1",
+    "au4",
+    "au6",
+    "au9",
+    "au12",
+    "au18",
+    "au20",
+    "au27",
+    "au43"
+  ],
+  "sample_count": 80,
+  "parameters": {
+    "leaf_size": 8,
+    "contact_tolerance_relative": 1e-09
+  },
+  "totals": {
+    "candidate_pairs": 1909091,
+    "proper_crossing_pairs": 45475,
+    "coplanar_overlap_pairs": 0,
+    "touch_only_pairs": 28853,
+    "affected_faces": 51269
+  },
+  "notes": [
+    "Shared-index triangle pairs are excluded as expected local adjacency.",
+    "AABB is only broad phase; triangles are classified by SAT and explicit plane intersection.",
+    "Floating-point predicates are not exact arithmetic; small-geometry tests are in test_self_intersection.py.",
+    "All detected pairs are written with face indices for visual inspection.",
+    "This detects mesh self-intersection, not correspondence correctness."
+  ]
+}

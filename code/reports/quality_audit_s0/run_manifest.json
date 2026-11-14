@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-11-14T09:17:07.387997+00:00",
+  "python": "3.12.5",
+  "numpy": "1.26.4",
+  "command": [
+    "code/run_quality_s0.py"
+  ],
+  "sources": {
+    "code/run_quality_s0.py": "3e318a067d51b6429f70de1aa7d4b9c8530bd5c64d9b5f1b2f8c6519dd9adfc0",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3",
+    "code/s0_protocol.json": "adf9a5ff7db569c926a2687cd3d865695f3a5e6847773b0d88a277be8eedb075"
+  },
+  "outputs": {
+    "assets.csv": "bafb3473c2dba18a816a34d9e5e9fc0e5f727625f0fa032839a7c63681598440",
+    "s0_protocol.json": "4cf81b02e3ca3f58fa057003c487598050e34b0c54f431db6e10b3827bb3d04a",
+    "s0_validation.json": "2c94b19cbc84a730a9ae465fec0762b57502371e9de9b418192e1c9ad35f89db",
+    "sample_checks.csv": "2414f23c073da36fc0ca2ba3304ac4f59c15bb75b3d8a951b5f9b03e7f17f98c",
+    "splits.json": "7dd0bd5d994fd4e6f1440f3994a3ff0a6915c608950f81d0a064e879d23e3eed",
+    "transforms.json": "5d202d13084e0c874c8cefc63178283b18f57974a15b98f9349f0bbc52b4902a"
+  }
+}

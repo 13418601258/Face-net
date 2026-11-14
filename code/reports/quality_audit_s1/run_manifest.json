@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-11-14T10:40:59.135672+00:00",
+  "command": [
+    "python",
+    "code/s1_probes.py",
+    "--all-states"
+  ],
+  "sources": {
+    "code/s1_probes.py": "b5e7b15f310bea4972ff50408f9b1b6dd9fde5b55497a9bbb9413327cae4d77a",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3",
+    "code/s0_protocol.json": "adf9a5ff7db569c926a2687cd3d865695f3a5e6847773b0d88a277be8eedb075"
+  },
+  "outputs": {
+    "code/reports/quality_audit_s1/collision_candidates.csv": "cc78daa55b439f8b60eaa1feb0f289dff8a694ef9d16dce37af7648e2858115f",
+    "code/reports/quality_audit_s1/s1_summary.json": "b24436131e6ad9e19cca0633c32ab773df9bb99fb691867b1f7a6c0e2ef2e388",
+    "code/reports/quality_audit_s1/sample_probes.csv": "58047344dbf50447bb56764b92cfd4199feffd517cf93f3e434324478c2f2f15",
+    "code/reports/quality_audit_s1/state_summary.csv": "adce4dd58a901eb4beaf705e5122e5f46eb542dd0b71ef5263db6dd648f07061"
+  }
+}

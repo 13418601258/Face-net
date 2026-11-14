@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-11-14T12:02:14.263232+00:00",
+  "command": [
+    "aggregate",
+    "self_intersection_part1..4"
+  ],
+  "sources": {
+    "code/run_self_intersection.py": "a504ae068786a4e62395d742dbc35e9644a4125490d401ded33bd1267e712d38",
+    "code/self_intersection.py": "2f91511ed735d69eff378a56fc057ba38b67625c05b73936c6cb46b7ad5c34c2",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3",
+    "code/s0_protocol.json": "adf9a5ff7db569c926a2687cd3d865695f3a5e6847773b0d88a277be8eedb075"
+  },
+  "outputs": {
+    "code/reports/quality_audit_s1/self_intersection/intersection_pairs.csv": "91fcbb15531e7858ca3a61381d2ee40f53a4f32cc1ac23f1d66c9a46641197c3",
+    "code/reports/quality_audit_s1/self_intersection/self_intersection.csv": "cfaa462aaae58a975b03bcb218a5e7ee8c80d0d3d88f94605851cfb9ea2832fb",
+    "code/reports/quality_audit_s1/self_intersection/state_summary.csv": "4e4102e545c92fb4588a6694b06beeaba82bf31eb0244cd05f73a7b94cf286d9",
+    "code/reports/quality_audit_s1/self_intersection/summary.json": "9f585bcc4a78da802c2d4e54f8e49527f44d041cc2238d41b5174b9f87d765b5"
+  }
+}

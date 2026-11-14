@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "stage": "S0",
+  "status": "PASS",
+  "meaning": "input-contract and integrity readiness only; not semantic quality or model performance",
+  "summary": {
+    "subjects": 20,
+    "samples": 320,
+    "assets": 940,
+    "asset_kinds": {
+      "deformation": 300,
+      "landmarks": 320,
+      "mesh": 320
+    },
+    "sample_status": {
+      "pass": 320
+    },
+    "split_samples": {
+      "development": 240,
+      "held_out": 80
+    },
+    "pilot_samples": 140,
+    "unique_topologies": 1,
+    "issue_counts": {},
+    "missing_samples": [],
+    "deformation_max_abs_error_native": 1.1907958996637547e-07,
+    "landmark_bbox_ratio_range": [
+      54.925793272492314,
+      104.64426006891924
+    ]
+  },
+  "reference_topology_hash": "57d942f8a95e181a56aaf587a2d4df9cb5a61885185c2646f470d273235a0b64",
+  "topologies": {
+    "57d942f8a95e181a56aaf587a2d4df9cb5a61885185c2646f470d273235a0b64": {
+      "vertex_count": 33390,
+      "face_count": 66190,
+      "edge_count": 99580,
+      "boundary_edges": 590,
+      "boundary_components": 2,
+      "boundary_vertices_degree_not_two": 0,
+      "nonmanifold_edges": 0,
+      "inconsistent_winding_edges": 0,
+      "duplicate_faces_ignoring_winding": 0,
+      "repeated_index_faces": 0,
+      "unused_vertices": 0,
+      "connected_components_including_unused": 1,
+      "euler_characteristic": 0,
+      "vertex_link_manifoldness": "not_checked; edge-manifoldness alone is insufficient"
+    }
+  },
+  "errors": [],
+  "unclassified_assets": [],
+  "limitations": [
+    "Dataset registration is a provisional reference, not independent correspondence ground truth.",
+    "Landmark physical units and coordinate frame are unverified; no automatic conversion or scoring.",
+    "No real model predictions or forward/backward maps have been supplied.",
+    "No self-intersection, fold or vertex-link manifoldness test in S0.",
+    "Held-out assets are checked for integrity only; no thresholds are fitted on them."
+  ]
+}

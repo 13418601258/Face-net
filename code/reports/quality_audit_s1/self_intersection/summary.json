@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "stage": "S1_self_intersection",
+  "status": "CANDIDATE_SCREEN_COMPLETE",
+  "algorithm": "median-split triangle BVH broad phase + float64 triangle SAT and plane-intersection narrow phase",
+  "sample_count": 320,
+  "pair_record_count": 257210,
+  "parameters": {
+    "leaf_size": 8,
+    "contact_tolerance_relative": 1e-09
+  },
+  "totals": {
+    "candidate_pairs": 7233252,
+    "proper_crossing_pairs": 154305,
+    "coplanar_overlap_pairs": 0,
+    "touch_only_pairs": 102905,
+    "affected_faces": 177507
+  },
+  "normal_control": {
+    "ast005_au0_proper_crossing_pairs": 0,
+    "ast005_au0_touch_only_pairs": 0
+  },
+  "notes": [
+    "Shared-index triangle pairs are excluded as expected local adjacency.",
+    "AABB is broad phase; narrow phase uses float64 SAT plus explicit segment-plane/barycentric checks.",
+    "Small known-case and random BVH-vs-brute-force tests pass.",
+    "Normal and state variation is large; reported crossings are geometric candidates requiring visual/topological review, not semantic correspondence labels.",
+    "This detects mesh self-intersection, not correspondence correctness."
+  ]
+}

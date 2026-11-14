@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "experiment": "dense_face_correspondence_quality_audit_s0",
+  "data_dir": "data/ASTFace_Public",
+  "output_dir": "code/reports/quality_audit_s0",
+  "subjects": [
+    "ast001",
+    "ast002",
+    "ast003",
+    "ast004",
+    "ast005",
+    "ast006",
+    "ast007",
+    "ast008",
+    "ast009",
+    "ast010",
+    "ast011",
+    "ast012",
+    "ast013",
+    "ast014",
+    "ast015",
+    "ast016",
+    "ast017",
+    "ast018",
+    "ast019",
+    "ast020"
+  ],
+  "expected_states": [
+    "au0",
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "au1",
+    "au4",
+    "au6",
+    "au9",
+    "au12",
+    "au18",
+    "au20",
+    "au27",
+    "au43"
+  ],
+  "pilot_states": [
+    "au0",
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise"
+  ],
+  "development_subjects": [
+    "ast001",
+    "ast002",
+    "ast003",
+    "ast004",
+    "ast005",
+    "ast006",
+    "ast007",
+    "ast008",
+    "ast009",
+    "ast010",
+    "ast011",
+    "ast012",
+    "ast013",
+    "ast014",
+    "ast015"
+  ],
+  "held_out_subjects": [
+    "ast016",
+    "ast017",
+    "ast018",
+    "ast019",
+    "ast020"
+  ],
+  "template_subject": "ast001",
+  "neutral_state": "au0",
+  "deformation_absolute_tolerance_native": 2e-06,
+  "degenerate_twice_area_relative_to_bbox_squared": 1e-12,
+  "representation": {
+    "X_F": "ast001 neutral supplies the common vertex numbering and ordered oriented connectivity; it is not an anatomical ideal",
+    "expression_reference": "each subject's own neutral geometry, with shared connectivity",
+    "Y": "observed target surface, stored separately from the predicted correspondence",
+    "Z": "predicted mapped source vertices f(X), retaining source connectivity F; not available from an actual model in this S0",
+    "baseline": "dataset registered meshes are reference controls, not absolute semantic ground truth",
+    "array_dtype": "float64 coordinates; int64 zero-based triangle vertex indices",
+    "units": "native units, physical calibration unverified",
+    "topology_hash": "SHA256 of little-endian int64 [vertex_count, face_count] and exact ordered zero-based face array; preserves winding",
+    "missing": "record null/not_applicable, never impute"
+  },
+  "preprocessing": {
+    "scale": "preserve individual native scale; no per-sample size normalization",
+    "alignment": "one proper rigid transform per subject, fitted from its neutral to ast001 neutral; apply the same transform to all its expressions and associated target/prediction geometry when needed",
+    "landmarks": "native landmark frame is not assumed compatible; do not apply mesh transforms or use as independent ground truth before separate validation",
+    "transform_convention": "row vectors: aligned = native @ R + t; native = aligned @ R.T - t @ R.T; vectors transform by R only",
+    "materialization": "save forward/inverse transforms and verification statistics only; do not write aligned or repaired meshes",
+    "forbidden": [
+      "reflection",
+      "scaling",
+      "smoothing",
+      "automatic repair",
+      "vertex reordering",
+      "face reordering",
+      "remeshing",
+      "resampling"
+    ]
+  },
+  "scope": {
+    "allowed_controls": [
+      "proper rigid pose",
+      "dataset expressions as provisional normal controls",
+      "native identity size variation"
+    ],
+    "not_in_s0": [
+      "self-intersection detection",
+      "fold detection",
+      "semantic correspondence validation",
+      "learning",
+      "resampling robustness",
+      "open-surface shape-space theorem claims"
+    ],
+    "boundary_policy": "open facial boundaries are permitted and reported; boundary existence alone is not a defect",
+    "split_policy": "all expressions, corruptions and seeds of one subject inherit its split; held-out subjects never tune thresholds",
+    "model_outputs_available": false,
+    "independent_semantic_ground_truth_available": false
+  }
+}

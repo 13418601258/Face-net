@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-11-14T12:00:07.120480+00:00",
+  "command": [
+    "code/run_self_intersection.py",
+    "--subjects",
+    "ast006",
+    "ast007",
+    "ast008",
+    "ast009",
+    "ast010",
+    "--output-dir",
+    "code/reports/quality_audit_s1/self_intersection_part2"
+  ],
+  "sources": {
+    "code/run_self_intersection.py": "a504ae068786a4e62395d742dbc35e9644a4125490d401ded33bd1267e712d38",
+    "code/self_intersection.py": "2f91511ed735d69eff378a56fc057ba38b67625c05b73936c6cb46b7ad5c34c2",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3",
+    "code/s0_protocol.json": "adf9a5ff7db569c926a2687cd3d865695f3a5e6847773b0d88a277be8eedb075"
+  },
+  "outputs": {
+    "code/reports/quality_audit_s1/self_intersection_part2/intersection_pairs.csv": "e9fc4d565f24f0b884caad79916b16a1318b6f5bde052a6d77c8a2c9d86ae146",
+    "code/reports/quality_audit_s1/self_intersection_part2/self_intersection.csv": "7d9649dc63a0cae64a2a64cfe0611aff0a3e2beeafbea40665711bdd62388d4c",
+    "code/reports/quality_audit_s1/self_intersection_part2/summary.json": "049b3770e5b30f784f3a31bdf23382100552c2d1e35d779e810420e678785d75"
+  }
+}

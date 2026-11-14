@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "stage": "S1",
+  "status": "PARTIAL",
+  "meaning": "deterministic geometric probe outputs; thresholds are descriptive, not quality labels",
+  "states": [
+    "au0",
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "au1",
+    "au4",
+    "au6",
+    "au9",
+    "au12",
+    "au18",
+    "au20",
+    "au27",
+    "au43"
+  ],
+  "sample_count": 320,
+  "collision_mode": "not_run",
+  "mapping_dependent": {
+    "coverage": "not_applicable",
+    "cycle_consistency": "not_applicable"
+  },
+  "normal_interpretation": "normal reversal and angle are changes against each subject neutral, not proof of a fold; legal facial expression can be large",
+  "reference": "each subject's neutral mesh; shared topology is checked, not semantic truth",
+  "limitations": [
+    "AABB overlaps are candidates and require exact triangle intersection confirmation.",
+    "No forward/backward predicted mapping is present, so coverage and cycle probes are not run.",
+    "No S1 threshold turns a legal expression into a failure label.",
+    "Landmarks are not used as independent ground truth."
+  ],
+  "counts": {
+    "development": 240,
+    "held_out": 80,
+    "neutral": 20,
+    "expressions": 300
+  },
+  "topology_hashes": [
+    "57d942f8a95e181a56aaf587a2d4df9cb5a61885185c2646f470d273235a0b64"
+  ],
+  "completed_probes": [
+    "surface_jacobian_singular_values",
+    "area_ratio",
+    "edge_length_ratio",
+    "normal_change",
+    "degeneracy"
+  ],
+  "pending_probes": [
+    "exact_triangle_self_intersection",
+    "coverage",
+    "cycle_consistency"
+  ]
+}
