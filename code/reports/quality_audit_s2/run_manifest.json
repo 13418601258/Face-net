@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-15T09:31:27.639481+00:00",
+  "command": [
+    "code/s2_experiment.py"
+  ],
+  "sources": {
+    "code/s2_experiment.py": "71d9231d97eec6989f955fbb11e9304e22ef1b8de5a964afabf354e001cf530a",
+    "code/s1_probes.py": "b5e7b15f310bea4972ff50408f9b1b6dd9fde5b55497a9bbb9413327cae4d77a",
+    "code/self_intersection.py": "2f91511ed735d69eff378a56fc057ba38b67625c05b73936c6cb46b7ad5c34c2",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3",
+    "code/s0_protocol.json": "adf9a5ff7db569c926a2687cd3d865695f3a5e6847773b0d88a277be8eedb075"
+  },
+  "outputs": {
+    "code/reports/quality_audit_s2/alert_summary.csv": "9619137c4e900600ef2bf4ba3ac92c407031ad9f80e8be5fdefbd2398daaaf74",
+    "code/reports/quality_audit_s2/localization_results.csv": "2261b3c8e2ce23ae10f08e6d9eb53b297ddcd1505c7e4b7e1caacbf8a2247f81",
+    "code/reports/quality_audit_s2/s2_validation.json": "941ccfdb905f5884c86486f92a1897754271826713fb784b3971269f24dc00d7",
+    "code/reports/quality_audit_s2/sample_results.csv": "ab8fd982f8fde1e46f9a68d653117ca2cde0cf53f59ef93fcb35d71e5c63a3b5",
+    "code/reports/quality_audit_s2/severity_curves.csv": "efa7b94904b7c9c41ef205ece796e6fdcc4ca75d3c0ace576ad875d9d6b9ea65"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "stage": "S2",
+  "status": "RUN_COMPLETE",
+  "seed": 20261115,
+  "subjects": [
+    "ast001",
+    "ast002",
+    "ast003",
+    "ast004",
+    "ast005",
+    "ast006",
+    "ast007",
+    "ast008",
+    "ast009",
+    "ast010",
+    "ast011",
+    "ast012",
+    "ast013",
+    "ast014",
+    "ast015",
+    "ast016",
+    "ast017",
+    "ast018",
+    "ast019",
+    "ast020"
+  ],
+  "expression_states": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise"
+  ],
+  "split_policy": "subject split from S0; no thresholds tuned on held-out subjects",
+  "mapping_assumption": "AST-Face shared vertex indexing is treated as synthetic correspondence oracle only",
+  "normal_controls": {
+    "clean_neutral": 20,
+    "clean_expression": 120,
+    "rigid_invariance": 20
+  },
+  "corruption_counts": {
+    "local_collapse": 360,
+    "local_fold": 360,
+    "local_permutation": 360,
+    "smooth_drift": 360,
+    "duplicate_mapping": 360,
+    "coverage_missing": 360
+  },
+  "sample_count": 2320,
+  "localization_rows": 13920,
+  "self_intersection_controls": [
+    {
+      "case": "two_nonadjacent_triangles_with_known_crossing",
+      "expected_crossing_pairs": 1,
+      "detected_crossing_pairs": 1,
+      "candidate_pairs": 1,
+      "pass": true
+    },
+    {
+      "case": "known_crossing_in_full_AST_mesh",
+      "sample_id": "ast005_au0",
+      "expected_face_pair": [
+        1000,
+        2000
+      ],
+      "detected": true,
+      "candidate_pairs": 9456,
+      "proper_crossing_pairs": 8,
+      "pass": true
+    },
+    {
+      "case": "known_crossing_in_full_AST_mesh",
+      "sample_id": "ast016_au0",
+      "expected_face_pair": [
+        1000,
+        2000
+      ],
+      "detected": true,
+      "candidate_pairs": 14086,
+      "proper_crossing_pairs": 116,
+      "pass": true
+    }
+  ],
+  "thresholds": {
+    "degenerate": "twice_area <= 1e-12 * max(1,bbox_diagonal)^2",
+    "normal_reversal": "normal dot < 0 versus source reference",
+    "large_normal_change": "angle > 45 degrees versus source reference",
+    "strain": "sigma_min<0.5 or sigma_max>2 or area_ratio outside [0.5,2]"
+  },
+  "limitations": [
+    "Synthetic vertex-index correspondence is not independent semantic ground truth.",
+    "Geometric alert thresholds are fixed diagnostics, not optimized classifiers.",
+    "Smooth drift can preserve local intrinsic geometry and should be read as a known probe blind spot.",
+    "Anatomical mouth/eyelid shift was not isolated because landmark frame and scale are uncalibrated.",
+    "Self-intersection is checked on a known small crossing control, not as a per-corruption scan over all full meshes.",
+    "Held-out identities are evaluated descriptively and are not used to tune thresholds."
+  ]
+}

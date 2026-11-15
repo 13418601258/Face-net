@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-11-15T09:19:03.369503+00:00",
+  "command": [
+    "code/s2_experiment.py",
+    "--subjects",
+    "ast001",
+    "ast016",
+    "--output-dir",
+    "code/reports/quality_audit_s2_pilot"
+  ],
+  "sources": {
+    "code/s2_experiment.py": "b9cc506858689f952a20c5867c049212bde67aa2b3f947596ecfa5cc688c3400",
+    "code/s1_probes.py": "b5e7b15f310bea4972ff50408f9b1b6dd9fde5b55497a9bbb9413327cae4d77a",
+    "code/self_intersection.py": "2f91511ed735d69eff378a56fc057ba38b67625c05b73936c6cb46b7ad5c34c2",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3",
+    "code/s0_protocol.json": "adf9a5ff7db569c926a2687cd3d865695f3a5e6847773b0d88a277be8eedb075"
+  },
+  "outputs": {
+    "code/reports/quality_audit_s2_pilot/alert_summary.csv": "f57ea1c7996d0fce5629aacddd00239b0db52ef407303789b1af5add00518b04",
+    "code/reports/quality_audit_s2_pilot/localization_results.csv": "ad61fba364f08f2f80ffe4508a8c86345d0d09ac205339a9b11d56033e3c3cc8",
+    "code/reports/quality_audit_s2_pilot/s2_validation.json": "c3858667739ad0da75ca6fb446c65a4f38c845c4395415ec8d7a1808ad57a7d1",
+    "code/reports/quality_audit_s2_pilot/sample_results.csv": "0178d6f0f75d84a597e18f424dc1d38ec27775c97625ee63beff93a390be20a9",
+    "code/reports/quality_audit_s2_pilot/severity_curves.csv": "59622b5702f69929263c18ecce26d84d55b8065ded07edab2f48421d8ed65636"
+  }
+}

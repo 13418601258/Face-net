@@ -37,3 +37,13 @@ test_self_intersection.py
 作用：用已知相交、共面重叠、不相交和共享边样例验证检测器。
 如何使用：在项目根目录运行 python -m unittest discover -s code -p test_self_intersection.py -v。
 输出什么：测试通过或失败的终端记录。
+
+s2_experiment.py
+作用：在已知索引映射上注入局部压扁、折叠、顶点置换、平滑漂移、重复映射和覆盖缺失，评估几何及映射完整性探针。
+如何使用：在项目根目录运行 python code/s2_experiment.py；可用 --seed 固定随机种子、--subjects 限定身份。
+输出什么：code/reports/quality_audit_s2 下的逐样本指标、六类探针区域定位、强度曲线、合成自交检查和运行哈希；缺失映射时几何/对应误差记为不适用。
+
+test_s2_experiment.py
+作用：验证六类 S2 扰动的可复现性、定位标签、映射覆盖率、误差适用性及 Jacobian 数值一致性。
+如何使用：在项目根目录运行 python -m unittest discover -s code -p test_s2_experiment.py -v。
+输出什么：测试通过或失败的终端记录。
