@@ -47,3 +47,13 @@ test_s2_experiment.py
 作用：验证六类 S2 扰动的可复现性、定位标签、映射覆盖率、误差适用性及 Jacobian 数值一致性。
 如何使用：在项目根目录运行 python -m unittest discover -s code -p test_s2_experiment.py -v。
 输出什么：测试通过或失败的终端记录。
+
+official_pipeline_reconciliation.py
+作用：按 AST-Face 官方 01–07 流程说明核对当前公开派生数据的阶段、拓扑、形变场和关键点异常。
+如何使用：在项目根目录运行 python code/official_pipeline_reconciliation.py。
+输出什么：code/reports/quality_audit_s0/official_pipeline_reconciliation.json，说明哪些官方阶段可复核、哪些中间数据缺失，以及需要人工复核的关键点异常样本。
+
+prepare_s3_official_manual_template.py
+作用：为官方公开流程导出的最终 Standardized Meshes 生成不依赖关键点坐标换算的人工稀疏点标注表。
+如何使用：在项目根目录运行 python code/prepare_s3_official_manual_template.py。
+输出什么：code/reports/s3_manual_pilot/manual_sparse_pairs_official.csv，包含开发/留出身份的中性到表情网格路径、8 个语义锚点和待填写的人工坐标与标签。

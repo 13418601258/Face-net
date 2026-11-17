@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "paper-workflow-orchestrator/scripts/workflow_guard.py",
+  "generated_at": "2026-11-17T15:23:16",
+  "target_step": "S1",
+  "status": "FAIL",
+  "steps": [
+    {
+      "step": "S0",
+      "name": "准入预检",
+      "status": "FAIL",
+      "failures": [
+        "缺少文件：paper_output/preflight_report.json",
+        "缺少文件：paper_output/input_manifest.json"
+      ]
+    },
+    {
+      "step": "S1",
+      "name": "审题分析",
+      "status": "FAIL",
+      "failures": [
+        "缺少文件：paper_output/step1/problem_analysis.json"
+      ]
+    }
+  ],
+  "failures": [
+    "S0: 缺少文件：paper_output/preflight_report.json",
+    "S0: 缺少文件：paper_output/input_manifest.json",
+    "S1: 缺少文件：paper_output/step1/problem_analysis.json"
+  ],
+  "mode": "skill",
+  "skill": "authoritative-data-harvester",
+  "required_step": "S1",
+  "handoff": "外部数据检索必须围绕已解析的题意和子问题进行，检索结果回填 crawled_data/ 或 data_plan。",
+  "next_action": "禁止启动 authoritative-data-harvester；先补齐 S1 及之前的失败项。"
+}

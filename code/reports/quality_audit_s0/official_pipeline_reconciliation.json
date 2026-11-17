@@ -1,0 +1,223 @@
+{
+  "stage": "official_pipeline_reconciliation",
+  "official_repository": "https://github.com/zhaopu99/AST-face",
+  "mode": "public_derived_tier_reconciliation; full raw-to-standardized rerun unavailable",
+  "public_assets": {
+    "subjects": 20,
+    "inventory_keys": 320,
+    "unclassified_files": 0,
+    "topology_count": 1,
+    "topology_groups": {
+      "57d942f8a95e181a56aaf587a2d4df9cb5a61885185c2646f470d273235a0b64": 320
+    },
+    "max_deformation_reconstruction_error_native": 1.1907958996637547e-07,
+    "landmark_shape_errors": []
+  },
+  "official_stage_status": {
+    "01_icp": "not rerun; final public meshes are already a derived standardized tier",
+    "02_landmarks": "84-point files present; exact coordinate frame relative to final meshes remains unverified",
+    "03_flame_fitting": "not reproducible from current workspace; FLAME assets and fitted intermediates absent",
+    "04_flame_to_bfm": "not rerun; final standardized meshes are present",
+    "05_edge_nicp": "not rerun; final topology-standardized meshes are present; intermediate transforms absent",
+    "06_bfm_cropper": "not rerun; final cropped topology is treated as supplied output",
+    "07_deformation_fields": "verified by reconstruction against supplied mesh vertices"
+  },
+  "landmark_suspicious_outliers": [
+    {
+      "subject": "ast015",
+      "state": "angry",
+      "landmark_y_mean": -37.81883433603105,
+      "landmark_z_mean": 85.45210661206927,
+      "state_y_median": 1.5943829637198221,
+      "state_z_median": 87.85660555249169,
+      "robust_y_score": 20.089656063477843,
+      "robust_z_score": 1.3485722602789114
+    },
+    {
+      "subject": "ast014",
+      "state": "au0",
+      "landmark_y_mean": -14.838491712297712,
+      "landmark_z_mean": 92.00994627816337,
+      "state_y_median": 2.175576888379597,
+      "state_z_median": 88.35553984414963,
+      "robust_y_score": 9.233908675031273,
+      "robust_z_score": 3.0891466223861626
+    },
+    {
+      "subject": "ast014",
+      "state": "au1",
+      "landmark_y_mean": -23.859849741771107,
+      "landmark_z_mean": 90.9210246404012,
+      "state_y_median": 1.9888420514762402,
+      "state_z_median": 87.96975998651413,
+      "robust_y_score": 11.799367320176993,
+      "robust_z_score": 3.119702419383454
+    },
+    {
+      "subject": "ast019",
+      "state": "au1",
+      "landmark_y_mean": -49.607679531776476,
+      "landmark_z_mean": 72.12095351446243,
+      "state_y_median": 1.9888420514762402,
+      "state_z_median": 87.96975998651413,
+      "robust_y_score": 23.55269332288925,
+      "robust_z_score": 16.753346681422997
+    },
+    {
+      "subject": "ast014",
+      "state": "au12",
+      "landmark_y_mean": -10.359968920016573,
+      "landmark_z_mean": 90.51613984789167,
+      "state_y_median": 1.9502468204924037,
+      "state_z_median": 87.31286019370668,
+      "robust_y_score": 8.68199540520104,
+      "robust_z_score": 4.8580135655036845
+    },
+    {
+      "subject": "ast019",
+      "state": "au12",
+      "landmark_y_mean": -55.49126757042749,
+      "landmark_z_mean": 71.01346342904228,
+      "state_y_median": 1.9502468204924037,
+      "state_z_median": 87.31286019370668,
+      "robust_y_score": 40.51163476921619,
+      "robust_z_score": 24.719256243774073
+    },
+    {
+      "subject": "ast019",
+      "state": "au18",
+      "landmark_y_mean": -21.789087961117428,
+      "landmark_z_mean": 81.22045585087368,
+      "state_y_median": 2.3455184754871183,
+      "state_z_median": 89.1652558871678,
+      "robust_y_score": 10.124764271045654,
+      "robust_z_score": 6.823050629011998
+    },
+    {
+      "subject": "ast019",
+      "state": "au20",
+      "landmark_y_mean": -38.214395105838776,
+      "landmark_z_mean": 77.45014267876034,
+      "state_y_median": 1.2542021446639584,
+      "state_z_median": 88.08965946379162,
+      "robust_y_score": 15.811672088813214,
+      "robust_z_score": 8.979798506528908
+    },
+    {
+      "subject": "ast009",
+      "state": "au4",
+      "landmark_y_mean": -42.7394557765552,
+      "landmark_z_mean": 79.62042234057472,
+      "state_y_median": 1.3727607313720953,
+      "state_z_median": 87.91606943947929,
+      "robust_y_score": 19.262725643382556,
+      "robust_z_score": 4.15600642998006
+    },
+    {
+      "subject": "ast014",
+      "state": "au4",
+      "landmark_y_mean": -29.56164177312028,
+      "landmark_z_mean": 91.27743266877674,
+      "state_y_median": 1.3727607313720953,
+      "state_z_median": 87.91606943947929,
+      "robust_y_score": 13.50829669325092,
+      "robust_z_score": 1.6839972853116496
+    },
+    {
+      "subject": "ast015",
+      "state": "au4",
+      "landmark_y_mean": -24.112457057228312,
+      "landmark_z_mean": 83.36209415254139,
+      "state_y_median": 1.3727607313720953,
+      "state_z_median": 87.91606943947929,
+      "robust_y_score": 11.12877105450916,
+      "robust_z_score": 2.281479714461745
+    },
+    {
+      "subject": "ast019",
+      "state": "au4",
+      "landmark_y_mean": -53.36053697552,
+      "landmark_z_mean": 72.9401250566755,
+      "state_y_median": 1.3727607313720953,
+      "state_z_median": 87.91606943947929,
+      "robust_y_score": 23.90069193408076,
+      "robust_z_score": 7.502744560840234
+    },
+    {
+      "subject": "ast014",
+      "state": "au43",
+      "landmark_y_mean": -24.919737893910636,
+      "landmark_z_mean": 90.83542882828485,
+      "state_y_median": 0.4325560244421164,
+      "state_z_median": 87.81838189987909,
+      "robust_y_score": 9.401990730689642,
+      "robust_z_score": 2.153768665282016
+    },
+    {
+      "subject": "ast015",
+      "state": "au6",
+      "landmark_y_mean": -14.444624892302922,
+      "landmark_z_mean": 82.31126603626069,
+      "state_y_median": 3.742516291993005,
+      "state_z_median": 86.62420327322823,
+      "robust_y_score": 11.57624228920175,
+      "robust_z_score": 2.619671876562369
+    },
+    {
+      "subject": "ast018",
+      "state": "au6",
+      "landmark_y_mean": -8.836941673819508,
+      "landmark_z_mean": 88.93850440070743,
+      "state_y_median": 3.742516291993005,
+      "state_z_median": 86.62420327322823,
+      "robust_y_score": 8.006912785436326,
+      "robust_z_score": 1.405703177312307
+    },
+    {
+      "subject": "ast004",
+      "state": "au9",
+      "landmark_y_mean": -28.707751845497462,
+      "landmark_z_mean": 88.89105896722702,
+      "state_y_median": 2.236163318866775,
+      "state_z_median": 88.37906517301286,
+      "robust_y_score": 33.21673386611057,
+      "robust_z_score": 0.34915689922950943
+    },
+    {
+      "subject": "ast019",
+      "state": "au9",
+      "landmark_y_mean": -54.18482895976021,
+      "landmark_z_mean": 72.2113405863444,
+      "state_y_median": 2.236163318866775,
+      "state_z_median": 88.37906517301286,
+      "robust_y_score": 60.56509252388707,
+      "robust_z_score": 11.025666029687399
+    },
+    {
+      "subject": "ast007",
+      "state": "disgust",
+      "landmark_y_mean": -46.330893848623546,
+      "landmark_z_mean": 76.16595486232212,
+      "state_y_median": 1.008773148287132,
+      "state_z_median": 86.94052516846429,
+      "robust_y_score": 29.056859756368823,
+      "robust_z_score": 6.964607127141953
+    },
+    {
+      "subject": "ast014",
+      "state": "happy",
+      "landmark_y_mean": -28.256662951871043,
+      "landmark_z_mean": 90.72798728942871,
+      "state_y_median": 2.378872635109084,
+      "state_z_median": 87.50022640682403,
+      "robust_y_score": 15.854511850412539,
+      "robust_z_score": 2.9354598134116787
+    }
+  ],
+  "interpretation": [
+    "Do not run ICP again on final Standardized Meshes unless an official input/output transform is explicitly recovered.",
+    "The mesh and deformation-field checks can use the public derived tier.",
+    "The landmark files must be coordinate-validated separately before serving as manual ground truth.",
+    "Suspicious landmark samples are data-quality flags, not proof that the official AST-Face pipeline is incorrect."
+  ]
+}
