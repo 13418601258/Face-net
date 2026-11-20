@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "anchors": [
+    {
+      "id_1based": 1,
+      "name": "left_inner_eye",
+      "official_name": "En_L"
+    },
+    {
+      "id_1based": 5,
+      "name": "left_outer_eye",
+      "official_name": "Ex_L"
+    },
+    {
+      "id_1based": 9,
+      "name": "right_inner_eye",
+      "official_name": "En_R"
+    },
+    {
+      "id_1based": 13,
+      "name": "right_outer_eye",
+      "official_name": "Ex_R"
+    },
+    {
+      "id_1based": 49,
+      "name": "left_mouth_corner",
+      "official_name": "Ch_L"
+    },
+    {
+      "id_1based": 55,
+      "name": "right_mouth_corner",
+      "official_name": "Ch_R"
+    },
+    {
+      "id_1based": 76,
+      "name": "chin",
+      "official_name": "Po"
+    },
+    {
+      "id_1based": 84,
+      "name": "nose_tip",
+      "official_name": "Nt"
+    }
+  ],
+  "source": "AST-Face supplied 84-point landmark files",
+  "coordinate_policy": "raw landmark frame; no mesh unit conversion",
+  "semantic_features": "pairwise distance change and no-scale proper-rigid residual among eight anchors",
+  "mesh_projection_policy": "bbox calibration is diagnostic only; projection is not used as semantic truth or a face label"
+}

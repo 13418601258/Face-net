@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "stage": "S2_sparse_semantic_probe",
+  "status": "RUN_COMPLETE",
+  "subjects": [
+    "ast001",
+    "ast002",
+    "ast003",
+    "ast004",
+    "ast005",
+    "ast006",
+    "ast007",
+    "ast008",
+    "ast009",
+    "ast010",
+    "ast011",
+    "ast012",
+    "ast013",
+    "ast014",
+    "ast015",
+    "ast016",
+    "ast017",
+    "ast018",
+    "ast019",
+    "ast020"
+  ],
+  "states": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise"
+  ],
+  "clean_pair_count": 120,
+  "corruption_row_count": 3240,
+  "control_row_count": 40,
+  "corruption_families": {
+    "anchor_swap": 1080,
+    "anchor_drift": 1080,
+    "anchor_missing": 1080
+  },
+  "normal_control_max_rigid_delta": {
+    "pairwise_distance_rmse_norm": 1.613238513525034e-16,
+    "rigid_residual_q95_norm": 4.860879123556194e-16,
+    "pairwise_relative_rmse": 1.4274097081270068e-16
+  },
+  "normal_control_max_self_metric": {
+    "pairwise_distance_rmse_norm": 0.0,
+    "rigid_residual_q95_norm": 3.468263128379292e-15,
+    "pairwise_relative_rmse": 0.0
+  },
+  "projection_applicable_subjects": 0,
+  "projection_median_distance_edge_ratio": 3.807814191487162,
+  "four_tasks": {
+    "T1_anchor_ingestion": {
+      "anchor_count": 8,
+      "clean_expression_pairs": 120,
+      "all_rows_have_eight_anchor_slots": true
+    },
+    "T2_normal_controls": {
+      "self_controls": 20,
+      "rigid_controls": 20,
+      "max_rigid_delta": {
+        "pairwise_distance_rmse_norm": 1.613238513525034e-16,
+        "rigid_residual_q95_norm": 4.860879123556194e-16,
+        "pairwise_relative_rmse": 1.4274097081270068e-16
+      }
+    },
+    "T3_controlled_point_errors": {
+      "threshold_metric": "pairwise_distance_rmse_norm",
+      "development_clean_q95": 0.191679734701217,
+      "response": {
+        "anchor_swap": {
+          "1": {
+            "held_out_count": 90,
+            "held_out_median": 0.2208657884146446,
+            "above_development_clean_q95": 1.0
+          },
+          "2": {
+            "held_out_count": 90,
+            "held_out_median": 0.2747956504512642,
+            "above_development_clean_q95": 1.0
+          },
+          "3": {
+            "held_out_count": 90,
+            "held_out_median": 0.33036933828786386,
+            "above_development_clean_q95": 1.0
+          }
+        },
+        "anchor_drift": {
+          "1": {
+            "held_out_count": 90,
+            "held_out_median": 0.03347330879610543,
+            "above_development_clean_q95": 0.0
+          },
+          "2": {
+            "held_out_count": 90,
+            "held_out_median": 0.07042419957953774,
+            "above_development_clean_q95": 0.0
+          },
+          "3": {
+            "held_out_count": 90,
+            "held_out_median": 0.15252269944195068,
+            "above_development_clean_q95": 0.05555555555555555
+          }
+        },
+        "anchor_missing": {
+          "1": {
+            "held_out_count": 90,
+            "held_out_median": 0.02934820273085658,
+            "above_development_clean_q95": 0.0
+          },
+          "2": {
+            "held_out_count": 90,
+            "held_out_median": 0.03274953661269732,
+            "above_development_clean_q95": 0.0
+          },
+          "3": {
+            "held_out_count": 90,
+            "held_out_median": 0.03879032076505212,
+            "above_development_clean_q95": 0.0
+          }
+        }
+      }
+    },
+    "T4_stability_and_boundary": {
+      "seeds": [
+        20261120,
+        20261121,
+        20261122
+      ],
+      "held_out_subjects": [
+        "ast016",
+        "ast017",
+        "ast018",
+        "ast019",
+        "ast020"
+      ],
+      "projection_applicable_subjects": 0,
+      "missing_points_are_not_imputed": true
+    }
+  },
+  "limitations": [
+    "Official landmarks are not assumed to be independent semantic ground truth.",
+    "Pairwise features preserve landmark-frame shape and do not provide a mesh-face localization without a validated coordinate transform.",
+    "Synthetic point corruptions validate probe sensitivity, not performance on real model output.",
+    "Missing anchors are excluded and reported as not applicable; no imputation is performed."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-20T13:29:06.167224+00:00",
+  "command": [
+    "code/s2_point_probes.py"
+  ],
+  "sources": {
+    "code/s2_point_probes.py": "d0cc29d8277d78e967eef2bfcc951d16f3d70eba45f1efd95c619e841da9489e",
+    "code/s0_protocol.json": "adf9a5ff7db569c926a2687cd3d865695f3a5e6847773b0d88a277be8eedb075",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3"
+  },
+  "outputs": {
+    "anchor_definition.json": "30d2bc427a1f6d83e1869c611f75b3a9c3346f7ed20409edd2e7792cd8a4b8aa",
+    "clean_point_probe.csv": "d89fd4f9671de40905da55be6226a6f06c44d8c532d6936b96f52f8d40bf9ee4",
+    "point_controls.csv": "d76a7aabbf3adfad9301d13c56e08701f9f96f922d0ac3fb975cc4e19694ae99",
+    "point_corruption_controls.csv": "208b68b284e9068181e47d742244c75b8bde410f2122f01e566f9e6d4841e97b",
+    "projection_diagnostics.csv": "f627570dffd79702b5e87d4688d52b992b19bf364c083b43e9534362454c6d14",
+    "s2_point_validation.json": "65718c915e0fe8b611a9e7cd0efbe501e74bcbcf1d3e1924e5d4aea9228412a1",
+    "stability_summary.csv": "03c96addb474c3f5ec8644853f16b944e8306a56fad19cd927abc7c2fc5841fd"
+  }
+}

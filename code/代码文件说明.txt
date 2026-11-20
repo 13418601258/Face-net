@@ -48,6 +48,16 @@ test_s2_experiment.py
 如何使用：在项目根目录运行 python -m unittest discover -s code -p test_s2_experiment.py -v。
 输出什么：测试通过或失败的终端记录。
 
+s2_point_probes.py
+作用：把官方 84 点中的 8 个解剖锚点接入 S2，计算尺度无关的两两距离和刚体残差语义探针，并验证交换、漂移、缺失三类点级扰动。
+如何使用：在项目根目录运行 python code/s2_point_probes.py；可用 --seed 固定种子、--subjects 限定身份、--output-dir 指定报告目录。
+输出什么：code/reports/quality_audit_s2_points 下的锚点定义、正常点探针、扰动正控、刚体/自比较控制、网格投影诊断、稳定性汇总和运行哈希。
+
+test_s2_point_probes.py
+作用：验证点探针对共同刚体变换不变、对交换与漂移有响应，并明确记录缺失点而不补值。
+如何使用：在项目根目录运行 python -m unittest discover -s code -p test_s2_point_probes.py -v。
+输出什么：测试通过或失败的终端记录。
+
 official_pipeline_reconciliation.py
 作用：按 AST-Face 官方 01–07 流程说明核对当前公开派生数据的阶段、拓扑、形变场和关键点异常。
 如何使用：在项目根目录运行 python code/official_pipeline_reconciliation.py。
