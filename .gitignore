@@ -41,3 +41,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# 第三方上游仓库：code/3DDFA_V2 为独立 clone 的 cleardusk/3DDFA_V2，不纳入本仓库版本管理
+/code/3DDFA_V2/
