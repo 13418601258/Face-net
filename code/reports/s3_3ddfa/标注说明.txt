@@ -1,0 +1,81 @@
+﻿S3 第一轮 3DDFA_V2 人工标注说明
+
+一、这批数据是什么
+
+ data/3ddfa_inputs/ 下有 20 个身份、每个身份 3 张输入图像：v00、v05、v10。
+ data/3ddfa_outputs/ 下有对应的 3DDFA_V2 输出。每个身份用 v00 作为参考，v05 和 v10 各形成一条待检查样本对，共 40 对。
+
+v00、v05、v10 是输入状态名称，不预先代表“正确”或“错误”。v05 和 v10 可能只是姿态变化，也可能包含模型失败，必须由人工判断。
+
+二、需要使用的文件
+
+1. manual_pair_labels_template.csv：样本级标注表，共 40 行，每行对应一条 v00→v05 或 v00→v10 样本对。
+2. manual_anchor_labels_template.csv：锚点级标注表，共 320 行，每条样本对有 8 个锚点。
+3. data/3ddfa_inputs/*.png：输入图像，用来判断原始人脸、姿态、遮挡和表情。
+4. data/3ddfa_outputs/<sample_id>.obj：3D 输出网格，用 MeshLab、Blender 或其他网格查看器打开。
+5. data/3ddfa_outputs/<sample_id>/landmarks.npy：程序导出的 68 点坐标。模板中的 source_xyz_3ddfa 和 target_xyz_3ddfa 已自动复制这些坐标，不需要手工修改。
+
+不要在人工标注阶段打开 s3_3ddfa_probe_features.csv。它包含探针分数，先看它会让人工判断产生偏置。topology_validation.csv 只用于确认文件完整性，不需要填写。
+
+三、推荐的查看顺序
+
+1. 打开一条样本对的 input_path，先看输入图像是否完整、是否侧脸、低头、遮挡或有极端表情。
+2. 打开 reference_sample_id 和 target_sample_id 的 OBJ。先检查整体轮廓，再检查眼睛、鼻子、嘴、下巴和面颊。
+3. 对照输入图像和输出网格，判断目标输出是否有孔洞、断裂、局部翻折、异常凹陷、五官错位、左右明显不对称或区域缺失。
+4. 先填写样本级表，再填写同一条样本的 8 个锚点。不要根据探针分数反推标签。
+
+四、manual_pair_labels_template.csv 的填写方法
+
+以下字段已经自动填写，不要修改：
+
+- pair_id：样本对编号；
+- identity_id：身份编号；
+- reference_sample_id：v00 参考样本；
+- target_sample_id、target_state：待检查目标样本；
+- input_path：目标输入图像；
+- output_obj：目标 OBJ 文件。
+
+需要人工填写的字段：
+
+- reference_quality：v00 参考网格的质量，填写 acceptable、review、clear_failure 或 uncertain。若 v00 本身有明显问题，在 reference_note 说明；不要因为它是参考样本就默认正确。
+- reference_note：参考网格的问题描述，没有问题可留空。
+- sample_label：目标输出相对输入和参考的总体判断。
+  - acceptable：没有发现需要人工处理的明显问题；
+  - review：存在可疑局部，或姿态/遮挡使判断不确定，需要进一步检查；
+  - clear_failure：发现明显孔洞、翻折、错位、缺失、自交或其他明确失败；
+  - uncertain：当前图像和网格无法可靠判断，不要猜测。
+- error_type：错误类型。可填写 correspondence_mismatch、local_fold、smooth_drift、missing_or_coverage、self_intersection、other。若有多个类型，用分号分隔，例如 local_fold;self_intersection；没有明确错误时留空。
+- region：错误区域，可填写 eye、nose、mouth、chin、cheek、other；没有明确区域时留空。
+- confidence_1_to_5：对本行判断的把握程度。1 表示很不确定，5 表示非常确定，不是模型置信度。
+- review_note：写可复核的事实描述，例如“目标 v05 嘴部左侧出现不自然凹陷”，不要只写“很差”。
+
+五、manual_anchor_labels_template.csv 的填写方法
+
+每条样本对有 8 行，锚点编号和名称已经填写：36、39、42、45 为眼角，48、54 为嘴角，30 为鼻尖，8 为下巴。左右名称采用编号，避免不同图像左右约定造成混淆。
+
+以下字段已经自动填写：
+
+- pair_id、identity_id、reference_sample_id、target_sample_id、target_state；
+- anchor_id_68、anchor_name；
+- source_xyz_3ddfa、target_xyz_3ddfa。这两列是程序从 landmarks.npy 复制的坐标，只作追溯，不是人工坐标，也不需要修改。
+
+需要人工填写：
+
+- anchor_consistent：填写 yes、no 或 uncertain。
+  - yes：参考和目标中该编号代表的解剖位置仍然合理，未发现明显语义错位；
+  - no：该点明显落在错误的解剖位置，或相对输入/参考发生明显错配；
+  - uncertain：姿态、遮挡或网格质量导致无法判断。
+- confidence_1_to_5：对该锚点判断的把握程度；
+- review_note：说明原因，例如“鼻尖点落到鼻梁侧面”或“侧脸遮挡，无法确认眼角”。
+
+六、标注原则
+
+- 不要把正常的姿态变化直接标成错误；先区分整体姿态变化和局部解剖错位。
+- 不要因为探针告警就标成 clear_failure；探针结果要等人工标签完成后再分析。
+- 不要把无法判断的样本硬标为 acceptable 或 clear_failure，使用 uncertain。
+- 如果 v00 本身有问题，在 reference_quality 和 reference_note 中记录；不能把所有问题都归因于目标样本。
+- 标注结束前不要查看 s3_3ddfa_probe_features.csv、排序后的风险结果或任何自动告警汇总。
+
+七、完成后的交付
+
+保留填写后的两个 CSV 原文件，并确保 sample_label、reference_quality、anchor_consistent、confidence_1_to_5 已填写。之后再把人工标签与 s3_3ddfa_probe_features.csv 合并分析，计算探针与人工标签的一致性、误报和漏检。当前探针输出是候选特征，不是自动质量标签。

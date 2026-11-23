@@ -58,6 +58,11 @@ test_s2_point_probes.py
 如何使用：在项目根目录运行 python -m unittest discover -s code -p test_s2_point_probes.py -v。
 输出什么：测试通过或失败的终端记录。
 
+s3_3ddfa_probe.py
+作用：读取 3DDFA_V2 的 60 个固定拓扑输出，以每个身份的 v00 为参考，对 v05/v10 计算相似变换后的几何和 68 点语义探针，并生成盲人工标注模板。
+如何使用：在项目根目录运行 python code/s3_3ddfa_probe.py；可用 --input-dir 和 --output-dir 指定输入输出目录。
+输出什么：code/reports/s3_3ddfa 下的拓扑检查、40 对探针特征、样本级标注模板、8 点锚点标注模板、标注说明和运行记录。
+
 official_pipeline_reconciliation.py
 作用：按 AST-Face 官方 01–07 流程说明核对当前公开派生数据的阶段、拓扑、形变场和关键点异常。
 如何使用：在项目根目录运行 python code/official_pipeline_reconciliation.py。

@@ -1,0 +1,37 @@
+{
+  "blind_protocol": [
+    "Do not inspect s3_3ddfa_probe_features.csv while labeling.",
+    "Review source and target mesh/rendering independently.",
+    "Mark uncertain instead of guessing."
+  ],
+  "sample_label_values": [
+    "acceptable",
+    "review",
+    "clear_failure",
+    "uncertain"
+  ],
+  "reference_quality_values": [
+    "acceptable",
+    "review",
+    "clear_failure",
+    "uncertain"
+  ],
+  "error_type_values": [
+    "correspondence_mismatch",
+    "local_fold",
+    "smooth_drift",
+    "missing_or_coverage",
+    "self_intersection",
+    "other"
+  ],
+  "region_values": [
+    "eye",
+    "nose",
+    "mouth",
+    "chin",
+    "cheek",
+    "other"
+  ],
+  "anchor_policy": "The source_xyz_3ddfa and target_xyz_3ddfa columns are filled automatically from landmarks.npy for traceability; only anchor_consistent, confidence and review_note are human fields. Anchor IDs are 36,39,42,45,48,54,30,8.",
+  "note": "3DDFA has fixed BFM topology, so this pilot evaluates real reconstruction outputs and implicit template consistency; it is not an explicit learned forward/backward-map benchmark."
+}

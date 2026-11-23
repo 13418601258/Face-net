@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "stage": "S3_3DDFA_probe_pilot",
+  "status": "RUN_COMPLETE",
+  "input_dir": "F:\\arxiv\\face\\data\\3ddfa_outputs",
+  "sample_count": 60,
+  "identity_count": 20,
+  "pair_count": 40,
+  "topology_group_count": 1,
+  "topology_group_sizes": {
+    "82ff2cef404b2f2170d74ea1b4c8cc6e163a01ab695df4cd0825e9e9900ae6e3": 60
+  },
+  "states": [
+    "v00",
+    "v05",
+    "v10"
+  ],
+  "reference_policy": "within-identity v00; target v05/v10; similarity fit from exported 68 landmarks",
+  "semantic_anchor_ids_68": [
+    36,
+    39,
+    42,
+    45,
+    48,
+    54,
+    30,
+    8
+  ],
+  "label_status": "templates_generated; independent human labels not filled",
+  "limitations": [
+    "Similarity alignment removes global camera scale/pose and is not a correctness label.",
+    "Fixed BFM vertex numbering is implicit template correspondence; no learned explicit f/g is present.",
+    "Probe features are not quality labels until blind human review is completed."
+  ]
+}

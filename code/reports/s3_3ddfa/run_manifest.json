@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-11-23T13:37:20.946749+00:00",
+  "command": [
+    "code/s3_3ddfa_probe.py"
+  ],
+  "sources": {
+    "code/s3_3ddfa_probe.py": "2d18dcf8707f9d4ebafd172d102eabb5610d655c10f2fc6939ac77c93e5a4a07",
+    "code/s1_probes.py": "b5e7b15f310bea4972ff50408f9b1b6dd9fde5b55497a9bbb9413327cae4d77a",
+    "code/s2_point_probes.py": "d0cc29d8277d78e967eef2bfcc951d16f3d70eba45f1efd95c619e841da9489e",
+    "code/audit_io.py": "15841c2c5da3f89e1811d0e9e7d46b19a8851e69273b2962cb9918e760b22cd3"
+  },
+  "outputs": {
+    "manual_anchor_labels_template.csv": "bdf4c35e020164af4b6e88732cc2d5121aac9df381b7dabcf8c2b78c0ae5be21",
+    "manual_label_instructions.json": "3473065de49a3fac21307fa31816c8f9e3ba6f7af030c089e7cf46ee5efbcbfe",
+    "manual_pair_labels_template.csv": "73aa01e0a45fda7ecf1496fb5bea5e3ed2bdc8a058c5c1cfe9dae4fd4a5d146a",
+    "s3_3ddfa_probe_features.csv": "9d509be2e821fb8dbc7efe0d72df9a2deb30b93e1b0fa5ff8077fcfa21153656",
+    "s3_3ddfa_validation.json": "86142de4aa60d973b84abf89025d95000c9606401f37deabeb2558be77bdf97b",
+    "topology_validation.csv": "18cbbdb361a77e0c333b2065ba220bb76c4947c50753d93253859f8917c1e273",
+    "标注说明.txt": "e78230df314b725f83a8ac91f821e00ef637aeea27cf4894e82ea3ad314f00c6"
+  }
+}
